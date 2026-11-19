@@ -1,0 +1,890 @@
+{
+ "run": "2026-11-19T23:45:46.514Z",
+ "total": 147,
+ "pass": 147,
+ "fail": 0,
+ "results": [
+  {
+   "prof": "desktop",
+   "name": "nameForLength(\"Isu(Chongshin Univ.)\") → \"Isu\" (3)",
+   "pass": true,
+   "detail": "\"Isu\""
+  },
+  {
+   "prof": "desktop",
+   "name": "nameForLength(\"이수(총신대입구)\") → \"이수\" (2)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "nameForLength(\"총신대입구(이수)\") → \"총신대입구\" (5)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "nameForLength(\"Seoul Station(서울역)\") → \"Seoul Station\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "names without parentheses are unchanged",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "cl(): L4 ko=5, L7 ko=2",
+   "pass": true,
+   "detail": "{\"ko4\":5,\"ko7\":2,\"en4\":13,\"en7\":3}"
+  },
+  {
+   "prof": "desktop",
+   "name": "cl(): L4 en \"Chongshin Univ.\" / L7 en \"Isu\"(3)",
+   "pass": true,
+   "detail": "{\"ko4\":5,\"ko7\":2,\"en4\":13,\"en7\":3}"
+  },
+  {
+   "prof": "desktop",
+   "name": "all stations × lines × both modes ignore parenthetical text (12 names have parentheses)",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "prof": "desktop",
+   "name": "Lines tab, L4, 5-letter filter: 총신대입구 listed with its FULL displayed name",
+   "pass": true,
+   "detail": "Byeollae Byeolgaram 별내별가람 5 Line 4 | Miasageori 미아사거리 5 Line 4 | Hansung Univ. 한성대입구 5 Line 4"
+  },
+  {
+   "prof": "desktop",
+   "name": "row shows the parenthesis-free count (5), not the full length (10)",
+   "pass": true,
+   "detail": "Chongshin Univ.(Isu) 총신대입구(이수) 5 Line 4Line 7"
+  },
+  {
+   "prof": "desktop",
+   "name": "Lines tab, L7, 2-letter filter: 이수(총신대입구) listed (counted as 2)",
+   "pass": true,
+   "detail": "Jangam 장암 2 Line 7 | Madeul 마들 2 Line 7 | Nowon 노원 2 Line 4Line 7 | Junggye 중계 2 Line 7"
+  },
+  {
+   "prof": "desktop",
+   "name": "English letters mode: Isu(Chongshin Univ.) counted as \"Isu\" (3) and found with the 3-letter filter",
+   "pass": true,
+   "detail": "Isu(Chongshin Univ.) 이수(총신대입구) 3 Line 4Line 7"
+  },
+  {
+   "prof": "desktop",
+   "name": "English mode starts on English-labelled tiles (single layer)",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "precondition: route visible, station selected, sheet open",
+   "pass": true,
+   "detail": "{\"sel\":36,\"sheet\":\"hidden\",\"pins\":3}"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | 출발 | 환승 | 도착 | ← 경로 결과 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | ✕ | 1호선4호선GTX-A공항철도"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: tapping the destination after the switch selects it and keeps the route",
+   "pass": true,
+   "detail": "{\"sel\":122,\"route\":true} top=circle"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: base tiles switched to EN(carto) (single layer)",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | 🔄 1 transfer · 🚉 11 stops · 📏  || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ en: tapping the destination after the switch selects it and keeps the route",
+   "pass": true,
+   "detail": "{\"sel\":122,\"route\":true} top=circle"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | 출발 | 환승 | 도착 | ← 경로 결과 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | ✕ | 1호선4호선GTX-A공항철도"
+  },
+  {
+   "prof": "desktop",
+   "name": "→ ko: tapping the destination after the switch selects it and keeps the route",
+   "pass": true,
+   "detail": "{\"sel\":122,\"route\":true} top=circle"
+  },
+  {
+   "prof": "desktop",
+   "name": "language toggle keeps the open station sheet, its state and scroll position",
+   "pass": true,
+   "detail": "{\"a\":0,\"b\":0,\"s\":\"hidden\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "…a localized notice explains it",
+   "pass": true,
+   "detail": "한국어 지도 타일을 불러올 수 없어 현재 지도를 유지합니다. 역 이름 등은 선택한 언어로 표시됩니다."
+  },
+  {
+   "prof": "desktop",
+   "name": "…but language is Korean: info sheet, route summary and markers all localized",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "…selection, route, centre, zoom preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "hit-testing still works while tiles fell back",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "after tiles recover, switching language swaps to Korean tiles again",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "English tiles unavailable → Korean (current) tiles preserved",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "…English notice shown, UI still English",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "six rapid toggles end with exactly one tile layer matching the language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "theme toggle keeps one tile layer in the current language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "nameForLength(\"Isu(Chongshin Univ.)\") → \"Isu\" (3)",
+   "pass": true,
+   "detail": "\"Isu\""
+  },
+  {
+   "prof": "iphone",
+   "name": "nameForLength(\"이수(총신대입구)\") → \"이수\" (2)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "nameForLength(\"총신대입구(이수)\") → \"총신대입구\" (5)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "nameForLength(\"Seoul Station(서울역)\") → \"Seoul Station\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "names without parentheses are unchanged",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "cl(): L4 ko=5, L7 ko=2",
+   "pass": true,
+   "detail": "{\"ko4\":5,\"ko7\":2,\"en4\":13,\"en7\":3}"
+  },
+  {
+   "prof": "iphone",
+   "name": "cl(): L4 en \"Chongshin Univ.\" / L7 en \"Isu\"(3)",
+   "pass": true,
+   "detail": "{\"ko4\":5,\"ko7\":2,\"en4\":13,\"en7\":3}"
+  },
+  {
+   "prof": "iphone",
+   "name": "all stations × lines × both modes ignore parenthetical text (12 names have parentheses)",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "prof": "iphone",
+   "name": "Lines tab, L4, 5-letter filter: 총신대입구 listed with its FULL displayed name",
+   "pass": true,
+   "detail": "Byeollae Byeolgaram 별내별가람 5 Line 4 | Miasageori 미아사거리 5 Line 4 | Hansung Univ. 한성대입구 5 Line 4"
+  },
+  {
+   "prof": "iphone",
+   "name": "row shows the parenthesis-free count (5), not the full length (10)",
+   "pass": true,
+   "detail": "Chongshin Univ.(Isu) 총신대입구(이수) 5 Line 4Line 7"
+  },
+  {
+   "prof": "iphone",
+   "name": "Lines tab, L7, 2-letter filter: 이수(총신대입구) listed (counted as 2)",
+   "pass": true,
+   "detail": "Jangam 장암 2 Line 7 | Madeul 마들 2 Line 7 | Nowon 노원 2 Line 4Line 7 | Junggye 중계 2 Line 7"
+  },
+  {
+   "prof": "iphone",
+   "name": "English letters mode: Isu(Chongshin Univ.) counted as \"Isu\" (3) and found with the 3-letter filter",
+   "pass": true,
+   "detail": "Isu(Chongshin Univ.) 이수(총신대입구) 3 Line 4Line 7"
+  },
+  {
+   "prof": "iphone",
+   "name": "English mode starts on English-labelled tiles (single layer)",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "precondition: route visible, station selected, sheet open",
+   "pass": true,
+   "detail": "{\"sel\":36,\"sheet\":\"half\",\"pins\":3}"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: sheet stays open in the same state",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: destination hit-test (point off-screen at this zoom; skipped)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: base tiles switched to EN(carto) (single layer)",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: sheet stays open in the same state",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | 🔄 1 transfer · 🚉 11 stops · 📏  || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ en: destination hit-test (point off-screen at this zoom; skipped)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: sheet stays open in the same state",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+  },
+  {
+   "prof": "iphone",
+   "name": "→ ko: destination hit-test (point off-screen at this zoom; skipped)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "language toggle keeps the open station sheet, its state and scroll position",
+   "pass": true,
+   "detail": "{\"a\":120,\"b\":121,\"s\":\"full\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "…a localized notice explains it",
+   "pass": true,
+   "detail": "한국어 지도 타일을 불러올 수 없어 현재 지도를 유지합니다. 역 이름 등은 선택한 언어로 표시됩니다."
+  },
+  {
+   "prof": "iphone",
+   "name": "…but language is Korean: info sheet, route summary and markers all localized",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "…selection, route, centre, zoom preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "hit-testing still works while tiles fell back",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "after tiles recover, switching language swaps to Korean tiles again",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "English tiles unavailable → Korean (current) tiles preserved",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "…English notice shown, UI still English",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "six rapid toggles end with exactly one tile layer matching the language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "theme toggle keeps one tile layer in the current language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "nameForLength(\"Isu(Chongshin Univ.)\") → \"Isu\" (3)",
+   "pass": true,
+   "detail": "\"Isu\""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "nameForLength(\"이수(총신대입구)\") → \"이수\" (2)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "nameForLength(\"총신대입구(이수)\") → \"총신대입구\" (5)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "nameForLength(\"Seoul Station(서울역)\") → \"Seoul Station\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "names without parentheses are unchanged",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "cl(): L4 ko=5, L7 ko=2",
+   "pass": true,
+   "detail": "{\"ko4\":5,\"ko7\":2,\"en4\":13,\"en7\":3}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "cl(): L4 en \"Chongshin Univ.\" / L7 en \"Isu\"(3)",
+   "pass": true,
+   "detail": "{\"ko4\":5,\"ko7\":2,\"en4\":13,\"en7\":3}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "all stations × lines × both modes ignore parenthetical text (12 names have parentheses)",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Lines tab, L4, 5-letter filter: 총신대입구 listed with its FULL displayed name",
+   "pass": true,
+   "detail": "Byeollae Byeolgaram 별내별가람 5 Line 4 | Miasageori 미아사거리 5 Line 4 | Hansung Univ. 한성대입구 5 Line 4"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "row shows the parenthesis-free count (5), not the full length (10)",
+   "pass": true,
+   "detail": "Chongshin Univ.(Isu) 총신대입구(이수) 5 Line 4Line 7"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Lines tab, L7, 2-letter filter: 이수(총신대입구) listed (counted as 2)",
+   "pass": true,
+   "detail": "Jangam 장암 2 Line 7 | Madeul 마들 2 Line 7 | Nowon 노원 2 Line 4Line 7 | Junggye 중계 2 Line 7"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English letters mode: Isu(Chongshin Univ.) counted as \"Isu\" (3) and found with the 3-letter filter",
+   "pass": true,
+   "detail": "Isu(Chongshin Univ.) 이수(총신대입구) 3 Line 4Line 7"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English mode starts on English-labelled tiles (single layer)",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "precondition: route visible, station selected, sheet open",
+   "pass": true,
+   "detail": "{\"sel\":36,\"sheet\":\"half\",\"pins\":3}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: sheet stays open in the same state",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: destination hit-test (point off-screen at this zoom; skipped)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: base tiles switched to EN(carto) (single layer)",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: sheet stays open in the same state",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | 🔄 1 transfer · 🚉 11 stops · 📏  || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ en: destination hit-test (point off-screen at this zoom; skipped)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: station selection preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: map centre and zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: route highlight unchanged (same path, same pins)",
+   "pass": true,
+   "detail": "pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: all 654 station markers still present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: sheet stays open in the same state",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: station sheet + route summary localized",
+   "pass": true,
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "→ ko: destination hit-test (point off-screen at this zoom; skipped)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "language toggle keeps the open station sheet, its state and scroll position",
+   "pass": true,
+   "detail": "{\"a\":120,\"b\":120,\"s\":\"full\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
+   "pass": true,
+   "detail": "[\"EN(carto)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "…a localized notice explains it",
+   "pass": true,
+   "detail": "한국어 지도 타일을 불러올 수 없어 현재 지도를 유지합니다. 역 이름 등은 선택한 언어로 표시됩니다."
+  },
+  {
+   "prof": "iphone-land",
+   "name": "…but language is Korean: info sheet, route summary and markers all localized",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "…selection, route, centre, zoom preserved",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "hit-testing still works while tiles fell back",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "after tiles recover, switching language swaps to Korean tiles again",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English tiles unavailable → Korean (current) tiles preserved",
+   "pass": true,
+   "detail": "[\"KO(osm)\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "…English notice shown, UI still English",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "six rapid toggles end with exactly one tile layer matching the language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "theme toggle keeps one tile layer in the current language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

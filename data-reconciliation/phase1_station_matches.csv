@@ -1,0 +1,655 @@
+﻿id,ko,en,lines,category,relations,master_rows,master_line_section_note,spread_m
+0,연천,Yeoncheon,1,exact,exact,1919:연천(경원선),,0
+1,전곡,Jeongok,1,exact,exact,1918:전곡(경원선),,0
+2,청산,Cheongsan,1,exact,exact,1917:청산(경원선),,0
+3,소요산,Soyosan,1,exact,exact,1916:소요산(경원선),,0
+4,동두천,Dongducheon,1,exact,exact,1915:동두천(경원선),,0
+5,보산,Bosan,1,exact,exact,1914:보산(경원선),,0
+6,동두천중앙,Dongducheonjungang,1,exact,exact,1913:동두천중앙(경원선),,0
+7,지행,Jihaeng,1,exact,exact,1912:지행(경원선),,0
+8,덕정,Deokjeong,1,exact,exact,1911:덕정(경원선),,0
+9,덕계,Deokgye,1,exact,exact,1910:덕계(경원선),,0
+10,양주,Yangju,1,exact,exact,1909:양주(경원선),,0
+11,녹양,Nogyang,1,exact,exact,1908:녹양(경원선),,0
+12,가능,Ganeung,1,exact,exact,1907:가능(경원선),,0
+13,의정부,Uijeongbu,1,exact,exact,1906:의정부(경원선),,0
+14,회룡,Hoeryong,1|의정부경전철,exact,exact,1905:회룡(경원선); 4602:회룡(의정부선),,70
+15,망월사,Mangwolsa,1,exact,exact,1904:망월사(경원선),,0
+16,도봉산,Dobongsan,1|7,exact,exact,1903:도봉산(경원선); 2712:도봉산(7호선),,52
+17,도봉,Dobong,1,exact,exact,1902:도봉(경원선),,0
+18,방학,Banghak,1,exact,exact,1901:방학(경원선),,0
+19,창동,Chang-dong,1|4,exact,exact,412:창동(4호선),,0
+20,녹천,Nokcheon,1,exact,exact,1021:녹천(경원선),,0
+21,월계,Wolgye,1,exact,exact,1020:월계(경원선),,0
+22,광운대,Kwangwoon Univ.,1|경춘선,exact,exact,1019:광운대(경원선),,0
+23,석계,Seokgye,1|6,exact,exact,1018:석계(경원선); 2645:석계(6호선),,48
+24,신이문,Sinimun,1,exact,exact,1017:신이문(경원선),,0
+25,외대앞,Hankuk Univ. of Foreign Studies,1,exact,exact,1016:외대앞(경원선),,0
+26,회기,Hoegi,1|경의선|경춘선,exact,exact,1015:회기(중앙선),,0
+27,청량리,Cheongnyangni,1|경의선|경춘선|수인분당선,duplicate,alias:parenthetical,1014:청량리(서울시립대입구)(경원선); 158:청량리(서울시립대입구)(1호선),,339
+28,제기동,Jegi-dong,1,exact,exact,157:제기동(1호선),,0
+29,신설동,Sinseol-dong,1|2|우이신설경전철,exact,exact,156:신설동(1호선); 246:신설동(2호선); 4713:신설동(우이신설선),,211
+30,동묘앞,Dongmyo,1|6,exact,exact,159:동묘앞(1호선); 2637:동묘앞(6호선),,125
+31,동대문,Dongdaemun,1|4,exact,exact,155:동대문(1호선); 421:동대문(4호선),,167
+32,종로5가,Jongno 5(o)-ga,1,exact,exact,154:종로5가(1호선),,0
+33,종로3가,Jongno 3(sam)-ga,1|3|5,exact,exact,153:종로3가(1호선); 319:종로3가(3호선); 2535:종로3가(5호선),,273
+34,종각,Jonggak,1,exact,exact,152:종각(1호선),,0
+35,시청,City Hall,1|2,exact,exact,151:시청(1호선); 201:시청(2호선),,279
+36,서울,Seoul Station,1|4|GTX-A|공항철도|경의선,duplicate,exact,1001:서울역(경부선); 150:서울역(1호선); 426:서울역(4호선); 9005:서울(수도권 광역급행철도); 4201:서울역(공항철도1호선); 1251:서울역(경의중앙선),,510
+37,남영,Namyeong,1,exact,exact,1002:남영(경부선),,0
+38,용산,Yongsan,1|경의선,exact,exact,1003:용산(경부선),,0
+39,노량진,Noryangjin,1|9,exact,exact,1004:노량진(경부선); 4117:노량진(9호선),,165
+40,대방,Daebang,1|신림선,exact,exact,1005:대방(경부선); 4402:대방(신림선),,58
+41,신길,Singil,1|5,exact,exact,1032:신길(경부선); 2526:신길(5호선),,280
+42,영등포,Yeongdeungpo,1,exact,exact,1006:영등포(경부선),,0
+43,신도림,Sindorim,1|2,exact,exact,1007:신도림(경부선); 234:신도림(2호선),,20
+44,구로,Guro,1,exact,exact,1701:구로(경부선),,0
+45,가산디지털단지,Gasan Digital Complex,1|7,exact,exact,1702:가산디지털단지(경부선); 2748:가산디지털단지(7호선),,138
+46,독산,Doksan,1,exact,exact,1714:독산(경부선),,0
+47,금천구청,Geumcheon-Gu Office,1,exact,exact,1703:금천구청(경부선),,0
+48,석수,Seoksu,1,exact,exact,1704:석수(경부선),,0
+49,관악,Gwanak,1,exact,exact,1705:관악(경부선),,0
+50,안양,Anyang,1,exact,exact,1706:안양(경부선),,0
+51,명학,Myeonghak,1,exact,exact,1707:명학(경부선),,0
+52,금정,Geumjeong,1|4,exact,exact,1708:금정(경부선); 1458:금정(과천선),,2
+53,군포,Gunpo,1,exact,exact,1709:군포(경부선),,0
+54,당정,Dangjeong,1,exact,exact,1729:당정(경부선),,0
+55,의왕,Uiwang,1,exact,exact,1710:의왕(경부선),,0
+56,성균관대,Sungkyunkwan Univ.,1,exact,exact,1711:성균관대(경부선),,0
+57,화서,Hwaseo,1,exact,exact,1712:화서(경부선),,0
+58,수원,Suwon,1|수인분당선,exact,exact,1713:수원(경부선); 1846:수원(분당선),,49
+59,세류,Seryu,1,exact,exact,1715:세류(경부선),,0
+60,병점,Byeongjeom,1,exact,exact,1716:병점(경부선),,0
+61,세마,Sema,1,exact,exact,1717:세마(경부선),,0
+62,오산대,Osan College,1,exact,exact,1718:오산대(경부선),,0
+63,오산,Osan,1,exact,exact,1719:오산(경부선),,0
+64,진위,Jinwi,1,exact,exact,1720:진위(경부선),,0
+65,송탄,Songtan,1,exact,exact,1721:송탄(경부선),,0
+66,서정리,Seojeong-ri,1,exact,exact,1722:서정리(경부선),,0
+67,평택지제,PyeongtaekJije,1,alias,alias:rename,1723:지제(경부선),,0
+68,평택,Pyeongtaek,1,exact,exact,1724:평택(경부선),,0
+69,성환,Seonghwan,1,exact,exact,1725:성환(경부선),,0
+70,직산,Jiksan,1,exact,exact,1726:직산(경부선),,0
+71,두정,Dujeong,1,exact,exact,1727:두정(경부선),,0
+72,천안,Cheonan,1,exact,exact,1728:천안(경부선),,0
+73,봉명,Bongmyeong,1,exact,exact,1401:봉명(장항선),,0
+74,쌍용,Ssangyong,1,alias,alias:parenthetical,1402:쌍용(나사렛대)(장항선),,0
+75,아산,Asan,1,exact,exact,1403:아산(장항선),,0
+76,탕정,Tangjeong,1,exact,exact,1404:탕정(장항선),,0
+77,배방,Baebang,1,exact,exact,1405:배방(장항선),,0
+78,온양온천,Onyang oncheon,1,exact,exact,1407:온양온천(장항선),,0
+79,신창,Sinchang,1,alias,alias:parenthetical,1408:신창(순천향대)(장항선),,0
+80,구일,Guil,1,exact,exact,1813:구일(경인선),,0
+81,개봉,Gaebong,1,exact,exact,1801:개봉(경인선),,0
+82,오류동,Oryu-dong,1,exact,exact,1802:오류동(경인선),,0
+83,온수,Onsu,1|7,alias,alias:parenthetical,1821:온수(성공회대입구)(경인선); 2752:온수(성공회대입구)(7호선),,101
+84,역곡,Yeokgok,1,exact,exact,1803:역곡(경인선),,0
+85,소사,Sosa,1|서해선,exact,exact,1814:소사(경인선); 4804:소사(서해선),,69
+86,부천,Bucheon,1,exact,exact,1804:부천(경인선),,0
+87,중동,Jung-dong,1,exact,exact,1822:중동(경인선),,0
+88,송내,Songnae,1,exact,exact,1805:송내(경인선),,0
+89,부개,Bugae,1,exact,exact,1815:부개(경인선),,0
+90,부평,Bupyeong,1|인천선,exact,exact,1806:부평(경인선); 3120:부평(인천1호선),,153
+91,백운,Baegun,1,exact,exact,1807:백운(경인선),,0
+92,동암,Dongam,1,exact,exact,1808:동암(경인선),,0
+93,간석,Ganseok,1,exact,exact,1816:간석(경인선),,0
+94,주안,Juan,1|인천2호선,exact,exact,1809:주안(경인선); 3218:주안(인천2호선),,57
+95,도화,Dohwa,1,exact,exact,1823:도화(경인선),,0
+96,제물포,Jemulpo,1,exact,exact,1810:제물포(경인선),,0
+97,도원,Dowon,1,exact,exact,1817:도원(경인선),,0
+98,동인천,Dongincheon,1,exact,exact,1811:동인천(경인선),,0
+99,인천,Incheon,1|수인분당선,exact,exact,1812:인천(경인선); 1891:인천(수인선),,59
+100,광명,Gwangmyeong,1,exact,exact,1750:광명(경부선),,0
+101,서동탄,Seodongtan,1,exact,exact,1749:서동탄(경부선),,0
+102,을지로입구,Euljiro 1(il)-ga,2,exact,exact,202:을지로입구(2호선),,0
+103,을지로3가,Euljiro 3(sam)-ga,2|3,exact,exact,203:을지로3가(2호선); 320:을지로3가(3호선),,85
+104,을지로4가,Euljiro 4(sa)-ga,2|5,exact,exact,204:을지로4가(2호선); 2536:을지로4가(5호선),,86
+105,동대문역사문화공원,Dongdaemun History  Culture Park,2|4|5,exact,exact,205:동대문역사문화공원(2호선); 422:동대문역사문화공원(4호선); 2537:동대문역사문화공원(5호선),,343
+106,신당,Sindang,2|6,exact,exact,206:신당(2호선); 2636:신당(6호선),,311
+107,상왕십리,Sangwangsimni,2,exact,exact,207:상왕십리(2호선),,0
+108,왕십리,Wangsimni,2|5|경의선|수인분당선,alias,alias:parenthetical,208:왕십리(성동구청)(2호선); 2541:왕십리(성동구청)(5호선); 1013:왕십리(성동구청)(경원선),,140
+109,한양대,Hanyang Univ.,2,exact,exact,209:한양대(2호선),,0
+110,뚝섬,Ttukseom,2,exact,exact,210:뚝섬(2호선),,0
+111,성수,Seongsu,2,exact,exact,211:성수(2호선),,0
+112,건대입구,Konkuk Univ.,2|7,exact,exact,212:건대입구(2호선); 2729:건대입구(7호선),,167
+113,구의,Guui,2,alias,alias:parenthetical,213:구의(광진구청)(2호선),,0
+114,강변,Gangbyeon,2,alias,alias:parenthetical,214:강변(동서울터미널)(2호선),,0
+115,잠실나루,Jamsillaru,2,exact,exact,215:잠실나루(2호선),,0
+116,잠실,Jamsil,2|8,alias,alias:parenthetical,216:잠실(송파구청)(2호선); 2815:잠실(송파구청)(8호선),,401
+117,잠실새내,Jamsilsaenae,2,exact,exact,217:잠실새내(2호선),,0
+118,종합운동장,Sports Complex,2|9,exact,exact,218:종합운동장(2호선); 4130:종합운동장(9호선(연장)),,231
+119,삼성,Samseong,2,alias,alias:parenthetical,219:삼성(무역센터)(2호선),,0
+120,선릉,Seolleung,2|수인분당선,exact,exact,220:선릉(2호선); 1023:선릉(분당선),,83
+121,역삼,Yeoksam,2,exact,exact,221:역삼(2호선),,0
+122,강남,Gangnam,2|신분당선,exact,exact,222:강남(2호선); 4307:강남(신분당선),,129
+123,교대,Seoul Nat`l Univ. of Education,2|3,alias,alias:parenthetical,223:교대(법원.검찰청)(2호선); 330:교대(법원.검찰청)(3호선),,130
+124,서초,Seocho,2,exact,exact,224:서초(2호선),,0
+125,방배,Bangbae,2,exact,exact,225:방배(2호선),,0
+126,사당,Sadang,2|4,exact,exact,226:사당(2호선); 433:사당(4호선),,47
+127,낙성대,Nakseongdae,2,exact,exact,227:낙성대(2호선),,0
+128,서울대입구,Seoul Nat`l Univ.,2,alias,alias:parenthetical,228:서울대입구(관악구청)(2호선),,0
+129,봉천,Bongcheon,2,exact,exact,229:봉천(2호선),,0
+130,신림,Sillim,2|신림선,exact,exact,230:신림(2호선); 4408:신림(신림선),,81
+131,신대방,Sindaebang,2,exact,exact,231:신대방(2호선),,0
+132,구로디지털단지,Guro Digital Complex,2,exact,exact,232:구로디지털단지(2호선),,0
+133,대림,Daerim,2|7,alias,alias:parenthetical,233:대림(구로구청)(2호선); 2746:대림(구로구청)(7호선),,191
+134,문래,Mullae,2,exact,exact,235:문래(2호선),,0
+135,영등포구청,Yeongdeungpo-gu Office,2|5,exact,exact,236:영등포구청(2호선); 2524:영등포구청(5호선),,218
+136,당산,Dangsan,2|9,exact,exact,237:당산(2호선); 4113:당산(9호선),,171
+137,합정,Hapjeong,2|6,exact,exact,238:합정(2호선); 2623:합정(6호선),,48
+138,홍대입구,Hongik Univ.,2|공항철도|경의선,exact,exact,239:홍대입구(2호선); 4203:홍대입구(공항철도1호선); 1264:홍대입구(경의중앙선),,279
+139,신촌,Sinchon,2|경의선,exact,exact,240:신촌(2호선); 1252:신촌(경의중앙선),,715
+140,이대,Ewha Womans Univ.,2,exact,exact,241:이대(2호선),,0
+141,아현,Ahyeon,2,exact,exact,242:아현(2호선),,0
+142,충정로,Chungjeongno,2|5,alias,alias:parenthetical,243:충정로(경기대입구)(2호선); 2532:충정로(경기대입구)(5호선),,143
+143,용답,Yongdap,2,exact,exact,244:용답(2호선),,0
+144,신답,Sindap,2,exact,exact,245:신답(2호선),,0
+145,용두,Yongdu,2,alias,alias:parenthetical,250:용두(동대문구청)(2호선),,0
+146,도림천,Dorimcheon,2,exact,exact,247:도림천(2호선),,0
+147,양천구청,Yangcheon-gu Office,2,exact,exact,248:양천구청(2호선),,0
+148,신정네거리,Sinjeongnegeori,2,exact,exact,249:신정네거리(2호선),,0
+149,까치산,Kkachisan,2|5,exact,exact,2519:까치산(5호선),,0
+150,대화,Daehwa,3,exact,exact,1958:대화(일산선),,0
+151,주엽,Juyeop,3,exact,exact,1957:주엽(일산선),,0
+152,정발산,Jeongbalsan,3,exact,exact,1956:정발산(일산선),,0
+153,마두,Madu,3,exact,exact,1955:마두(일산선),,0
+154,백석,Baekseok,3,exact,exact,1954:백석(일산선),,0
+155,대곡,Daegok,3|GTX-A|경의선|서해선,exact,exact,1953:대곡(일산선); 9002:대곡(수도권 광역급행철도),,33
+156,화정,Hwajeong,3,exact,exact,1952:화정(일산선),,0
+157,원당,Wondang,3,exact,exact,1951:원당(일산선),,0
+158,원흥,Wonheung,3,exact,exact,1948:원흥(일산선),,0
+159,삼송,Samsong,3,exact,exact,1950:삼송(일산선),,0
+160,지축,Jichuk,3,duplicate,exact,1949:지축(일산선); 309:지축(3호선),,5
+161,구파발,Gupabal,3,exact,exact,310:구파발(3호선),,0
+162,연신내,Yeonsinnae,3|6|GTX-A,exact,exact,311:연신내(3호선); 2615:연신내(6호선); 9004:연신내(수도권 광역급행철도),,75
+163,불광,Bulgwang,3|6,exact,exact,312:불광(3호선); 2613:불광(6호선),,52
+164,녹번,Nokbeon,3,exact,exact,313:녹번(3호선),,0
+165,홍제,Hongje,3,exact,exact,314:홍제(3호선),,0
+166,무악재,Muakjae,3,exact,exact,315:무악재(3호선),,0
+167,독립문,Dongnimmun,3,exact,exact,316:독립문(3호선),,0
+168,경복궁,Gyeongbokgung,3,alias,alias:parenthetical,317:경복궁(정부서울청사)(3호선),,0
+169,안국,Anguk,3,exact,exact,318:안국(3호선),,0
+170,충무로,Chungmuro,3|4,exact,exact,321:충무로(3호선); 423:충무로(4호선),,25
+171,동대입구,Dongguk Univ.,3,exact,exact,322:동대입구(3호선),,0
+172,약수,Yaksu,3|6,exact,exact,323:약수(3호선); 2634:약수(6호선),,69
+173,금호,Geumho,3,exact,exact,324:금호(3호선),,0
+174,옥수,Oksu,3|경의선,exact,exact,325:옥수(3호선); 1011:옥수(경원선),,185
+175,압구정,Apgujeong,3,exact,exact,326:압구정(3호선),,0
+176,신사,Sinsa,3|신분당선,exact,exact,327:신사(3호선); 4304:신사(신분당선(연장2)),,0
+177,잠원,Jamwon,3,exact,exact,328:잠원(3호선),,0
+178,고속터미널,Express Bus Terminal,3|7|9,exact,exact,329:고속터미널(3호선); 2736:고속터미널(7호선); 4123:고속터미널(9호선),,296
+179,남부터미널,Nambu Bus Terminal,3,alias,alias:parenthetical,331:남부터미널(예술의전당)(3호선),,0
+180,양재,Yangjae,3|신분당선,alias,alias:parenthetical,332:양재(서초구청)(3호선); 4308:양재(서초구청)(신분당선),,100
+181,매봉,Maebong,3,exact,exact,333:매봉(3호선),,0
+182,도곡,Dogok,3|수인분당선,exact,exact,334:도곡(3호선); 1025:도곡(분당선),,41
+183,대치,Daechi,3,exact,exact,335:대치(3호선),,0
+184,학여울,Hangnyeoul,3,exact,exact,336:학여울(3호선),,0
+185,대청,Daecheong,3,exact,exact,337:대청(3호선),,0
+186,일원,Irwon,3,exact,exact,338:일원(3호선),,0
+187,수서,Suseo,3|GTX-A|수인분당선,exact,exact,339:수서(3호선); 9007:수서(수도권 광역급행철도); 1030:수서(분당선),,124
+188,가락시장,Garak Market,3|8,exact,exact,340:가락시장(3호선); 2818:가락시장(8호선),,91
+189,경찰병원,National Police Hospital,3,exact,exact,341:경찰병원(3호선),,0
+190,오금,Ogeum,3|5,exact,exact,342:오금(3호선); 2558:오금(5호선),,35
+191,진접,Jinjeop,4,exact,exact,405:진접(진접선),,0
+192,오남,Onam,4,exact,exact,406:오남(진접선),,0
+193,별내별가람,Byeollae Byeolgaram,4,exact,exact,408:별내별가람(진접선),,0
+194,불암산,Buramsan,4,exact,exact,409:불암산(4호선),,0
+195,상계,Sanggye,4,exact,exact,410:상계(4호선),,0
+196,노원,Nowon,4|7,exact,exact,411:노원(4호선); 2715:노원(7호선),,295
+197,쌍문,Ssangmun,4,exact,exact,413:쌍문(4호선),,0
+198,수유,Suyu,4,alias,alias:parenthetical,414:수유(강북구청)(4호선),,0
+199,미아,Mia,4,alias,alias:parenthetical,415:미아(서울사이버대학)(4호선),,0
+200,미아사거리,Miasageori,4,exact,exact,416:미아사거리(4호선),,0
+201,길음,Gireum,4,exact,exact,417:길음(4호선),,0
+202,성신여대입구,Sungshin Women`s Univ.,4|우이신설경전철,alias,alias:parenthetical,418:성신여대입구(돈암)(4호선); 4711:성신여대입구(돈암)(우이신설선),,17
+203,한성대입구,Hansung Univ.,4,alias,alias:parenthetical,419:한성대입구(삼선교)(4호선),,0
+204,혜화,Hyehwa,4,exact,exact,420:혜화(4호선),,0
+205,명동,Myeong-dong,4,exact,exact,424:명동(4호선),,0
+206,회현,Hoehyeon,4,alias,alias:parenthetical,425:회현(남대문시장)(4호선),,0
+207,숙대입구,Sookmyung Women`s Univ.,4,alias,alias:parenthetical,427:숙대입구(갈월)(4호선),,0
+208,삼각지,Samgakji,4|6,exact,exact,428:삼각지(4호선); 2629:삼각지(6호선),,206
+209,신용산,Sinyongsan,4,exact,exact,429:신용산(4호선),,0
+210,이촌,Ichon,4|경의선,alias,alias:parenthetical,430:이촌(국립중앙박물관)(4호선); 1008:이촌(국립중앙박물관)(경원선),,118
+211,동작,Dongjak,4|9,alias,alias:parenthetical,431:동작(현충원)(4호선); 4120:동작(현충원)(9호선),,194
+212,총신대입구,Chongshin Univ.,4|7,alias,alias:parenthetical,432:총신대입구(이수)(4호선); 2738:이수(7호선),,123
+213,남태령,Namtaeryeong,4,exact,exact,434:남태령(4호선),,0
+214,선바위,Seonbawi,4,exact,exact,1450:선바위(과천선),,0
+215,경마공원,Seoul Racecourse Park,4,exact,exact,1451:경마공원(과천선),,0
+216,대공원,Seoul Grand Park,4,exact,exact,1452:대공원(과천선),,0
+217,과천,Gwacheon,4,exact,exact,1453:과천(과천선),,0
+218,정부과천청사,Government Complex Gwacheon,4,exact,exact,1454:정부과천청사(과천선),,0
+219,인덕원,Indeogwon,4,exact,exact,1455:인덕원(과천선),,0
+220,평촌,Pyeongchon,4,exact,exact,1456:평촌(과천선),,0
+221,범계,Beomgye,4,exact,exact,1457:범계(과천선),,0
+222,산본,Sanbon,4,exact,exact,1751:산본(안산선),,0
+223,수리산,Surisan,4,exact,exact,1763:수리산(안산선),,0
+224,대야미,Daeyami,4,exact,exact,1752:대야미(안산선),,0
+225,반월,Banwol,4,exact,exact,1753:반월(안산선),,0
+226,상록수,Sangnoksu,4,exact,exact,1754:상록수(안산선),,0
+227,한대앞,Hanyang Univ. at Ansan,4|수인분당선,exact,exact,1755:한대앞(안산선),,0
+228,중앙,Jungang,4|수인분당선,exact,exact,1756:중앙(안산선),,0
+229,고잔,Gojan,4|수인분당선,exact,exact,1757:고잔(안산선),,0
+230,초지,Choji,4|수인분당선|서해선,exact,exact,1758:초지(안산선); 4813:초지(서해선),,228
+231,안산,Ansan,4|수인분당선,exact,exact,1759:안산(안산선),,0
+232,신길온천,Neunggil,4|수인분당선,exact,exact,1760:신길온천(안산선),,0
+233,정왕,Jeongwang,4|수인분당선,exact,exact,1761:정왕(안산선),,0
+234,오이도,Oido,4|수인분당선,exact,exact,1762:오이도(안산선),,0
+235,장암,Jangam,7,exact,exact,2711:장암(7호선),,0
+236,수락산,Suraksan,7,exact,exact,2713:수락산(7호선),,0
+237,마들,Madeul,7,exact,exact,2714:마들(7호선),,0
+238,중계,Junggye,7,exact,exact,2716:중계(7호선),,0
+239,하계,Hagye,7,exact,exact,2717:하계(7호선),,0
+240,공릉,Gongneung,7,alias,alias:parenthetical,2718:공릉(서울과학기술대)(7호선),,0
+241,태릉입구,Taereung,6|7,exact,exact,2646:태릉입구(6호선); 2719:태릉입구(7호선),,121
+242,먹골,Meokgol,7,exact,exact,2720:먹골(7호선),,0
+243,중화,Junghwa,7,exact,exact,2721:중화(7호선),,0
+244,상봉,Sangbong,7|경의선|경춘선,alias,alias:parenthetical,2722:상봉(시외버스터미널)(7호선); 1202:상봉(시외버스터미널)(중앙선),,136
+245,면목,Myeonmok,7,exact,exact,2723:면목(7호선),,0
+246,사가정,Sagajeong,7,exact,exact,2724:사가정(7호선),,0
+247,용마산,Yongmasan,7,exact,exact,2725:용마산(7호선),,0
+248,중곡,Junggok,7,exact,exact,2726:중곡(7호선),,0
+249,군자,Gunja,5|7,alias,alias:parenthetical,2545:군자(능동)(5호선); 2727:군자(능동)(7호선),,30
+250,어린이대공원,Children's Grand Park,7,alias,alias:parenthetical,2728:어린이대공원(세종대)(7호선),,0
+251,자양,Jayang,7,alias,alias:rename,2730:뚝섬유원지(7호선),,0
+252,청담,Cheongdam,7,exact,exact,2731:청담(7호선),,0
+253,강남구청,Gangnam-gu Office,7|수인분당선,exact,exact,2732:강남구청(7호선); 1849:강남구청(분당선),,34
+254,학동,Hak-dong,7,exact,exact,2733:학동(7호선),,0
+255,논현,Nonhyeon,7|신분당선,exact,exact,2734:논현(7호선); 4305:논현(신분당선(연장2)),,0
+256,반포,Banpo,7,exact,exact,2735:반포(7호선),,0
+257,내방,Naebang,7,exact,exact,2737:내방(7호선),,0
+258,남성,Namseong,7,exact,exact,2739:남성(7호선),,0
+259,숭실대입구,Soongsil Univ.,7,alias,alias:parenthetical,2740:숭실대입구(살피재)(7호선),,0
+260,상도,Sangdo,7,exact,exact,2741:상도(7호선),,0
+261,장승배기,Jangseungbaegi,7,exact,exact,2742:장승배기(7호선),,0
+262,신대방삼거리,Sindaebangsamgeori,7,exact,exact,2743:신대방삼거리(7호선),,0
+263,보라매,Boramae,7|신림선,exact,exact,2744:보라매(7호선); 4404:보라매(신림선),,45
+264,신풍,Sinpung,7,exact,exact,2745:신풍(7호선),,0
+265,남구로,Namguro,7,exact,exact,2747:남구로(7호선),,0
+266,철산,Cheolsan,7,exact,exact,2749:철산(7호선),,0
+267,광명사거리,Gwangmyeongsageori,7,exact,exact,2750:광명사거리(7호선),,0
+268,천왕,Cheonwang,7,exact,exact,2751:천왕(7호선),,0
+269,까치울,Kkachiul,7,duplicate,exact,3753:까치울(7호선(인천)); 2753:까치울(7호선),,9
+270,부천종합운동장,Bucheon Stadium,7|서해선,duplicate,exact,3754:부천종합운동장(7호선(인천)); 2754:부천종합운동장(7호선); 1982:부천종합운동장(서해선),,77
+271,춘의,Chunui,7,duplicate,exact,3755:춘의(7호선(인천)); 2755:춘의(7호선),,110
+272,신중동,Sinjung-dong,7,duplicate,exact,3756:신중동(7호선(인천)); 2756:신중동(7호선),,37
+273,부천시청,Bucheon City Hall,7,duplicate,exact,3757:부천시청(7호선(인천)); 2757:부천시청(7호선),,23
+274,상동,Sang-dong,7,duplicate,exact,3758:상동(7호선(인천)); 2758:상동(7호선),,8
+275,삼산체육관,Samsan Gymnasium,7,duplicate,exact,3759:삼산체육관(7호선(인천)); 2759:삼산체육관(7호선),,98
+276,굴포천,Gulpocheon,7,duplicate,exact,3760:굴포천(7호선(인천)); 2760:굴포천(7호선),,96
+277,부평구청,Bupyeong-gu Office,7|인천선,duplicate,exact,3761:부평구청(7호선(인천)); 2761:부평구청(7호선); 3118:부평구청(인천1호선),,145
+278,산곡,Sangok,7,exact,exact,3762:산곡(7호선),,0
+279,석남,Seongnam,7|인천2호선,alias,alias:parenthetical,3763:석남(거북시장)(7호선); 3213:석남(거북시장)(인천2호선),,8
+280,별내,Byeollae,8|경춘선,exact,exact,2805:별내(별내선); 1313:별내(경춘선),,75
+281,다산,Dasan,8,exact,exact,2806:다산(별내선),,0
+282,동구릉,Donggureung,8,exact,exact,2807:동구릉(별내선),,0
+283,구리,Guri,8|경의선,exact,exact,2808:구리(별내선); 1205:구리(중앙선),,292
+284,장자호수공원,Jangja Lake Park,8,exact,exact,2809:장자호수공원(별내선),,0
+285,암사역사공원,Amsa History Park,8,exact,exact,2810:암사역사공원(8호선),,0
+286,암사,Amsa,8,exact,exact,2811:암사(8호선),,0
+287,천호,Cheonho,5|8,alias,alias:parenthetical,2548:천호(풍납토성)(5호선); 2812:천호(풍납토성)(8호선),,59
+288,강동구청,Gangdong-gu Office,8,exact,exact,2813:강동구청(8호선),,0
+289,몽촌토성,Mongchontoseong,8,alias,alias:parenthetical,2814:몽촌토성(평화의문)(8호선),,0
+290,석촌,Seokchon,8|9,exact,exact,2816:석촌(8호선); 4133:석촌(9호선(연장)),,43
+291,송파,Songpa,8,exact,exact,2817:송파(8호선),,0
+292,문정,Munjeong,8,exact,exact,2819:문정(8호선),,0
+293,장지,Jangji,8,exact,exact,2820:장지(8호선),,0
+294,복정,Bokjeong,8|수인분당선,exact,exact,2821:복정(8호선); 1031:복정(분당선),,112
+295,남위례,Namwirye,8,exact,exact,2828:남위례(8호선),,0
+296,산성,Sanseong,8,exact,exact,2822:산성(8호선),,0
+297,남한산성입구,Namhansanseong,8,alias,alias:parenthetical,2823:남한산성입구(성남법원.검찰청)(8호선),,0
+298,단대오거리,Dandaeogeori,8,exact,exact,2824:단대오거리(8호선),,0
+299,신흥,Sinheung,8,exact,exact,2825:신흥(8호선),,0
+300,수진,Sujin,8,exact,exact,2826:수진(8호선),,0
+301,모란,Moran,8|수인분당선,exact,exact,2827:모란(8호선); 1853:모란(분당선),,207
+302,개화,Gaehwa,9,exact,exact,4101:개화(9호선),,0
+303,김포공항,Gimpo Intl. Airport,5|9|공항철도|서해선|김포도시철도,exact,exact,2513:김포공항(5호선); 4102:김포공항(9호선); 4207:김포공항(공항철도1호선); 1980:김포공항(서해선); 4929:김포공항(김포골드라인),,259
+304,공항시장,Airport Market,9,exact,exact,4103:공항시장(9호선),,0
+305,신방화,Sinbanghwa,9,exact,exact,4104:신방화(9호선),,0
+306,마곡나루,Magongnaru,9|공항철도,exact,exact,4105:마곡나루(9호선); 4206:마곡나루(공항철도1호선),,137
+307,양천향교,Yangcheon Hyanggyo,9,exact,exact,4106:양천향교(9호선),,0
+308,가양,Gayang,9,exact,exact,4107:가양(9호선),,0
+309,증미,Jeungmi,9,exact,exact,4108:증미(9호선),,0
+310,등촌,Deungchon,9,exact,exact,4109:등촌(9호선),,0
+311,염창,Yeomchang,9,exact,exact,4110:염창(9호선),,0
+312,신목동,Sinmokdong,9,exact,exact,4111:신목동(9호선),,0
+313,선유도,Seonyudo,9,exact,exact,4112:선유도(9호선),,0
+314,국회의사당,National Assembly,9,exact,exact,4114:국회의사당(9호선),,0
+315,여의도,Yeouido,5|9,exact,exact,2527:여의도(5호선); 4115:여의도(9호선),,29
+316,샛강,Saetgang,9|신림선,exact,exact,4116:샛강(9호선); 4401:샛강(신림선),,88
+317,노들,Nodeul,9,exact,exact,4118:노들(9호선),,0
+318,흑석,Heukseok,9,alias,alias:parenthetical,4119:흑석(중앙대입구)(9호선),,0
+319,구반포,Gubanpo,9,exact,exact,4121:구반포(9호선),,0
+320,신반포,Sinbanpo,9,exact,exact,4122:신반포(9호선),,0
+321,사평,Sapyeong,9,exact,exact,4124:사평(9호선),,0
+322,신논현,Sinnonhyeon,9|신분당선,exact,exact,4125:신논현(9호선); 4306:신논현(신분당선(연장2)),,0
+323,언주,Eonju,9,exact,exact,4126:언주(9호선(연장)),,0
+324,선정릉,Seonjeongneung,9|수인분당선,exact,exact,4127:선정릉(9호선(연장)); 1850:선정릉(분당선),,56
+325,삼성중앙,Samseong Jungang,9,exact,exact,4128:삼성중앙(9호선(연장)),,0
+326,봉은사,Bongeunsa,9,exact,exact,4129:봉은사(9호선(연장)),,0
+327,삼전,Samjeon,9,exact,exact,4131:삼전(9호선(연장)),,0
+328,석촌고분,Seokchon Gobun,9,exact,exact,4132:석촌고분(9호선(연장)),,0
+329,송파나루,Songpanaru,9,exact,exact,4134:송파나루(9호선(연장)),,0
+330,한성백제,Hanseong Baekje,9,exact,exact,4135:한성백제(9호선(연장)),,0
+331,올림픽공원,Olympic Park,5|9,alias,alias:parenthetical,2556:올림픽공원(한국체대)(5호선); 4136:올림픽공원(한국체대)(9호선(연장)),,57
+332,둔촌오륜,Dunchon Oryun,9,exact,exact,4137:둔촌오륜(9호선(연장)),,0
+333,중앙보훈병원,VHS Medical Center,9,exact,exact,4138:중앙보훈병원(9호선(연장)),,0
+334,방화,Banghwa,5,exact,exact,2511:방화(5호선),,0
+335,개화산,Gaehwasan,5,exact,exact,2512:개화산(5호선),,0
+336,송정,Songjeong,5,exact,exact,2514:송정(5호선),,0
+337,마곡,Magok,5,exact,exact,2515:마곡(5호선),,0
+338,발산,Balsan,5,exact,exact,2516:발산(5호선),,0
+339,우장산,Ujangsan,5,exact,exact,2517:우장산(5호선),,0
+340,화곡,Hwagok,5,exact,exact,2518:화곡(5호선),,0
+341,신정,Sinjeong,5,alias,alias:parenthetical,2520:신정(은행정)(5호선),,0
+342,목동,Mok-dong,5,exact,exact,2521:목동(5호선),,0
+343,오목교,Omokgyo,5,alias,alias:parenthetical,2522:오목교(목동운동장앞)(5호선),,0
+344,양평,Yangpyeong,5,exact,exact,2523:양평(5호선),,0
+345,영등포시장,Yeongdeungpo Market,5,exact,exact,2525:영등포시장(5호선),,0
+346,여의나루,Yeouinaru,5,exact,exact,2528:여의나루(5호선),,0
+347,마포,Mapo,5,exact,exact,2529:마포(5호선),,0
+348,공덕,Gongdeok,5|6|공항철도|경의선,exact,exact,2530:공덕(5호선); 2627:공덕(6호선); 4202:공덕(공항철도1호선); 1262:공덕(경의중앙선),,219
+349,애오개,Aeogae,5,exact,exact,2531:애오개(5호선),,0
+350,서대문,Seodaemun,5,exact,exact,2533:서대문(5호선),,0
+351,광화문,Gwanghwamun,5,alias,alias:parenthetical,2534:광화문(세종문화회관)(5호선),,0
+352,청구,Cheonggu,5|6,exact,exact,2538:청구(5호선); 2635:청구(6호선),,48
+353,신금호,Singeumho,5,exact,exact,2539:신금호(5호선),,0
+354,행당,Haengdang,5,exact,exact,2540:행당(5호선),,0
+355,마장,Majang,5,exact,exact,2542:마장(5호선),,0
+356,답십리,Dapsimni,5,exact,exact,2543:답십리(5호선),,0
+357,장한평,Janghanpyeong,5,exact,exact,2544:장한평(5호선),,0
+358,아차산,Achasan,5,alias,alias:parenthetical,2546:아차산(어린이대공원후문)(5호선),,0
+359,광나루,Gwangnaru,5,alias,alias:parenthetical,2547:광나루(장신대)(5호선),,0
+360,강동,Gangdong,5,exact,exact,2549:강동(5호선),,0
+361,길동,Gil-dong,5,exact,exact,2550:길동(5호선),,0
+362,굽은다리,Gubeundari,5,alias,alias:parenthetical,2551:굽은다리(강동구민회관앞)(5호선),,0
+363,명일,Myeongil,5,exact,exact,2552:명일(5호선),,0
+364,고덕,Godeok,5,exact,exact,2553:고덕(5호선),,0
+365,상일동,Sangil-dong,5,exact,exact,2554:상일동(5호선),,0
+366,강일,Gangil,5,exact,exact,2562:강일(5호선),,0
+367,미사,Misa,5,exact,exact,2563:미사(5호선),,0
+368,하남풍산,Hanam Pungsan,5,exact,exact,2564:하남풍산(5호선),,0
+369,하남시청,Hanam City Hall,5,alias,alias:parenthetical,2565:하남시청(덕풍-신장)(5호선),,0
+370,하남검단산,Hanam Geomdansan,5,exact,exact,2566:하남검단산(5호선),,0
+371,둔촌동,Dunchon-dong,5,exact,exact,2555:둔촌동(5호선),,0
+372,방이,Bangi,5,exact,exact,2557:방이(5호선),,0
+373,개롱,Gaerong,5,exact,exact,2559:개롱(5호선),,0
+374,거여,Geoyeo,5,exact,exact,2560:거여(5호선),,0
+375,마천,Macheon,5,exact,exact,2561:마천(5호선),,0
+376,응암,Eungam,6,exact,exact,2611:응암(6호선),,0
+377,역촌,Yeokchon,6,exact,exact,2612:역촌(6호선),,0
+378,독바위,Dokbawi,6,exact,exact,2614:독바위(6호선),,0
+379,구산,Gusan,6,exact,exact,2616:구산(6호선),,0
+380,새절,Saejeol,6,alias,alias:parenthetical,2617:새절(신사)(6호선),,0
+381,증산,Jeungsan,6,alias,alias:parenthetical,2618:증산(명지대앞)(6호선),,0
+382,디지털미디어시티,Digital Media City,6|공항철도|경의선,exact,exact,2619:디지털미디어시티(6호선); 4204:디지털미디어시티(공항철도1호선); 1266:디지털미디어시티(경의중앙선),,263
+383,월드컵경기장,World Cup Stadium,6,alias,alias:parenthetical,2620:월드컵경기장(성산)(6호선),,0
+384,마포구청,Mapo-gu Office,6,exact,exact,2621:마포구청(6호선),,0
+385,망원,Mangwon,6,exact,exact,2622:망원(6호선),,0
+386,상수,Sangsu,6,exact,exact,2624:상수(6호선),,0
+387,광흥창,Gwangheungchang,6,alias,alias:parenthetical,2625:광흥창(서강)(6호선),,0
+388,대흥,Daeheung,6,alias,alias:parenthetical,2626:대흥(서강대앞)(6호선),,0
+389,효창공원앞,Hyochang park,6|경의선,exact,exact,2628:효창공원앞(6호선); 1261:효창공원앞(경의중앙선),,103
+390,녹사평,Noksapyeong,6,alias,alias:parenthetical,2630:녹사평(용산구청)(6호선),,0
+391,이태원,Itaewon,6,exact,exact,2631:이태원(6호선),,0
+392,한강진,Hangangjin,6,exact,exact,2632:한강진(6호선),,0
+393,버티고개,Beotigogae,6,exact,exact,2633:버티고개(6호선),,0
+394,창신,Changsin,6,exact,exact,2638:창신(6호선),,0
+395,보문,Bomun,6|우이신설경전철,exact,exact,2639:보문(6호선); 4712:보문(우이신설선),,3
+396,안암,Anam,6,alias,alias:parenthetical,2640:안암(고대병원앞)(6호선),,0
+397,고려대,Korea Univ.,6,alias,alias:parenthetical,2641:고려대(종암)(6호선),,0
+398,월곡,Wolgok,6,alias,alias:parenthetical,2642:월곡(동덕여대)(6호선),,0
+399,상월곡,Sangwolgok,6,alias,alias:parenthetical,2643:상월곡(한국과학기술연구원)(6호선),,0
+400,돌곶이,Dolgoji,6,exact,exact,2644:돌곶이(6호선),,0
+401,화랑대,Hwarangdae,6,alias,alias:parenthetical,2647:화랑대(서울여대입구)(6호선),,0
+402,봉화산,Bonghwasan,6,alias,alias:parenthetical,2648:봉화산(서울의료원)(6호선),,0
+403,신내,Sinnae,6|경춘선,exact,exact,2649:신내(6호선); 1311:신내(경춘선),,93
+404,운정중앙,Unjeongjungang,GTX-A,alias,alias:rename,9000:운정(수도권 광역급행철도),,0
+405,킨텍스,Kintex,GTX-A,exact,exact,9001:킨텍스(수도권 광역급행철도),,0
+406,성남,Seongnam,GTX-A|경강선,exact,exact,9008:성남(수도권 광역급행철도); 1512:성남(경강선),,100
+407,구성,Guseong,GTX-A|수인분당선,exact,exact,9009:구성(수도권 광역급행철도); 1863:구성(분당선),,158
+408,동탄,Dongtan,GTX-A,exact,exact,9010:동탄(수도권 광역급행철도),,0
+409,판교,Pangyo,신분당선|경강선,exact,exact,4311:판교(신분당선); 1501:판교(경강선),,88
+410,이매,Imae,수인분당선|경강선,exact,exact,1860:이매(분당선); 1502:이매(경강선),,88
+411,삼동,Samdong,경강선,exact,exact,1503:삼동(경강선),,0
+412,경기광주,GyeonggiGwangju,경강선,exact,exact,1504:경기광주(경강선),,0
+413,초월,Chowol,경강선,exact,exact,1505:초월(경강선),,0
+414,곤지암,Gonjiam,경강선,exact,exact,1506:곤지암(경강선),,0
+415,신둔도예촌,Sindundoyechon,경강선,exact,exact,1507:신둔도예촌(경강선),,0
+416,이천,Icheon,경강선,exact,exact,1508:이천(경강선),,0
+417,부발,Bubal,경강선,exact,exact,1509:부발(경강선),,0
+418,세종대왕릉,Sejongdaewangneung,경강선,exact,exact,1510:세종대왕릉(경강선),,0
+419,여주,Yeoju,경강선,exact,exact,1511:여주(경강선),,0
+420,중랑,Jungnang,경의선|경춘선,exact,exact,1201:중랑(중앙선),,0
+421,망우,Mangu,경의선|경춘선,exact,exact,1203:망우(중앙선),,0
+422,갈매,Galmae,경춘선,exact,exact,1312:갈매(경춘선),,0
+423,퇴계원,Toegyewon,경춘선,exact,exact,1314:퇴계원(경춘선),,0
+424,사릉,Sareung,경춘선,exact,exact,1315:사릉(경춘선),,0
+425,금곡,Geumgok,경춘선,exact,exact,1316:금곡(경춘선),,0
+426,평내호평,Pyeongnae Hopyeong,경춘선,exact,exact,1317:평내호평(경춘선),,0
+427,천마산,Cheonmasan,경춘선,exact,exact,1318:천마산(경춘선),,0
+428,마석,Maseok,경춘선,exact,exact,1319:마석(경춘선),,0
+429,대성리,Daeseong-ri,경춘선,exact,exact,1320:대성리(경춘선),,0
+430,청평,Cheongpyeong,경춘선,exact,exact,1321:청평(경춘선),,0
+431,상천,Sangcheon,경춘선,exact,exact,1322:상천(경춘선),,0
+432,가평,Gapyeong,경춘선,exact,exact,1323:가평(경춘선),,0
+433,굴봉산,Gulbongsan,경춘선,exact,exact,1324:굴봉산(경춘선),,0
+434,백양리,Baegyang-ri,경춘선,exact,exact,1325:백양리(경춘선),,0
+435,강촌,Gangchon,경춘선,exact,exact,1326:강촌(경춘선),,0
+436,김유정,Gimyujeong,경춘선,exact,exact,1327:김유정(경춘선),,0
+437,남춘천,Namchuncheon,경춘선,exact,exact,1328:남춘천(경춘선),,0
+438,춘천,Chuncheon,경춘선,exact,exact,1329:춘천(경춘선),,0
+439,양촌,Yangchon,김포도시철도,exact,exact,4920:양촌(김포골드라인),,0
+440,구래,Gurae,김포도시철도,exact,exact,4921:구래(김포골드라인),,0
+441,마산,Masan,김포도시철도,exact,exact,4922:마산(김포골드라인),,0
+442,장기,Janggi,김포도시철도,exact,exact,4923:장기(김포골드라인),,0
+443,운양,Unyang,김포도시철도,exact,exact,4924:운양(김포골드라인),,0
+444,걸포북변,Geolpo Bukbyeon,김포도시철도,exact,exact,4925:걸포북변(김포골드라인),,0
+445,사우,Sau,김포도시철도,alias,alias:parenthetical,4926:사우(김포시청)(김포골드라인),,0
+446,풍무,Pungmu,김포도시철도,exact,exact,4927:풍무(김포골드라인),,0
+447,고촌,Gochon,김포도시철도,exact,exact,4928:고촌(김포골드라인),,0
+448,일산,Ilsan,경의선|서해선,exact,exact,1275:일산(경의중앙선),,0
+449,풍산,Pungsan,경의선|서해선,exact,exact,1274:풍산(경의중앙선),,0
+450,백마,Baengma,경의선|서해선,exact,exact,1273:백마(경의중앙선),,0
+451,곡산,Goksan,경의선|서해선,exact,exact,1272:곡산(경의중앙선),,0
+452,능곡,Neunggok,경의선|서해선,exact,exact,1271:능곡(경의중앙선),,0
+453,원종,Wonjong,서해선,exact,exact,1981:원종(서해선),,0
+454,소새울,Sosaeul,서해선,exact,exact,4805:소새울(서해선),,0
+455,시흥대야,Siheung Daeya,서해선,exact,exact,4806:시흥대야(서해선),,0
+456,신천,Sincheon,서해선,exact,exact,4807:신천(서해선),,0
+457,신현,Sinhyeon,서해선,exact,exact,4808:신현(서해선),,0
+458,시흥시청,Siheung City Hall,서해선,exact,exact,4809:시흥시청(서해선),,0
+459,시흥능곡,Siheung Neunggok,서해선,exact,exact,4810:시흥능곡(서해선),,0
+460,달미,Dalmi,서해선,exact,exact,4811:달미(서해선),,0
+461,선부,Seonbu,서해선,exact,exact,4812:선부(서해선),,0
+462,시우,Siu,서해선,alias,alias:rename,4814:원곡(서해선),,0
+463,원시,Wonsi,서해선,exact,exact,4815:원시(서해선),,0
+464,서울숲,Seoul-forest,수인분당선,exact,exact,1847:서울숲(분당선),,0
+465,압구정로데오,Apgujeong rodeo,수인분당선,exact,exact,1848:압구정로데오(분당선),,0
+466,한티,Hanti,수인분당선,exact,exact,1024:한티(분당선),,0
+467,구룡,Guryong,수인분당선,exact,exact,1026:구룡(분당선),,0
+468,개포동,Gaepo-dong,수인분당선,exact,exact,1027:개포동(분당선),,0
+469,대모산입구,Daemosan,수인분당선,exact,exact,1028:대모산입구(분당선),,0
+470,가천대,Gachon Univ.,수인분당선,exact,exact,1851:가천대(분당선),,0
+471,태평,Taepyeong,수인분당선,exact,exact,1852:태평(분당선),,0
+472,야탑,Yatap,수인분당선,exact,exact,1854:야탑(분당선),,0
+473,서현,Seohyeon,수인분당선,exact,exact,1855:서현(분당선),,0
+474,수내,Sunae,수인분당선,exact,exact,1856:수내(분당선),,0
+475,정자,Jeongja,수인분당선|신분당선,exact,exact,1857:정자(분당선); 4312:정자(신분당선),,126
+476,미금,Migeum,수인분당선|신분당선,exact,exact,1858:미금(분당선); 4313:미금(신분당선(연장)),,11
+477,오리,Ori,수인분당선,exact,exact,1859:오리(분당선),,0
+478,죽전,Jukjeon,수인분당선,exact,exact,1862:죽전(분당선),,0
+479,보정,Bojeong,수인분당선,exact,exact,1861:보정(분당선),,0
+480,신갈,Singal,수인분당선,exact,exact,1864:신갈(분당선),,0
+481,기흥,Giheung,수인분당선|용인경전철,exact,exact,1865:기흥(분당선); 4501:기흥(에버라인선),,80
+482,상갈,Sanggal,수인분당선,exact,exact,1866:상갈(분당선),,0
+483,청명,Cheongmyeong,수인분당선,exact,exact,1867:청명(분당선),,0
+484,영통,Yeongtong,수인분당선,exact,exact,1868:영통(분당선),,0
+485,망포,Mangpo,수인분당선,exact,exact,1869:망포(분당선),,0
+486,매탄권선,MaetanGwonseon,수인분당선,exact,exact,1870:매탄권선(분당선),,0
+487,수원시청,Suwon City Hall,수인분당선,exact,exact,1871:수원시청(분당선),,0
+488,매교,Maegyo,수인분당선,exact,exact,1872:매교(분당선),,0
+489,고색,Gosaek,수인분당선,exact,exact,1873:고색(수인선),,0
+490,오목천,Omokcheon,수인분당선,exact,exact,1874:오목천(수인선),,0
+491,어천,Eocheon,수인분당선,exact,exact,1875:어천(수인선),,0
+492,야목,Yamok,수인분당선,exact,exact,1876:야목(수인선),,0
+493,사리,Sari,수인분당선,exact,exact,1877:사리(수인선),,0
+494,달월,Dalwol,수인분당선,exact,exact,1878:달월(수인선),,0
+495,월곶,Wolgot,수인분당선,exact,exact,1879:월곶(수인선),,0
+496,소래포구,Soraepogu,수인분당선,exact,exact,1880:소래포구(수인선),,0
+497,인천논현,Incheon Nonhyeon,수인분당선,exact,exact,1881:인천논현(수인선),,0
+498,호구포,Hogupo,수인분당선,exact,exact,1882:호구포(수인선),,0
+499,남동인더스파크,Namdong Induspark,수인분당선,exact,exact,1883:남동인더스파크(수인선),,0
+500,원인재,Woninjae,수인분당선|인천선,exact,exact,1884:원인재(수인선); 3130:원인재(인천1호선),,134
+501,연수,Yeonsu,수인분당선,exact,exact,1885:연수(수인선),,0
+502,송도,Songdo,수인분당선,exact,exact,1886:송도(수인선),,0
+503,인하대,Inha Univ.,수인분당선,exact,exact,1888:인하대(수인선),,0
+504,숭의,Sungui,수인분당선,exact,exact,1889:숭의(수인선),,0
+505,신포,Sinpo,수인분당선,exact,exact,1890:신포(수인선),,0
+506,서울지방병무청,Seoul Regional Office of Military Manpower,신림선,exact,exact,4403:서울지방병무청(신림선),,0
+507,보라매공원,Boramae Park,신림선,exact,exact,4405:보라매공원(신림선),,0
+508,보라매병원,Boramae MedicalCenter,신림선,exact,exact,4406:보라매병원(신림선),,0
+509,당곡,Danggok,신림선,exact,exact,4407:당곡(신림선),,0
+510,서원,Sutgogae,신림선,exact,exact,4409:서원(신림선),,0
+511,서울대벤처타운,Seoul National Univ. Venture Town,신림선,exact,exact,4410:서울대벤처타운(신림선),,0
+512,관악산,Gwanaksan,신림선,alias,alias:parenthetical,4411:관악산(서울대)(신림선),,0
+513,양재시민의숲,Yangjae Citizen's Forest,신분당선,alias,alias:parenthetical,4309:양재시민의숲(매헌)(신분당선),,0
+514,청계산입구,Cheonggyesan,신분당선,exact,exact,4310:청계산입구(신분당선),,0
+515,동천,Dongcheon,신분당선,exact,exact,4314:동천(신분당선(연장)),,0
+516,수지구청,Suji-gu office,신분당선,exact,exact,4315:수지구청(신분당선(연장)),,0
+517,성복,Seongbok,신분당선,exact,exact,4316:성복(신분당선(연장)),,0
+518,상현,Sanghyeon,신분당선,exact,exact,4317:상현(신분당선(연장)),,0
+519,광교중앙,GwanggyoJungang,신분당선,alias,alias:parenthetical,4318:광교중앙(아주대)(신분당선(연장)),,0
+520,광교,Gwanggyo,신분당선,alias,alias:parenthetical,4319:광교(경기대)(신분당선(연장)),,0
+521,강남대,Kangnam Univ.,용인경전철,exact,exact,4502:강남대(에버라인선),,0
+522,지석,Jiseok,용인경전철,exact,exact,4503:지석(에버라인선),,0
+523,어정,Eojeong,용인경전철,exact,exact,4504:어정(에버라인선),,0
+524,동백,Dongbaek,용인경전철,exact,exact,4505:동백(에버라인선),,0
+525,초당,Chodang,용인경전철,exact,exact,4506:초당(에버라인선),,0
+526,삼가,Samga,용인경전철,exact,exact,4508:삼가(에버라인선),,0
+527,시청·용인대,"City Hall, Yongin Univ.",용인경전철,alias,normalized,4509:시청.용인대(에버라인선),,0
+528,명지대,Myongji Univ.,용인경전철,exact,exact,4510:명지대(에버라인선),,0
+529,김량장,Gimnyangjang,용인경전철,exact,exact,4511:김량장(에버라인선),,0
+530,용인중앙시장,Yongin Jungang Market,용인경전철,alias,alias:rename,4512:운동장.송담대(에버라인선),,0
+531,고진,Gojin,용인경전철,exact,exact,4513:고진(에버라인선),,0
+532,보평,Bopyeong,용인경전철,exact,exact,4514:보평(에버라인선),,0
+533,둔전,Dunjeon,용인경전철,exact,exact,4515:둔전(에버라인선),,0
+534,전대·에버랜드,Jeondae ? Everland,용인경전철,alias,normalized,4517:전대.에버랜드(에버라인선),,0
+535,북한산우이,Bukhansan Ui,우이신설경전철,exact,exact,4701:북한산우이(우이신설선),,0
+536,솔밭공원,Solbat Park,우이신설경전철,exact,exact,4702:솔밭공원(우이신설선),,0
+537,4·19민주묘지,April 19th National Cemetery,우이신설경전철,alias,normalized,4703:4.19민주묘지(우이신설선),,0
+538,가오리,Gaori,우이신설경전철,exact,exact,4704:가오리(우이신설선),,0
+539,화계,Hwagye,우이신설경전철,exact,exact,4705:화계(우이신설선),,0
+540,삼양,Samyang,우이신설경전철,exact,exact,4706:삼양(우이신설선),,0
+541,삼양사거리,Samyang Sageori,우이신설경전철,exact,exact,4707:삼양사거리(우이신설선),,0
+542,솔샘,Solsaem,우이신설경전철,exact,exact,4708:솔샘(우이신설선),,0
+543,북한산보국문,Bukhansan Bogungmun,우이신설경전철,exact,exact,4709:북한산보국문(우이신설선),,0
+544,정릉,Jeongneung,우이신설경전철,exact,exact,4710:정릉(우이신설선),,0
+545,발곡,Balgok,의정부경전철,exact,exact,4601:발곡(의정부선),,0
+546,범골,Beomgol,의정부경전철,exact,exact,4603:범골(의정부선),,0
+547,경전철의정부,Lrt Uijeongbu,의정부경전철,exact,exact,4604:경전철의정부(의정부선),,0
+548,의정부시청,Uijeongbu City Hall,의정부경전철,exact,exact,4605:의정부시청(의정부선),,0
+549,흥선,Heungseon,의정부경전철,exact,exact,4606:흥선(의정부선),,0
+550,의정부중앙,Uijeongbu Jung-ang,의정부경전철,exact,exact,4607:의정부중앙(의정부선),,0
+551,동오,Dong-o,의정부경전철,exact,exact,4608:동오(의정부선),,0
+552,새말,sae-mal,의정부경전철,exact,exact,4609:새말(의정부선),,0
+553,경기도청북부청사,Gyeonggi Provincial Government Northern Office,의정부경전철,exact,exact,4610:경기도청북부청사(의정부선),,0
+554,효자,hyoja,의정부경전철,exact,exact,4611:효자(의정부선),,0
+555,곤제,gonjae,의정부경전철,exact,exact,4612:곤제(의정부선),,0
+556,어룡,eoryong,의정부경전철,exact,exact,4613:어룡(의정부선),,0
+557,송산,Songsan,의정부경전철,exact,exact,4614:송산(의정부선),,0
+558,탑석,Tapseok,의정부경전철,exact,exact,4615:탑석(의정부선),,0
+559,검단오류,Geomdan Oryu,인천2호선,alias,alias:parenthetical,3201:검단오류(검단산업단지)(인천2호선),,0
+560,왕길,Wanggil,인천2호선,exact,exact,3202:왕길(인천2호선),,0
+561,검단사거리,Geomdan Sageori,인천2호선,exact,exact,3203:검단사거리(인천2호선),,0
+562,마전,Majeon,인천2호선,exact,exact,3204:마전(인천2호선),,0
+563,완정,Wanjeong,인천2호선,exact,exact,3205:완정(인천2호선),,0
+564,독정,Dokjeong,인천2호선,exact,exact,3206:독정(인천2호선),,0
+565,검암,Geomam,공항철도|인천2호선,exact,exact,4209:검암(공항철도1호선); 3207:검암(인천2호선),,156
+566,검바위,Geombawi,인천2호선,exact,exact,3208:검바위(인천2호선),,0
+567,아시아드경기장,Asiad Stadium,인천2호선,alias,alias:parenthetical,3209:아시아드경기장(공촌사거리)(인천2호선),,0
+568,서해구청,Seohae-gu Office,인천2호선,alias,alias:rename,3210:서구청(인천2호선),,0
+569,가정,Gajeong,인천2호선,alias,alias:parenthetical,3211:가정(루원시티)(인천2호선),,0
+570,가정중앙시장,Gajeong Jungang Market,인천2호선,exact,exact,3212:가정중앙시장(인천2호선),,0
+571,서부여성회관,West Woman's Community Center,인천2호선,exact,exact,3214:서부여성회관(인천2호선),,0
+572,인천가좌,Incheon Gajwa,인천2호선,exact,exact,3215:인천가좌(인천2호선),,0
+573,가재울,Gajaeul,인천2호선,exact,exact,3216:가재울(인천2호선),,0
+574,주안국가산단,Juan National Industrial Complex,인천2호선,exact,exact,3217:주안국가산단(인천2호선),,0
+575,시민공원,Citizens Park,인천2호선,alias,alias:parenthetical,3219:시민공원(문화창작지대)(인천2호선),,0
+576,석바위시장,Seokbawi Market,인천2호선,exact,exact,3220:석바위시장(인천2호선),,0
+577,인천시청,Incheon City Hall,인천선|인천2호선,exact,exact,3124:인천시청(인천1호선); 3221:인천시청(인천2호선),,88
+578,석천사거리,Seokcheon Sageori,인천2호선,exact,exact,3222:석천사거리(인천2호선),,0
+579,모래내시장,Moraenae Market,인천2호선,exact,exact,3223:모래내시장(인천2호선),,0
+580,만수,Mansu,인천2호선,exact,exact,3224:만수(인천2호선),,0
+581,남동구청,Namdong-gu Office,인천2호선,exact,exact,3225:남동구청(인천2호선),,0
+582,인천대공원,Incheon Grand Park,인천2호선,exact,exact,3226:인천대공원(인천2호선),,0
+583,운연,Unyeon,인천2호선,alias,alias:parenthetical,3227:운연(서창)(인천2호선),,0
+584,검단호수공원,Geomdan Lake Park,인천선,exact,exact,3107:검단호수공원(인천1호선),,0
+585,신검단중앙,Singeomdanjungang,인천선,exact,exact,3108:신검단중앙(인천1호선),,0
+586,아라,Ara,인천선,alias,alias:parenthetical,3109:아라(북부법원?검찰청)(인천1호선),,0
+587,계양,Gyeyang,공항철도|인천선,exact,exact,4208:계양(공항철도1호선); 3110:계양(인천1호선),,52
+588,귤현,Gyulhyeon,인천선,exact,exact,3111:귤현(인천1호선),,0
+589,박촌,Bakchon,인천선,exact,exact,3112:박촌(인천1호선),,0
+590,임학,Imhak,인천선,exact,exact,3113:임학(인천1호선),,0
+591,계산,Gyesan,인천선,exact,exact,3114:계산(인천1호선),,0
+592,경인교대입구,Gyeong-in National University of Education,인천선,exact,exact,3115:경인교대입구(인천1호선),,0
+593,작전,Jakjeon,인천선,exact,exact,3116:작전(인천1호선),,0
+594,갈산,Galsan,인천선,exact,exact,3117:갈산(인천1호선),,0
+595,부평시장,Bupyeong Market,인천선,exact,exact,3119:부평시장(인천1호선),,0
+596,동수,Dongsu,인천선,exact,exact,3121:동수(인천1호선),,0
+597,부평삼거리,Bupyeongsamgeori,인천선,exact,exact,3122:부평삼거리(인천1호선),,0
+598,간석오거리,Ganseogogeori,인천선,exact,exact,3123:간석오거리(인천1호선),,0
+599,예술회관,Culture & Arts Center,인천선,exact,exact,3125:예술회관(인천1호선),,0
+600,인천터미널,Incheon Bus Terminal,인천선,exact,exact,3126:인천터미널(인천1호선),,0
+601,문학경기장,Munhak Sports Complex,인천선,exact,exact,3127:문학경기장(인천1호선),,0
+602,선학,Seonhak,인천선,exact,exact,3128:선학(인천1호선),,0
+603,신연수,Sinyeonsu,인천선,exact,exact,3129:신연수(인천1호선),,0
+604,동춘,Dongchun,인천선,exact,exact,3131:동춘(인천1호선),,0
+605,동막,Dongmak,인천선,exact,exact,3132:동막(인천1호선),,0
+606,캠퍼스타운,Campus Town,인천선,exact,exact,3133:캠퍼스타운(인천1호선),,0
+607,테크노파크,Technopark,인천선,exact,exact,3134:테크노파크(인천1호선),,0
+608,지식정보단지,BIT Zone,인천선,exact,exact,3135:지식정보단지(인천1호선),,0
+609,인천대입구,Incheon National University,인천선,exact,exact,3136:인천대입구(인천1호선),,0
+610,센트럴파크,Central Park,인천선,exact,exact,3137:센트럴파크(인천1호선),,0
+611,국제업무지구,International Business District,인천선,exact,exact,3138:국제업무지구(인천1호선),,0
+612,송도달빛축제공원,Songdo Moonlight Festival Park,인천선,exact,exact,3139:송도달빛축제공원(인천1호선),,0
+613,청라국제도시,Cheongna Int’l City Station,공항철도,exact,exact,4210:청라국제도시(공항철도1호선),,0
+614,영종,Yeongjong,공항철도,exact,exact,4217:영종(공항철도1호선),,0
+615,운서,Unseo,공항철도,exact,exact,4211:운서(공항철도1호선),,0
+616,공항화물청사,Incheon Intl. Airport Cargo Terminal,공항철도,exact,exact,4212:공항화물청사(공항철도1호선),,0
+617,인천공항1터미널,Incheon Int’l Airport Terminal 1,공항철도,exact,exact,4213:인천공항1터미널(공항철도1호선),,0
+618,인천공항2터미널,Incheon Int’l Airport Terminal 2,공항철도,exact,exact,4215:인천공항2터미널(공항철도1호선),,0
+619,임진강,Imjingang,경의선,exact,exact,1285:임진강(경의중앙선),,0
+620,운천,Uncheon,경의선,exact,exact,1286:운천(경의중앙선),,0
+621,문산,Munsan,경의선,exact,exact,1284:문산(경의중앙선),,0
+622,파주,Paju,경의선,exact,exact,1283:파주(경의중앙선),,0
+623,월롱,Wollong,경의선,exact,exact,1282:월롱(경의중앙선),,0
+624,금촌,Geumchon,경의선,exact,exact,1280:금촌(경의중앙선),,0
+625,금릉,Geumneung,경의선,exact,exact,1279:금릉(경의중앙선),,0
+626,운정,Unjeong,경의선,exact,exact,1278:운정(경의중앙선),,0
+627,야당,Yadang,경의선,exact,exact,1277:야당(경의중앙선),,0
+628,탄현,Tanhyeon,경의선,exact,exact,1276:탄현(경의중앙선),,0
+629,행신,Haengsin,경의선,exact,exact,1270:행신(경의중앙선),,0
+630,강매,Gangmae,경의선,exact,exact,1269:강매(경의중앙선),,0
+631,한국항공대,Korea Aerospace Univ.,경의선,alias,alias:rename,1268:화전(경의중앙선),,0
+632,수색,Susaek,경의선,exact,exact,1267:수색(경의중앙선),,0
+633,가좌,Gajwa,경의선,exact,exact,1265:가좌(경의중앙선),,0
+634,서강대,Sogang Univ.,경의선,exact,exact,1263:서강대(경의중앙선),,0
+635,서빙고,Seobinggo,경의선,exact,exact,1009:서빙고(경원선),,0
+636,한남,Hannam,경의선,exact,exact,1010:한남(경원선),,0
+637,응봉,Eungbong,경의선,exact,exact,1012:응봉(경원선),,0
+638,양원,Yangwon,경의선,exact,exact,1204:양원(중앙선),,0
+639,도농,Donong,경의선,exact,exact,1206:도농(중앙선),,0
+640,양정,Yangjeong,경의선,exact,exact,1207:양정(중앙선),,0
+641,덕소,Deokso,경의선,exact,exact,1208:덕소(중앙선),,0
+642,도심,Dosim,경의선,exact,exact,1209:도심(중앙선),,0
+643,팔당,Paldang,경의선,exact,exact,1210:팔당(중앙선),,0
+644,운길산,Ungilsan,경의선,exact,exact,1211:운길산(중앙선),,0
+645,양수,Yangsu,경의선,exact,exact,1212:양수(중앙선),,0
+646,신원,Sinwon,경의선,exact,exact,1213:신원(중앙선),,0
+647,국수,Guksu,경의선,exact,exact,1214:국수(중앙선),,0
+648,아신,Asin,경의선,exact,exact,1215:아신(중앙선),,0
+649,오빈,Obin,경의선,exact,exact,1216:오빈(중앙선),,0
+650,원덕,Wondeok,경의선,exact,exact,1218:원덕(중앙선),,0
+651,용문,Yongmun,경의선,exact,exact,1219:용문(중앙선),,0
+652,지평,Jipyeong,경의선,exact,exact,1220:지평(중앙선),,0
+653,양평(중앙선),Yangpyeong (Jungang),경의선,alias,alias:parenthetical,1217:양평(중앙선),,0

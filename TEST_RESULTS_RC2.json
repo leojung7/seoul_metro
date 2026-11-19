@@ -1,0 +1,1910 @@
+{
+ "run": "2026-11-19T23:45:01.330Z",
+ "total": 317,
+ "pass": 317,
+ "fail": 0,
+ "results": [
+  {
+   "prof": "desktop",
+   "name": "fresh load opens Geo map",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"geo\":true,\"sch\":false,\"btn\":\"geo\",\"m\":654,\"first\":\"geo\",\"second\":\"sch\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo map shows all 654 stations",
+   "pass": true,
+   "detail": "markers=654"
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic remains a secondary tab",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "search from Schematic jumps to Geo map and selects station",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"sel\":\"강남\",\"c\":[37.497414,127.028008],\"z\":14}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo map centres and zooms on the station",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "station info opens from Geo map search",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"서울\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"지제\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"뚝섬유원지\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"원곡\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"서구청\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"화전\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"Seoul\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"Jije\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"Gangnam\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"Isu\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "search \"code 100-3\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "desktop",
+   "name": "route fields resolve aliases (서울→서울역, 지제→평택지제, 원곡→시우)",
+   "pass": true,
+   "detail": "{\"서울\":\"서울역\",\"지제\":\"평택지제\",\"원곡\":\"시우\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":21,\"stroke\":6}"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: highlight passes through all 12 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: A + B + 1 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=3 transfers=1/1"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":76,\"stroke\":6}"
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: highlight passes through all 21 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: A + B + 0 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=2 transfers=0/0"
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":20,\"stroke\":6}"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: highlight passes through all 13 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: A + B + 0 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=2 transfers=0/0"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "강남→서울역: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":21,\"stroke\":6}"
+  },
+  {
+   "prof": "desktop",
+   "name": "강남→서울역: highlight passes through all 12 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "desktop",
+   "name": "강남→서울역: A + B + 1 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=3 transfers=1/1"
+  },
+  {
+   "prof": "desktop",
+   "name": "강남→서울역: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "강남→서울역: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "desktop",
+   "name": "강남→서울역: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "clear route removes the overlay",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "tap origin station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":36,\"routeKept\":true,\"sheet\":\"hidden\",\"panel\":true,\"want\":36}"
+  },
+  {
+   "prof": "desktop",
+   "name": "tap mid station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":126,\"routeKept\":true,\"sheet\":\"hidden\",\"panel\":true,\"want\":126}"
+  },
+  {
+   "prof": "desktop",
+   "name": "tap destination station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":122,\"routeKept\":true,\"sheet\":\"hidden\",\"panel\":true,\"want\":122}"
+  },
+  {
+   "prof": "desktop",
+   "name": "route graphics are non-interactive (pins pointer-events:none)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1920px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":56,\"spread\":6,\"ds\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1920px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1920px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1920px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1366px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":56,\"spread\":6,\"ds\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1366px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1366px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1366px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1024px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":56,\"spread\":6,\"ds\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1024px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1024px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @1024px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "header @800px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":7,\"ds\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @800px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @800px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @800px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "header @700px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":7,\"ds\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @700px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @700px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "header @700px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "every station is placed OR listed as unmatched (no silent gaps)",
+   "pass": true,
+   "detail": "{\"t\":654,\"m\":472,\"u\":182}"
+  },
+  {
+   "prof": "desktop",
+   "name": "clickable SVG hit target for every placed station",
+   "pass": true,
+   "detail": "hits=472 placed=472"
+  },
+  {
+   "prof": "desktop",
+   "name": "hit targets centred exactly on their symbol positions",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no two stations share one SVG symbol",
+   "pass": true,
+   "detail": "shared=0"
+  },
+  {
+   "prof": "desktop",
+   "name": "every placed position lies on a real symbol of the official SVG (<=4 units)",
+   "pass": true,
+   "detail": "far=0"
+  },
+  {
+   "prof": "desktop",
+   "name": "clicking 40 sampled SVG stations selects the right station",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "every station has a Geo marker",
+   "pass": true,
+   "detail": "654/654"
+  },
+  {
+   "prof": "desktop",
+   "name": "no impossible route hops (>15 km, GTX/AREX >30 km)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no station outside the Seoul region / Korea",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no synthetic or estimated coordinates in use",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo markers sit exactly on their data.js coordinates",
+   "pass": true,
+   "detail": "misplaced=0"
+  },
+  {
+   "prof": "desktop",
+   "name": "zoom/centering: setView centres map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "source contains no next-train / crowding / occupancy / simulation / fare / arrival-estimate wording",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "prof": "desktop",
+   "name": "[en] station/route/guide panels show no simulated data",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "prof": "desktop",
+   "name": "[en] typical interval is labelled \"not real-time\"",
+   "pass": true,
+   "detail": "🚇 Typical interval (not real-time)"
+  },
+  {
+   "prof": "desktop",
+   "name": "[en] no countdown timers running",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "[ko] station/route/guide panels show no simulated data",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "prof": "desktop",
+   "name": "[ko] typical interval is labelled \"not real-time\"",
+   "pass": true,
+   "detail": "🚇 배차 간격 (일반적, 실시간 아님)"
+  },
+  {
+   "prof": "desktop",
+   "name": "[ko] no countdown timers running",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "every station renders in both English and Korean",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "EN route: \"Board Line 2\"",
+   "pass": true,
+   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당"
+  },
+  {
+   "prof": "desktop",
+   "name": "EN route: \"Transfer at … (한글)\"",
+   "pass": true,
+   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당) Line 2 → Line 4 | Line 4 Board Line 4 | Sadang (사당) → Seoul Station (서울역) 7 stops | 🏁 Exit at Seoul Station (서울역)"
+  },
+  {
+   "prof": "desktop",
+   "name": "EN route: \"Exit at Seoul Station (서울역)\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "KO route: \"2호선 탑승\"",
+   "pass": true,
+   "detail": "2호선 2호선 탑승 | 강남 → 사당 4개 역 | 🔄 사당 환승 2호선 → 4호선 | 4호선 4호선 탑승 | 사당 → 서울역 7개 역 | 🏁 서울역 하차"
+  },
+  {
+   "prof": "desktop",
+   "name": "KO route: \"… 환승\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "KO route: \"서울역 하차\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "KO station page: labels translated, name in Korean",
+   "pass": true,
+   "detail": "강남 | Gangnam · カンナム | ☆ | ✕ | 2호선신분당선 🔀 환승 가능 | 역 코드 222D7"
+  },
+  {
+   "prof": "desktop",
+   "name": "EN station page: \"Gangnam (강남)\", \"Line 2\", \"Transfer available\"",
+   "pass": true,
+   "detail": "Gangnam (강남) | カンナム | ☆ | ✕ | Line 2Shinbundang Line 🔀 Transfer available"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean mode: no untranslated English UI text on any tab",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "station with the same name on several lines shows that name once (badges grouped)",
+   "pass": true,
+   "detail": "{\"n\":1,\"tip\":1,\"groups\":[\"서울역:4\",\"서울:1\"]}"
+  },
+  {
+   "prof": "desktop",
+   "name": "favorite saved and listed",
+   "pass": true,
+   "detail": "Gangnam 강남"
+  },
+  {
+   "prof": "desktop",
+   "name": "favorite selects station from Geo map context",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "fresh load opens Geo map",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"geo\":true,\"sch\":false,\"btn\":\"geo\",\"m\":654,\"first\":\"geo\",\"second\":\"sch\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo map shows all 654 stations",
+   "pass": true,
+   "detail": "markers=654"
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic remains a secondary tab",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "search from Schematic jumps to Geo map and selects station",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"sel\":\"강남\",\"c\":[37.497414,127.028008],\"z\":14}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo map centres and zooms on the station",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "station info opens from Geo map search",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"서울\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"지제\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"뚝섬유원지\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"원곡\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"서구청\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"화전\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"Seoul\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"Jije\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"Gangnam\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"Isu\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "search \"code 100-3\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone",
+   "name": "route fields resolve aliases (서울→서울역, 지제→평택지제, 원곡→시우)",
+   "pass": true,
+   "detail": "{\"서울\":\"서울역\",\"지제\":\"평택지제\",\"원곡\":\"시우\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":21,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: highlight passes through all 12 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: A + B + 1 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=3 transfers=1/1"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":76,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: highlight passes through all 21 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: A + B + 0 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=2 transfers=0/0"
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":20,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: highlight passes through all 13 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: A + B + 0 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=2 transfers=0/0"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "강남→서울역: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":21,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone",
+   "name": "강남→서울역: highlight passes through all 12 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone",
+   "name": "강남→서울역: A + B + 1 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=3 transfers=1/1"
+  },
+  {
+   "prof": "iphone",
+   "name": "강남→서울역: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "강남→서울역: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "iphone",
+   "name": "강남→서울역: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "clear route removes the overlay",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "tap origin station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":36,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":36}"
+  },
+  {
+   "prof": "iphone",
+   "name": "tap mid station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":126,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":126}"
+  },
+  {
+   "prof": "iphone",
+   "name": "tap destination station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":122,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":122}"
+  },
+  {
+   "prof": "iphone",
+   "name": "route graphics are non-interactive (pins pointer-events:none)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "sheet peek: anchored to bottom, fully on-screen, below header",
+   "pass": true,
+   "detail": "{\"s\":\"peek\",\"top\":488,\"bottom\":664,\"hb\":101,\"padB\":52,\"w\":390,\"left\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "sheet peek: respects safe-area bottom inset (34px)",
+   "pass": true,
+   "detail": "padB=52"
+  },
+  {
+   "prof": "iphone",
+   "name": "sheet half: anchored to bottom, fully on-screen, below header",
+   "pass": true,
+   "detail": "{\"s\":\"half\",\"top\":292,\"bottom\":664,\"hb\":101,\"padB\":52,\"w\":390,\"left\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "sheet half: respects safe-area bottom inset (34px)",
+   "pass": true,
+   "detail": "padB=52"
+  },
+  {
+   "prof": "iphone",
+   "name": "sheet full: anchored to bottom, fully on-screen, below header",
+   "pass": true,
+   "detail": "{\"s\":\"full\",\"top\":101,\"bottom\":664,\"hb\":101,\"padB\":52,\"w\":390,\"left\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "sheet full: respects safe-area bottom inset (34px)",
+   "pass": true,
+   "detail": "padB=52"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @320px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @320px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @320px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @360px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @360px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @360px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @360px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "header @375px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @375px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @375px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @375px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "header @390px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @390px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @390px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @390px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "header @414px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @414px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @414px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @414px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "header @430px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @430px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @430px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "header @430px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "header @280px: tab strip scrolls horizontally, controls stay pinned",
+   "pass": true,
+   "detail": "{\"can\":true,\"moved\":true,\"lgOk\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "every station is placed OR listed as unmatched (no silent gaps)",
+   "pass": true,
+   "detail": "{\"t\":654,\"m\":472,\"u\":182}"
+  },
+  {
+   "prof": "iphone",
+   "name": "clickable SVG hit target for every placed station",
+   "pass": true,
+   "detail": "hits=472 placed=472"
+  },
+  {
+   "prof": "iphone",
+   "name": "hit targets centred exactly on their symbol positions",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no two stations share one SVG symbol",
+   "pass": true,
+   "detail": "shared=0"
+  },
+  {
+   "prof": "iphone",
+   "name": "every placed position lies on a real symbol of the official SVG (<=4 units)",
+   "pass": true,
+   "detail": "far=0"
+  },
+  {
+   "prof": "iphone",
+   "name": "clicking 24 sampled SVG stations selects the right station",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "every station has a Geo marker",
+   "pass": true,
+   "detail": "654/654"
+  },
+  {
+   "prof": "iphone",
+   "name": "no impossible route hops (>15 km, GTX/AREX >30 km)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no station outside the Seoul region / Korea",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no synthetic or estimated coordinates in use",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo markers sit exactly on their data.js coordinates",
+   "pass": true,
+   "detail": "misplaced=0"
+  },
+  {
+   "prof": "iphone",
+   "name": "zoom/centering: setView centres map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "source contains no next-train / crowding / occupancy / simulation / fare / arrival-estimate wording",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "prof": "iphone",
+   "name": "[en] station/route/guide panels show no simulated data",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "prof": "iphone",
+   "name": "[en] typical interval is labelled \"not real-time\"",
+   "pass": true,
+   "detail": "🚇 Typical interval (not real-time)"
+  },
+  {
+   "prof": "iphone",
+   "name": "[en] no countdown timers running",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "[ko] station/route/guide panels show no simulated data",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "prof": "iphone",
+   "name": "[ko] typical interval is labelled \"not real-time\"",
+   "pass": true,
+   "detail": "🚇 배차 간격 (일반적, 실시간 아님)"
+  },
+  {
+   "prof": "iphone",
+   "name": "[ko] no countdown timers running",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "every station renders in both English and Korean",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "EN route: \"Board Line 2\"",
+   "pass": true,
+   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당"
+  },
+  {
+   "prof": "iphone",
+   "name": "EN route: \"Transfer at … (한글)\"",
+   "pass": true,
+   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당) Line 2 → Line 4 | Line 4 Board Line 4 | Sadang (사당) → Seoul Station (서울역) 7 stops | 🏁 Exit at Seoul Station (서울역)"
+  },
+  {
+   "prof": "iphone",
+   "name": "EN route: \"Exit at Seoul Station (서울역)\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "KO route: \"2호선 탑승\"",
+   "pass": true,
+   "detail": "2호선 2호선 탑승 | 강남 → 사당 4개 역 | 🔄 사당 환승 2호선 → 4호선 | 4호선 4호선 탑승 | 사당 → 서울역 7개 역 | 🏁 서울역 하차"
+  },
+  {
+   "prof": "iphone",
+   "name": "KO route: \"… 환승\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "KO route: \"서울역 하차\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "KO station page: labels translated, name in Korean",
+   "pass": true,
+   "detail": "강남 | Gangnam · カンナム | ☆ | 2호선신분당선 🔀 환승 가능 | 역 코드 222D7 | 🟢 출발"
+  },
+  {
+   "prof": "iphone",
+   "name": "EN station page: \"Gangnam (강남)\", \"Line 2\", \"Transfer available\"",
+   "pass": true,
+   "detail": "Gangnam (강남) | カンナム | ☆ | Line 2Shinbundang Line 🔀 Transfer available | Station codes 222D7"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean mode: no untranslated English UI text on any tab",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "station with the same name on several lines shows that name once (badges grouped)",
+   "pass": true,
+   "detail": "{\"n\":1,\"tip\":1,\"groups\":[\"서울역:4\",\"서울:1\"]}"
+  },
+  {
+   "prof": "iphone",
+   "name": "favorite saved and listed",
+   "pass": true,
+   "detail": "Gangnam 강남"
+  },
+  {
+   "prof": "iphone",
+   "name": "favorite selects station from Geo map context",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "fresh load opens Geo map",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"geo\":true,\"sch\":false,\"btn\":\"geo\",\"m\":654,\"first\":\"geo\",\"second\":\"sch\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo map shows all 654 stations",
+   "pass": true,
+   "detail": "markers=654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic remains a secondary tab",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search from Schematic jumps to Geo map and selects station",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"sel\":\"강남\",\"c\":[37.497414,127.028008],\"z\":14}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo map centres and zooms on the station",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "station info opens from Geo map search",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"서울\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"지제\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"뚝섬유원지\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"원곡\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"서구청\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"화전\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"Seoul\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"Jije\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"Gangnam\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"Isu\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search \"code 100-3\"",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route fields resolve aliases (서울→서울역, 지제→평택지제, 원곡→시우)",
+   "pass": true,
+   "detail": "{\"서울\":\"서울역\",\"지제\":\"평택지제\",\"원곡\":\"시우\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":21,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: highlight passes through all 12 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: A + B + 1 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=3 transfers=1/1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":76,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: highlight passes through all 21 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: A + B + 0 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=2 transfers=0/0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":20,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: highlight passes through all 13 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: A + B + 0 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=2 transfers=0/0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "강남→서울역: Geo map opened with overlay rendered",
+   "pass": true,
+   "detail": "{\"pts\":21,\"stroke\":6}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "강남→서울역: highlight passes through all 12 route stations (corrected coordinates)",
+   "pass": true,
+   "detail": "0 off line"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "강남→서울역: A + B + 1 transfer pin(s)",
+   "pass": true,
+   "detail": "pins=3 transfers=1/1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "강남→서울역: whole route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "강남→서울역: previous route cleared (single highlight)",
+   "pass": true,
+   "detail": "layers=1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "강남→서울역: survives tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "clear route removes the overlay",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tap origin station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":36,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":36}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tap mid station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":126,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":126}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tap destination station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":122,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":122}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route graphics are non-interactive (pins pointer-events:none)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "sheet peek: anchored to bottom, fully on-screen, below header",
+   "pass": true,
+   "detail": "{\"s\":\"peek\",\"top\":228,\"bottom\":340,\"hb\":93,\"padB\":52,\"w\":750,\"left\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "sheet peek: respects safe-area bottom inset (34px)",
+   "pass": true,
+   "detail": "padB=52"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "sheet half: anchored to bottom, fully on-screen, below header",
+   "pass": true,
+   "detail": "{\"s\":\"half\",\"top\":129,\"bottom\":340,\"hb\":93,\"padB\":52,\"w\":750,\"left\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "sheet half: respects safe-area bottom inset (34px)",
+   "pass": true,
+   "detail": "padB=52"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "sheet full: anchored to bottom, fully on-screen, below header",
+   "pass": true,
+   "detail": "{\"s\":\"full\",\"top\":93,\"bottom\":340,\"hb\":93,\"padB\":52,\"w\":750,\"left\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "sheet full: respects safe-area bottom inset (34px)",
+   "pass": true,
+   "detail": "padB=52"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @320px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @320px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @320px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @360px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @360px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @360px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @360px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @375px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @375px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @375px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @375px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @390px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @390px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @390px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @390px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @414px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @414px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @414px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @414px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @430px: one row, no page overflow",
+   "pass": true,
+   "detail": "{\"h\":54,\"spread\":1,\"ds\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @430px: EN/한, ⋯ and search fully visible (no clipping)",
+   "pass": true,
+   "detail": "{\"lg\":true,\"more\":true,\"s\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @430px: Geo map tab visible, no clipped tabs, scrollable fallback",
+   "pass": true,
+   "detail": "{\"geo\":true,\"clipped\":0,\"sc\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @430px: ALL visible tabs fully inside the strip (nothing cut off)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header @280px: tab strip scrolls horizontally, controls stay pinned",
+   "pass": true,
+   "detail": "{\"can\":true,\"moved\":true,\"lgOk\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "every station is placed OR listed as unmatched (no silent gaps)",
+   "pass": true,
+   "detail": "{\"t\":654,\"m\":472,\"u\":182}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "clickable SVG hit target for every placed station",
+   "pass": true,
+   "detail": "hits=472 placed=472"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "hit targets centred exactly on their symbol positions",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no two stations share one SVG symbol",
+   "pass": true,
+   "detail": "shared=0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "every placed position lies on a real symbol of the official SVG (<=4 units)",
+   "pass": true,
+   "detail": "far=0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "clicking 24 sampled SVG stations selects the right station",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "every station has a Geo marker",
+   "pass": true,
+   "detail": "654/654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no impossible route hops (>15 km, GTX/AREX >30 km)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no station outside the Seoul region / Korea",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no synthetic or estimated coordinates in use",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo markers sit exactly on their data.js coordinates",
+   "pass": true,
+   "detail": "misplaced=0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "zoom/centering: setView centres map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "source contains no next-train / crowding / occupancy / simulation / fare / arrival-estimate wording",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "[en] station/route/guide panels show no simulated data",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "[en] typical interval is labelled \"not real-time\"",
+   "pass": true,
+   "detail": "🚇 Typical interval (not real-time)"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "[en] no countdown timers running",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "[ko] station/route/guide panels show no simulated data",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "[ko] typical interval is labelled \"not real-time\"",
+   "pass": true,
+   "detail": "🚇 배차 간격 (일반적, 실시간 아님)"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "[ko] no countdown timers running",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "every station renders in both English and Korean",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "EN route: \"Board Line 2\"",
+   "pass": true,
+   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "EN route: \"Transfer at … (한글)\"",
+   "pass": true,
+   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당) Line 2 → Line 4 | Line 4 Board Line 4 | Sadang (사당) → Seoul Station (서울역) 7 stops | 🏁 Exit at Seoul Station (서울역)"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "EN route: \"Exit at Seoul Station (서울역)\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "KO route: \"2호선 탑승\"",
+   "pass": true,
+   "detail": "2호선 2호선 탑승 | 강남 → 사당 4개 역 | 🔄 사당 환승 2호선 → 4호선 | 4호선 4호선 탑승 | 사당 → 서울역 7개 역 | 🏁 서울역 하차"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "KO route: \"… 환승\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "KO route: \"서울역 하차\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "KO station page: labels translated, name in Korean",
+   "pass": true,
+   "detail": "강남 | Gangnam · カンナム | ☆ | 2호선신분당선 🔀 환승 가능 | 역 코드 222D7 | 🟢 출발"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "EN station page: \"Gangnam (강남)\", \"Line 2\", \"Transfer available\"",
+   "pass": true,
+   "detail": "Gangnam (강남) | カンナム | ☆ | Line 2Shinbundang Line 🔀 Transfer available | Station codes 222D7"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean mode: no untranslated English UI text on any tab",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "station with the same name on several lines shows that name once (badges grouped)",
+   "pass": true,
+   "detail": "{\"n\":1,\"tip\":1,\"groups\":[\"서울역:4\",\"서울:1\"]}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "favorite saved and listed",
+   "pass": true,
+   "detail": "Gangnam 강남"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "favorite selects station from Geo map context",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

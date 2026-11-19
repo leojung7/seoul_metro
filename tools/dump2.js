@@ -1,0 +1,1 @@
+const fs=require('fs'),vm=require('vm');const c={};vm.createContext(c);vm.runInContext(fs.readFileSync('data.js','utf8')+';this.RT=RT;',c);console.log(JSON.stringify(c.RT))

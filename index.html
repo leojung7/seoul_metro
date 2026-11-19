@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+  <meta name="theme-color" content="#111827">
+  <title>Seoul Metro Hub · 서울 지하철</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-sheet="hidden">
+<header>
+  <h1 class="brand">🚇 <span id="ttl">Seoul Metro Hub</span></h1>
+  <nav id="tabs" aria-label="Main views">
+    <button data-tab="geo" class="on"><span class="ic">🌍</span><span class="tl">Geo map</span><span class="ts">Map</span></button>
+    <button data-tab="sch"><span class="ic">🗺️</span><span class="tl">Schematic</span><span class="ts">Schematic</span></button>
+    <button data-tab="lines"><span class="ic">🚇</span><span class="tl">Lines</span><span class="ts">Lines</span></button>
+    <button data-tab="route"><span class="ic">⏱️</span><span class="tl">Route</span><span class="ts">Route</span></button>
+    <button data-tab="off" class="desk-only"><span class="ic">📄</span><span class="tl">Official</span><span class="ts">Official</span></button>
+    <button data-tab="guide" class="desk-only"><span class="ic">🧭</span><span class="tl">Guide</span><span class="ts">Guide</span></button>
+  </nav>
+  <input id="q" list="dl" placeholder="Search 🔍 (강남, Hongik…)" size="18" aria-label="Search stations">
+  <datalist id="dl"></datalist>
+  <button id="mobile-search" type="button" class="hbtn" aria-label="Open station search">🔍</button>
+  <button id="lg" type="button" class="hbtn" title="Switch language / 언어 전환" aria-label="Switch language English / Korean">EN / 한</button>
+  <button id="more-btn" type="button" class="hbtn" aria-label="More options" aria-haspopup="menu" aria-expanded="false" aria-controls="more-menu">⋯</button>
+</header>
+<!-- Overflow menu lives OUTSIDE the header and is position:fixed, so opening it can never change the header's size. -->
+<div id="more-menu" role="menu" hidden>
+  <button type="button" role="menuitem" data-tab="off" class="mobile-menu-tab">📄 Official map</button>
+  <button type="button" role="menuitem" data-tab="guide" class="mobile-menu-tab">🧭 Visitor guide</button>
+  <button type="button" role="menuitem" id="th" title="Toggle Dark / Light theme">🌙 Theme</button>
+  <div class="mm-sep" role="separator"></div>
+  <div class="mm-h">⭐ Favorites <span id="fc">0</span></div>
+  <div id="fav-list" class="mm-favs"></div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<div id="pick-banner" class="pick-banner" role="status" hidden>
+  <span id="pick-banner-txt">Tap any station on the map…</span>
+  <button id="pick-cancel">Cancel</button>
+</div>
+
+<div id="app">
+  <div id="main">
+    <div id="route-sum" class="route-sum" role="region" aria-label="Route summary" hidden></div>
+    <!-- 1. SCHEMATIC VIEWPORT (SVG KO / EN) -->
+    <div class="pane" id="p-sch">
+      <div class="fl">
+        <button id="sch-lang" class="on">🌐 SVG: English</button>
+        <button id="hubs">🔀 Hubs only</button>
+        <button id="fit">🎯 Fit</button>
+        <button id="cov-btn" type="button" title="Which stations are on the schematic?">📊 Coverage</button>
+        <button id="zi">＋</button>
+        <button id="zo">－</button>
+        <span class="mu pill" id="cnt"></span>
+      </div>
+      <div id="sch-tip" class="svg-tip" hidden></div>
+      <svg id="sch" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5724 6516">
+        <g id="sch-bg"></g>
+        <g id="sch-route"></g>
+        <g id="sch-hits"></g>
+      </svg>
+    </div>
+
+    <!-- 2. GEO MAP (OPENSTREETMAP + CONTINUOUS CSV POLYLINES) -->
+    <div class="pane on" id="p-geo">
+      <div class="fl" style="left:56px">
+        <select id="gl"><option value="*">All lines (전체 노선)</option></select>
+        <button id="loc">📍 Nearest</button>
+        <span class="mu pill" id="gcnt"></span>
+      </div>
+      <div id="map" style="height:100%"></div>
+    </div>
+
+    <!-- 3. LINES TAB (CONNECTED TRUNKS & BRANCHES) -->
+    <div class="pane scroll" id="p-lines">
+      <div style="max-width:920px;margin:auto">
+        <h2 style="margin:0">Lines &amp; stations</h2>
+        <div class="mu" id="dnote"></div>
+        <div id="lgrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:6px;margin:10px 0"></div>
+        <div class="card">
+          <b>🔠 Character-length filter (글자수)</b> <span class="mu" id="fcnt"></span>
+          <div style="margin:6px 0;display:flex;gap:5px;flex-wrap:wrap" id="lens"></div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <select id="cl"><option value="ko">한글 글자수</option><option value="en">English letters</option></select>
+            <select id="so">
+              <option value="o">Sort: route order (connected)</option>
+              <option value="en">Sort: A → Z (English)</option>
+              <option value="ko">Sort: 가나다 (Korean)</option>
+            </select>
+            <label class="mu" style="display:flex;align-items:center;gap:4px">
+              <input type="checkbox" id="tr" style="padding:0"> Transfers only (환승역)
+            </label>
+          </div>
+          <input id="lf" placeholder="Filter by station or line name…" style="width:100%;margin-top:6px">
+        </div>
+        <div id="lban" class="card"></div>
+        <div id="lst"></div>
+      </div>
+    </div>
+
+    <!-- 4. ROUTE PLANNER (TYPE + BROWSE BY LINE + PICK ON MAP) -->
+    <div class="pane scroll" id="p-route">
+      <div style="max-width:780px;margin:auto">
+        <h2 style="margin:0">Compare journeys</h2>
+        <div class="card">
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:end">
+            <div>
+              <div class="mu" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span>🟢 Origin</span>
+                <button type="button" class="mini-btn" id="pick-a-btn">📋 Line / 🗺️ Map</button>
+              </div>
+              <input id="ra" list="dl" placeholder="Type or pick station…" style="width:100%">
+            </div>
+            <button id="sw" title="Swap stations">⇄</button>
+            <div>
+              <div class="mu" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span>🔴 Destination</span>
+                <button type="button" class="mini-btn" id="pick-b-btn">📋 Line / 🗺️ Map</button>
+              </div>
+              <input id="rb" list="dl" placeholder="Type or pick station…" style="width:100%">
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+            <select id="rp"><option value="f">📏 Shortest route</option><option value="t">🔄 Fewer transfers</option></select>
+            <select id="rx"><option value="x">🚄 Include express lines</option><option value="l">🚃 All-stop only</option></select>
+            <button id="go" class="on">Calculate</button>
+          </div>
+        </div>
+        <div id="rres"></div>
+      </div>
+    </div>
+
+    <!-- 5. SEOUL VISITOR & RESIDENT GUIDE -->
+    <div class="pane scroll" id="p-guide">
+      <div class="guide-wrap">
+        <h2 style="margin:0">Seoul Visitor &amp; Resident Guide</h2>
+        <p class="mu">Useful official resources and simple Korean phrases. External links open the relevant service in a new tab.</p>
+        <div class="guide-grid">
+          <section class="card guide-card">
+            <h3>✈️ Airport connections</h3>
+            <p>Plan a trip between Incheon or Gimpo Airport and Seoul. Compare airport rail and bus options using current operator information.</p>
+            <a class="lk" href="https://english.seoul.go.kr/service/entry/getting-to-seoul-from-incheon-airport/" target="_blank" rel="noopener">Seoul Government: Getting to Seoul</a>
+            <a class="lk" href="https://english.visitseoul.net/airport-to-seoul" target="_blank" rel="noopener">Visit Seoul: Airport guide</a>
+          </section>
+          <section class="card guide-card">
+            <h3>🏙️ Discover Seoul</h3>
+            <p>Find attractions, food, shopping, events and suggested itineraries from Seoul’s official tourism service.</p>
+            <a class="lk" href="https://english.visitseoul.net/" target="_blank" rel="noopener">Official Visit Seoul guide</a>
+            <a class="lk" href="https://english.visitseoul.net/realtime-seoul" target="_blank" rel="noopener">Seoul Live Tourism Guide</a>
+            <a class="lk" href="https://english.visitseoul.net/tourist-Information-center" target="_blank" rel="noopener">Tourist information centres</a>
+          </section>
+          <section class="card guide-card">
+            <h3>🧭 Useful city information</h3>
+            <p>Official city information for residents and visitors, including public services and practical guidance.</p>
+            <a class="lk" href="https://world.seoul.go.kr/home/" target="_blank" rel="noopener">Seoul Metropolitan Government</a>
+            <a class="lk" href="https://english.visitkorea.or.kr/" target="_blank" rel="noopener">Korea Tourism Organization</a>
+          </section>
+          <section class="card guide-card">
+            <h3>🗣️ Everyday Korean phrases</h3>
+            <p class="mu">Tap the speaker to hear a Korean pronunciation. Voice availability depends on your device and browser.</p>
+            <div class="phrase-row"><div><b>안녕하세요</b><span class="mu">Hello</span></div><button type="button" class="phrase-speak" data-say="안녕하세요">🔊 Listen</button></div>
+            <div class="phrase-row"><div><b>감사합니다</b><span class="mu">Thank you</span></div><button type="button" class="phrase-speak" data-say="감사합니다">🔊 Listen</button></div>
+            <div class="phrase-row"><div><b>이 역은 어디예요?</b><span class="mu">Where is this station?</span></div><button type="button" class="phrase-speak" data-say="이 역은 어디예요?">🔊 Listen</button></div>
+            <div class="phrase-row"><div><b>화장실이 어디예요?</b><span class="mu">Where is the restroom?</span></div><button type="button" class="phrase-speak" data-say="화장실이 어디예요?">🔊 Listen</button></div>
+            <div class="phrase-row"><div><b>도와주세요</b><span class="mu">Please help me.</span></div><button type="button" class="phrase-speak" data-say="도와주세요">🔊 Listen</button></div>
+            <div id="guide-voice-status" class="mu" aria-live="polite"></div>
+          </section>
+        </div>
+        <div class="card"><b>ℹ️ A note about live transport information</b><p class="mu">This site does not show live train arrivals, real-time delays, crowding, or verified lift/escalator status. Routes are calculated from station positions as a planning aid. Check official operator notices before travelling.</p></div>
+      </div>
+    </div>
+
+    <!-- 6. OFFICIAL MAP TAB -->
+    <div class="pane" id="p-off">
+      <div class="fl">
+        <a class="lk" style="background:var(--pn)" href="map_korea.pdf" target="_blank">PDF (한국어)</a>
+        <button id="oz">🎯 Fit</button>
+      </div>
+      <svg id="stim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5724 6516">
+        <image id="oimg" href="Seoul_subway_linemap_en.svg" width="5724" height="6516"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- CONTEXTUAL STATION INFO DRAWER -->
+  <aside id="info" aria-label="Station details">
+    <div id="sheet-bar">
+      <div id="sheet-h" role="button" tabindex="0" aria-label="Expand or collapse station details" title="Drag, or tap to expand / collapse"></div>
+      <button type="button" id="sheet-x" aria-label="Close station details">✕</button>
+    </div>
+    <div id="ib"></div>
+  </aside>
+</div>
+
+<!-- STATION PICKER MODAL (TYPING / BROWSE BY LINE / PICK ON MAP) -->
+<div id="picker-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="picker-title">
+  <div class="modal-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <b id="picker-title">Select Station</b>
+      <button id="picker-close" type="button" aria-label="Close station picker">✕</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+      <button class="pk-mode on" data-mode="search">🔍 Search</button>
+      <button class="pk-mode" data-mode="line">🚇 Browse by Line</button>
+      <button class="pk-mode" data-mode="sch">🗺️ Pick on Schematic</button>
+      <button class="pk-mode" data-mode="geo">🌍 Pick on Geo Map</button>
+    </div>
+    <div id="pk-search-box">
+      <input id="pk-q" placeholder="Type Korean or English station name…" style="width:100%">
+    </div>
+    <div id="pk-line-box" hidden>
+      <div id="pk-line-chips" style="display:flex;gap:4px;flex-wrap:wrap;max-height:110px;overflow-y:auto;margin-bottom:8px"></div>
+    </div>
+    <div id="pk-list" style="max-height:320px;overflow-y:auto;border-top:1px solid var(--bd);margin-top:6px"></div>
+  </div>
+</div>
+
+<div id="cov-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="cov-title">
+  <div class="modal-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <b id="cov-title">Schematic coverage</b>
+      <button id="cov-close" type="button" aria-label="Close coverage">✕</button>
+    </div>
+    <div id="cov-body"></div>
+  </div>
+</div>
+
+<div id="search-modal" class="modal" hidden role="dialog" aria-modal="true" aria-label="Station search">
+  <div class="modal-card search-card">
+    <div class="search-head"><b>Search stations</b><button id="search-close" type="button" aria-label="Close search">✕</button></div>
+    <input id="mobile-q" autocomplete="off" placeholder="Korean name, English name, or station code" />
+    <div id="mobile-search-results" class="search-results"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="svg-positions.js"></script>
+<script src="svg-positions-extra.js"></script>
+<script src="svg-positions-labelmatch.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

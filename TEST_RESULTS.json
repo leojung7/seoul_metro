@@ -1,0 +1,1160 @@
+{
+ "run": "2026-11-19T23:43:52.765Z",
+ "total": 192,
+ "pass": 192,
+ "fail": 0,
+ "results": [
+  {
+   "prof": "desktop",
+   "name": "EN/한 visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "⋯ visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "search control visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "header single row, no overflow/wrap",
+   "pass": true,
+   "detail": "{\"h\":56,\"sw\":1366,\"cw\":1366,\"lg\":true,\"more\":true,\"sr\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "⋯ opens as floating popup",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "⋯ no layout shift",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Esc closes ⋯",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "outside click closes ⋯",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "EN/한 toggles and survives tab changes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/21 vertices off base"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: A, B + 1 transfer pins",
+   "pass": true,
+   "detail": "pins=3"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→강남: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/76 vertices off base"
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: A, B pins",
+   "pass": true,
+   "detail": "pins=2"
+  },
+  {
+   "prof": "desktop",
+   "name": "홍대입구→잠실: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/20 vertices off base"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: A, B pins",
+   "pass": true,
+   "detail": "pins=2"
+  },
+  {
+   "prof": "desktop",
+   "name": "서울→인천공항: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → origin: pick mode active with banner on Schematic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → origin: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"도봉\",\"target\":null} pt={\"x\":582.5653686523438,\"y\":203.52117919921875}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → origin: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → origin: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → destination: pick mode active with banner on Schematic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → destination: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"도봉\",\"target\":null} pt={\"x\":582.5653686523438,\"y\":203.52117919921875}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → destination: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic picker → destination: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → origin: pick mode active with banner on Geo map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → origin: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"종로3가\",\"target\":null} pt={\"x\":959.6660766601562,\"y\":243.7129364013672}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → origin: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → origin: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → destination: pick mode active with banner on Geo map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → destination: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"종로3가\",\"target\":null} pt={\"x\":959.6660766601562,\"y\":243.7129364013672}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → destination: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo picker → destination: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "search picker fills origin & closes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "line picker fills destination & closes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "cancel pick clears state",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "coverage counts shown (654/284/188/182)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "unmatched list has 182 rows",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "CSV export downloads with 654 rows",
+   "pass": true,
+   "detail": "download=true lines=656"
+  },
+  {
+   "prof": "desktop",
+   "name": "CSV marks every station verified / ESTIMATED / UNMATCHED",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "tap unmatched → Geo map + station selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "station details show \"no position\" warning",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop: info panel docked right, visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "schematic zoom in",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "SVG language toggle works",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "hubs-only toggle",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "fit resets view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "geo line filter",
+   "pass": true,
+   "detail": "markers=51"
+  },
+  {
+   "prof": "desktop",
+   "name": "favorite saved and listed in ⋯ menu",
+   "pass": true,
+   "detail": "Gangnam 강남"
+  },
+  {
+   "prof": "desktop",
+   "name": "favorite tap selects station + closes menu",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "EN/한 visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "⋯ visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "search control visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "header single row, no overflow/wrap",
+   "pass": true,
+   "detail": "{\"h\":54,\"sw\":390,\"cw\":390,\"lg\":true,\"more\":true,\"sr\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "⋯ opens as floating popup",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "⋯ no layout shift",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Esc closes ⋯",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "outside click closes ⋯",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "EN/한 toggles and survives tab changes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/21 vertices off base"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: A, B + 1 transfer pins",
+   "pass": true,
+   "detail": "pins=3"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→강남: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/76 vertices off base"
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: A, B pins",
+   "pass": true,
+   "detail": "pins=2"
+  },
+  {
+   "prof": "iphone",
+   "name": "홍대입구→잠실: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/20 vertices off base"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: A, B pins",
+   "pass": true,
+   "detail": "pins=2"
+  },
+  {
+   "prof": "iphone",
+   "name": "서울→인천공항: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → origin: pick mode active with banner on Schematic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → origin: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"망월사\",\"target\":null} pt={\"x\":254.41299438476562,\"y\":205.69811248779297}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → origin: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → origin: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → destination: pick mode active with banner on Schematic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → destination: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"도봉산\",\"target\":null} pt={\"x\":255.0875244140625,\"y\":217.94863891601562}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → destination: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic picker → destination: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → origin: pick mode active with banner on Geo map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → origin: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"광화문\",\"target\":null} pt={\"x\":356.7681579589844,\"y\":354.0278625488281}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → origin: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → origin: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → destination: pick mode active with banner on Geo map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → destination: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"광화문\",\"target\":null} pt={\"x\":356.7681579589844,\"y\":354.0278625488281}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → destination: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo picker → destination: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "search picker fills origin & closes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "line picker fills destination & closes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "cancel pick clears state",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "coverage counts shown (654/284/188/182)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "unmatched list has 182 rows",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "CSV export downloads with 654 rows",
+   "pass": true,
+   "detail": "download=true lines=656"
+  },
+  {
+   "prof": "iphone",
+   "name": "CSV marks every station verified / ESTIMATED / UNMATCHED",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "tap unmatched → Geo map + station selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "station details show \"no position\" warning",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "tap station → peek at bottom",
+   "pass": true,
+   "detail": "{\"s\":\"peek\",\"top\":488,\"bottom\":664,\"h\":176,\"sc\":0,\"scrollable\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "swipe up → half",
+   "pass": true,
+   "detail": "{\"s\":\"half\",\"top\":292,\"bottom\":664,\"h\":372,\"sc\":0,\"scrollable\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "swipe up again → full",
+   "pass": true,
+   "detail": "{\"s\":\"full\",\"top\":54,\"bottom\":664,\"h\":610,\"sc\":0,\"scrollable\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "full sheet content scrollable",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "content scrolls in full",
+   "pass": true,
+   "detail": "scrollTop=333"
+  },
+  {
+   "prof": "iphone",
+   "name": "swipe down collapses",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "route tab not blocked by sheet",
+   "pass": true,
+   "detail": "{\"sheet\":\"hidden\",\"vis\":\"hidden\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "guide tab not blocked by sheet",
+   "pass": true,
+   "detail": "{\"sheet\":\"hidden\",\"vis\":\"hidden\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "off tab not blocked by sheet",
+   "pass": true,
+   "detail": "{\"sheet\":\"hidden\",\"vis\":\"hidden\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "✕ closes sheet",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "schematic zoom in",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "SVG language toggle works",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "hubs-only toggle",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "fit resets view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "geo line filter",
+   "pass": true,
+   "detail": "markers=51"
+  },
+  {
+   "prof": "iphone",
+   "name": "favorite saved and listed in ⋯ menu",
+   "pass": true,
+   "detail": "Gangnam 강남"
+  },
+  {
+   "prof": "iphone",
+   "name": "favorite tap selects station + closes menu",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "EN/한 visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "⋯ visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search control visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "header single row, no overflow/wrap",
+   "pass": true,
+   "detail": "{\"h\":46,\"sw\":750,\"cw\":750,\"lg\":true,\"more\":true,\"sr\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "⋯ opens as floating popup",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "⋯ no layout shift",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Esc closes ⋯",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "outside click closes ⋯",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "EN/한 toggles and survives tab changes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/21 vertices off base"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: A, B + 1 transfer pins",
+   "pass": true,
+   "detail": "pins=3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→강남: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/76 vertices off base"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: A, B pins",
+   "pass": true,
+   "detail": "pins=2"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "홍대입구→잠실: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: opens Geo map with highlighted route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: highlight follows displayed network",
+   "pass": true,
+   "detail": "0/20 vertices off base"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: fitBounds keeps route in view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: A, B pins",
+   "pass": true,
+   "detail": "pins=2"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "서울→인천공항: route still highlighted after tab switch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → origin: pick mode active with banner on Schematic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → origin: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"월계\",\"target\":null} pt={\"x\":419.2173156738281,\"y\":125.23020553588867}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → origin: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → origin: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → destination: pick mode active with banner on Schematic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → destination: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"월계\",\"target\":null} pt={\"x\":419.2173156738281,\"y\":125.23020553588867}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → destination: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic picker → destination: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → origin: pick mode active with banner on Geo map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → origin: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"덕정\",\"target\":null} pt={\"x\":460.64215087890625,\"y\":129.13394165039062}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → origin: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → origin: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → destination: pick mode active with banner on Geo map",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → destination: field populated",
+   "pass": true,
+   "detail": "{\"tab\":\"route\",\"banner\":false,\"val\":\"덕정\",\"target\":null} pt={\"x\":460.64215087890625,\"y\":129.13394165039062}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → destination: banner closed + pickTarget cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo picker → destination: Route tab opened",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "search picker fills origin & closes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "line picker fills destination & closes",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "cancel pick clears state",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "coverage counts shown (654/284/188/182)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "unmatched list has 182 rows",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "CSV export downloads with 654 rows",
+   "pass": true,
+   "detail": "download=true lines=656"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "CSV marks every station verified / ESTIMATED / UNMATCHED",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tap unmatched → Geo map + station selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "station details show \"no position\" warning",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tap station → peek at bottom",
+   "pass": true,
+   "detail": "{\"s\":\"peek\",\"top\":228,\"bottom\":340,\"h\":112,\"sc\":0,\"scrollable\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "swipe up → half",
+   "pass": true,
+   "detail": "{\"s\":\"half\",\"top\":129,\"bottom\":340,\"h\":211,\"sc\":0,\"scrollable\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "swipe up again → full",
+   "pass": true,
+   "detail": "{\"s\":\"full\",\"top\":46,\"bottom\":340,\"h\":294,\"sc\":0,\"scrollable\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "full sheet content scrollable",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "content scrolls in full",
+   "pass": true,
+   "detail": "scrollTop=199"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "swipe down collapses",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route tab not blocked by sheet",
+   "pass": true,
+   "detail": "{\"sheet\":\"hidden\",\"vis\":\"hidden\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "guide tab not blocked by sheet",
+   "pass": true,
+   "detail": "{\"sheet\":\"hidden\",\"vis\":\"hidden\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "off tab not blocked by sheet",
+   "pass": true,
+   "detail": "{\"sheet\":\"hidden\",\"vis\":\"hidden\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "✕ closes sheet",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "schematic zoom in",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "SVG language toggle works",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "hubs-only toggle",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "fit resets view",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "geo line filter",
+   "pass": true,
+   "detail": "markers=51"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "favorite saved and listed in ⋯ menu",
+   "pass": true,
+   "detail": "Gangnam 강남"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "favorite tap selects station + closes menu",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no console/page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}
