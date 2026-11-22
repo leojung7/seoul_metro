@@ -3,14 +3,14 @@
 window.KO = {
   // ---- header / tabs / menu ----
   "Main views": "주요 화면",
-  "Schematic": "노선도", "Map": "지도", "Geo map": "지도", "Lines": "노선", "Route": "경로", "Official": "공식", "Guide": "안내",
+  "Schematic": "노선도", "Map": "지도", "Geo map": "지도", "Lines": "노선", "Route": "경로", "Official PDF": "공식 PDF", "PDF": "PDF", "Guide": "안내",
   "Search 🔍 (강남, Hongik…)": "검색 🔍 (강남, 홍대입구…)",
   "Search stations": "역 검색",
   "Open station search": "역 검색 열기",
   "Switch language / 언어 전환": "언어 전환 / Switch language",
   "Switch language English / Korean": "언어 전환 영어 / 한국어",
   "More options": "더보기",
-  "📄 Official map": "📄 공식 노선도", "🧭 Visitor guide": "🧭 여행자 안내", "🌙 Theme": "🌙 테마",
+  "📄 Official PDF": "📄 공식 PDF", "Official PDF map": "공식 노선도 (PDF)", "📄 Official PDF map": "📄 공식 노선도 (PDF)", "Open in new tab": "새 탭에서 열기", "Download": "다운로드", "📄 Open PDF": "📄 PDF 열기", "The official PDF map was opened in a new tab.": "공식 노선도 PDF를 새 탭에서 열었습니다.", "Tap the button to open the official PDF map.": "아래 버튼을 눌러 공식 노선도 PDF를 여세요.", "🧭 Visitor guide": "🧭 여행자 안내", "🌙 Theme": "🌙 테마",
   "Toggle Dark / Light theme": "다크 / 라이트 테마 전환",
   "⭐ Favorites": "⭐ 즐겨찾기",
   "No saved stations yet. Open a station and tap ☆.": "저장된 역이 없습니다. 역을 열고 ☆를 누르세요.",

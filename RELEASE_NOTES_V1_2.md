@@ -6,7 +6,7 @@
 - Used by every length filter and by the count shown on each row (`cl()` in `app.js`). Counting rules other than the parenthesis removal are unchanged: Korean mode ignores spaces; English mode counts letters and digits only (so "Seoul Station" counts as 12, not 13 — say so if you want raw `.length` instead).
 
 ## 2. Bilingual Geo map
-- English mode → CARTO Voyager tiles (English labels where a name exists). Korean mode → OpenStreetMap standard tiles (local = Korean names). Defined in `TILE_SOURCES` (`app.js`), so providers are easy to swap. Attributions for OSM and CARTO are shown.
+- *(HISTORICAL, superseded in RC4: the English provider described here was removed because it now requires an API key; see `RELEASE_NOTES_RC4.md`.)* In v1.2, English mode used the Voyager tiles of the former provider; Korean mode used OpenStreetMap standard tiles (local = Korean names). Providers are defined in `TILE_SOURCES` (`app.js`).
 - Toggling EN/한 swaps the base tiles **without** touching: selected station, open sheet (state and scroll), route highlight and pins, map centre, zoom, markers or hit-testing.
 - The old tiles stay visible until the new ones load. If the new tiles fail (4+ tile errors, none loaded) the current tiles are kept, a localized notice is shown, and everything else (station names, markers, tooltips, route text, sheets) is still localized by the app. A failed language is retried after 60 s or on the next toggle after recovery.
 - The theme toggle keeps the tiles of the current language; rapid toggling always ends with one tile layer.
@@ -29,6 +29,6 @@ Still unmatched: mostly interchange hubs and line termini, whose labels sit 40�
 - New suite: length-filter examples + all stations × lines × both modes against the spec regex + UI filtering; language toggle while a route is visible and while a station sheet is open (selection, view, route, pins, sheet state/scroll, tiles, localized text, post-toggle taps); Korean/English tile failure fallback with notice; recovery; rapid toggles; theme toggle.
 
 ## Limits
-- **Tile labels could not be verified here** (no network): that CARTO Voyager labels Seoul in English and OSM standard in Korean is based on how those providers document/behave. Check one screen of each on a real device; if a provider disagrees, change its entry in `TILE_SOURCES`. CARTO's free tiles are intended for light use.
+- *(HISTORICAL, superseded in RC4.)* **Tile labels could not be verified here** (no network). This caveat proved right in production: the former English provider started returning an "API KEY REQUIRED" image. If a provider misbehaves, change its entry in `TILE_SOURCES`.
 - Not run on real iPhone Safari, Edge or real Leaflet.
 - 182 stations still have no schematic position.

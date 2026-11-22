@@ -912,37 +912,54 @@ function geoRoutePath(hops) {
 // ============================================================================
 let MAP = null, GL, TL;
 
-// Base map per language. OpenStreetMap's standard tiles label places in the local language (Korean in Korea); CARTO's
-// Voyager tiles label them in English where a name exists. If the wanted tiles cannot load, the current tiles are kept
-// (all station labels, markers, tooltips and sheets are localized by the app itself and never depend on the tiles).
+// Base map per language. Both providers are keyless HTTPS raster tile services that work from any static host
+// (GitHub Pages) with plain Leaflet; no API key or token is involved anywhere.
+//   ko -> OpenStreetMap standard tiles (UNCHANGED): place labels in the local language (Korean in Korea).
+//   en -> Esri World Street Map tiles: place labels in English.
+// Station labels, markers, tooltips and sheets are localized by the app itself and never depend on the tiles.
+//
+// HISTORICAL NOTE (root cause of the "API KEY REQUIRED" map): English mode used to load the Voyager raster tiles from the
+// provider that was formerly the "en" entry here. That provider now answers every tile request with a normal 200 PNG that is
+// itself a notice reading "API KEY REQUIRED". Leaflet therefore fired "load", not "tileerror", and the switch-over logic
+// in setTiles() accepted the notice image as a working base map. Korean mode (OpenStreetMap) was never affected.
 const TILE_SOURCES = {
-  ko: { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", sub: "abc",
+  ko: { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", sub: "abc", maxNativeZoom: 19,
         attr: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' },
-  en: { url: "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", sub: "abcd",
-        attr: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>' }
+  en: { url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", sub: "", maxNativeZoom: 19,
+        attr: 'Tiles &copy; <a href="https://www.esri.com">Esri</a> &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong) and the GIS User Community' }
 };
-let TL_LANG = null;
+// If the English tiles cannot be loaded at all on first paint, fall back to the Korean (OpenStreetMap) tiles instead of a blank map.
+const TILE_FALLBACK = { en: "ko" };
+let TL_LANG = null, TL_PENDING = null, TL_TOKEN = 0;    // TL_PENDING / TL_TOKEN: only the newest language switch may change the base map
 const TILE_DOWN = {};                                   // lang -> timestamp of the last failed attempt (retry after 60 s)
+function cancelPendingTiles() { if (TL_PENDING) { try { MAP.removeLayer(TL_PENDING); } catch (e) {} TL_PENDING = null; } }
 function setTiles(lang, force) {
   if (!MAP) return;
-  if (TL && TL_LANG === lang && !force) return;
+  // Already showing this language: just drop any half-finished switch to another language.
+  if (TL && TL_LANG === lang && !force) { if (TL_PENDING) { cancelPendingTiles(); TL_TOKEN++; } return; }
   if (TILE_DOWN[lang] && Date.now() - TILE_DOWN[lang] < 60000 && !force) return;
-  const c = TILE_SOURCES[lang] || TILE_SOURCES.en, old = TL;
-  const next = L.tileLayer(c.url, { maxZoom: 19, subdomains: c.sub, attribution: c.attr });
+  cancelPendingTiles();
+  const c = TILE_SOURCES[lang] || TILE_SOURCES.ko, old = TL, token = ++TL_TOKEN;
+  const opts = { maxZoom: 19, maxNativeZoom: c.maxNativeZoom, attribution: c.attr };
+  if (c.sub) opts.subdomains = c.sub;
+  const next = L.tileLayer(c.url, opts);
   next.__lang = lang;
-  if (!old) { TL = next; TL_LANG = lang; next.addTo(MAP); return; }
-  let errors = 0, done = false;
+  let errors = 0, loaded = false, done = false;
   const finish = ok => {
     if (done) return; done = true;
-    if (ok) { MAP.removeLayer(old); TL = next; TL_LANG = lang; }
-    else {
-      MAP.removeLayer(next); TILE_DOWN[lang] = Date.now();
-      toast(t(lang === "ko" ? "Korean map tiles are unavailable; keeping the current map. Station labels are still in the selected language." : "English map tiles are unavailable; keeping the current map. Station labels are still in the selected language."), 4200);
-    }
+    if (TL_PENDING === next) TL_PENDING = null;
+    if (token !== TL_TOKEN) { try { MAP.removeLayer(next); } catch (e) {} return; }       // a newer language switch superseded this one
+    if (ok) { if (old && old !== next) MAP.removeLayer(old); TL = next; TL_LANG = lang; return; }
+    MAP.removeLayer(next); TILE_DOWN[lang] = Date.now();
+    if (TL === next) { TL = null; TL_LANG = null; }
+    toast(t(lang === "ko" ? "Korean map tiles are unavailable; keeping the current map. Station labels are still in the selected language." : "English map tiles are unavailable; keeping the current map. Station labels are still in the selected language."), 4200);
+    const fb = TILE_FALLBACK[lang];
+    if (!TL && fb && fb !== lang) setTiles(fb, true);   // nothing on screen yet: use the fallback provider rather than a blank map
   };
-  next.on("load", () => finish(true));
-  next.on("tileerror", () => { if (++errors >= 4) finish(false); });
-  next.addTo(MAP);                                      // the old layer stays visible until the new one has loaded
+  next.on("load", () => { loaded = true; finish(true); });
+  next.on("tileerror", () => { if (!loaded && ++errors >= 4) finish(false); });
+  if (!old) TL = next, TL_LANG = lang; else TL_PENDING = next;   // first paint is shown at once; later switches keep the old layer until the new one has loaded
+  next.addTo(MAP);
 }
 const tiles = () => setTiles(S.lang, true);             // used by the theme toggle
 
@@ -1395,12 +1412,35 @@ $("#lst").addEventListener("keydown", e => { if ((e.key === "Enter" || e.key ===
 // ============================================================================
 // 6. OFFICIAL VIEW & SHELL INITIALIZATION
 // ============================================================================
-const os = $("#stim");
-let OV = [0, 0, 5724, 6516];
-const ovb = () => os.setAttribute("viewBox", OV.join(" "));
-panzoom(os, () => OV, v => { OV = v; ovb(); });
-$("#oz").onclick = () => { OV = [0, 0, 5724, 6516]; ovb(); };
-ovb();
+// ---- Official PDF tab: shows map_korea.pdf and nothing else (no SVG, image or alternate schematic) ----
+const PDF_URL = "map_korea.pdf";
+const pdfNeedsNewTab = () => isMobile() || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || "")
+  || ((navigator.maxTouchPoints || 0) > 1 && /Macintosh/.test(navigator.userAgent || ""))      // iPadOS reports a Mac user agent
+  || navigator.pdfViewerEnabled === false;                                                       // desktop browser without a built-in PDF viewer
+let PDF_EMBEDDED = false, PDF_OPENED_AT = 0;
+function showOfficialPdf() {
+  const host = $("#pdf-host"), fb = $("#pdf-fallback"), bar = $("#pdf-bar");
+  if (!host || !fb) return;
+  if (!pdfNeedsNewTab()) {
+    // Desktop: embed the PDF in the page; the browser's own viewer provides scrolling, zoom and page navigation.
+    fb.hidden = true; host.hidden = false; if (bar) bar.hidden = false;
+    if (!PDF_EMBEDDED) {
+      host.innerHTML = `<object id="pdf-obj" data="${PDF_URL}#view=FitH&amp;navpanes=0" type="application/pdf" aria-label="${esc(t("Official PDF map"))}">
+        <iframe id="pdf-frame" src="${PDF_URL}#view=FitH&amp;navpanes=0" title="${esc(t("Official PDF map"))}"></iframe></object>`;
+      PDF_EMBEDDED = true;
+    }
+    return;
+  }
+  // Phones / tablets: a PDF embedded in a page is unreliable (iOS shows page 1 only, no scrolling). Open it in a new tab
+  // automatically, and keep a visible button on screen so the view is never blank (also covers blocked pop-ups).
+  host.hidden = true; host.innerHTML = ""; PDF_EMBEDDED = false; fb.hidden = false; if (bar) bar.hidden = true;
+  if (Date.now() - PDF_OPENED_AT > 1500) {
+    PDF_OPENED_AT = Date.now();
+    let w = null; try { w = window.open(PDF_URL, "_blank"); if (w) w.opener = null; } catch (e) { w = null; }
+    const msg = $("#pdf-fb-msg");
+    if (msg) msg.textContent = w ? t("The official PDF map was opened in a new tab.") : t("Tap the button to open the official PDF map.");
+  }
+}
 
 const redraw = () => { if (S.tab === "sch") drawSch(); else if (S.tab === "geo") drawGeo(); };
 function tab(t) {
@@ -1415,6 +1455,7 @@ function tab(t) {
   if (t === "geo") initGeo();
   if (t === "lines") drawLines();
   if (t === "sch") drawSch();
+  if (t === "off") showOfficialPdf();
   renderRouteSummary();
   closeMoreMenu();
 }

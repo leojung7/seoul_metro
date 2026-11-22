@@ -1,0 +1,1171 @@
+{
+ "total": 194,
+ "passed": 194,
+ "failed": 0,
+ "results": [
+  {
+   "prof": "static",
+   "name": "no active (non-comment) line in app.js mentions the former English tile provider",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "exactly one L.tileLayer( call in app.js, fed by TILE_SOURCES",
+   "pass": true,
+   "detail": "  const next = L.tileLayer(c.url, opts);"
+  },
+  {
+   "prof": "static",
+   "name": "Korean tile source unchanged: OpenStreetMap",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "English tile source is Esri World Street Map (HTTPS, no key)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "repo-wide grep for the former provider (name, CDN host, style name): only comments / historical notes remain",
+   "pass": true,
+   "detail": "2 hit(s), 0 active: "
+  },
+  {
+   "prof": "static",
+   "name": "map_korea.pdf is present and is a real PDF",
+   "pass": true,
+   "detail": "1950427 bytes"
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "pass": true,
+   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "pass": true,
+   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+  },
+  {
+   "prof": "desktop",
+   "name": "no network request to the former English provider so far",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "precondition: English, route visible, station selected",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"red\":1,\"sel\":36,\"sheet\":\"hidden\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 1 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 1 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 1 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 1 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 2 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 2 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 2 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 2 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 3 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 3 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 3 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 3 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 4 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 4 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 4 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switch 4 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop",
+   "name": "after switching, tapping a station still selects it and keeps the route",
+   "pass": true,
+   "detail": "{\"sel\":122,\"route\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "6 rapid toggles: one tile layer, matching the final language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop",
+   "name": "no network request to the former English provider during all switching",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English tiles failing: route and markers untouched",
+   "pass": true,
+   "detail": "{\"red\":1,\"markers\":654}"
+  },
+  {
+   "prof": "desktop",
+   "name": "tab label reads \"Official PDF\" (desktop tab + mobile menu)",
+   "pass": true,
+   "detail": "{\"desk\":\"Official PDF\",\"menu\":\"📄 Official PDF\",\"tabs\":[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]}"
+  },
+  {
+   "prof": "desktop",
+   "name": "the old \"Official\" label is gone",
+   "pass": true,
+   "detail": "[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]"
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop: PDF is embedded in the page (<object data=\"map_korea.pdf\">), viewport-sized",
+   "pass": true,
+   "detail": "{\"on\":true,\"vis\":\"flex\",\"hostW\":966,\"hostH\":696,\"obj\":\"map_korea.pdf#view=FitH&navpanes=0\",\"type\":\"application/pdf\",\"frame\":true,\"fbHidden\":true,\"imgs\":0,\"svgRef\":false,\"bar\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop: only the PDF is shown (no SVG / image / canvas / schematic reference), fallback hidden",
+   "pass": true,
+   "detail": "{\"imgs\":0,\"svgRef\":false,\"fb\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop: \"Open in new tab\" and \"Download\" links point to map_korea.pdf",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop: the browser actually requested map_korea.pdf",
+   "pass": true,
+   "detail": "http://localhost:35021/map_korea.pdf"
+  },
+  {
+   "prof": "desktop",
+   "name": "server returns map_korea.pdf as application/pdf (starts with %PDF-)",
+   "pass": true,
+   "detail": "{\"status\":200,\"type\":\"application/pdf\",\"magic\":\"%PDF-\",\"size\":1950427}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switching away and back keeps one embedded PDF (no duplicates)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop without a PDF viewer: opens map_korea.pdf in a new tab and shows the button (no blank page)",
+   "pass": true,
+   "detail": "{\"opened\":[\"map_korea.pdf\"],\"fb\":true,\"hostEmpty\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean mode: tab = \"공식 PDF\", pane text localized",
+   "pass": true,
+   "detail": "{\"desk\":\"공식 PDF\",\"menu\":\"📄 공식 PDF\",\"pane\":\"📄 공식 노선도 (PDF) 공식 노선도 PDF를 새 탭에서 열었습니다. 📄 PDF 열기\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Schematic tab renders (SVG background + station hit targets)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Geo map tab renders markers + route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Route search works (Incheon Airport T1 → Hongik Univ.)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no page errors in this profile",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "pass": true,
+   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "pass": true,
+   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+  },
+  {
+   "prof": "iphone",
+   "name": "no network request to the former English provider so far",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "precondition: English, route visible, station selected, sheet open",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"red\":1,\"sel\":36,\"sheet\":\"half\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 1 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 2 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 3 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switch 4 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone",
+   "name": "6 rapid toggles: one tile layer, matching the final language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone",
+   "name": "no network request to the former English provider during all switching",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English tiles failing: route and markers untouched",
+   "pass": true,
+   "detail": "{\"red\":1,\"markers\":654}"
+  },
+  {
+   "prof": "iphone",
+   "name": "tab label reads \"Official PDF\" (desktop tab + mobile menu)",
+   "pass": true,
+   "detail": "{\"desk\":\"Official PDF\",\"menu\":\"📄 Official PDF\",\"tabs\":[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]}"
+  },
+  {
+   "prof": "iphone",
+   "name": "the old \"Official\" label is gone",
+   "pass": true,
+   "detail": "[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "mobile: opens map_korea.pdf in a separate tab automatically",
+   "pass": true,
+   "detail": "[\"map_korea.pdf\"]"
+  },
+  {
+   "prof": "iphone",
+   "name": "mobile: not blank — message + \"Open PDF\" button visible in the viewport, link = map_korea.pdf",
+   "pass": true,
+   "detail": "{\"vis\":true,\"inView\":true,\"text\":\"📄 Official PDF map The official PDF map was opened in a new tab. 📄 Open PDF\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "mobile: nothing embedded, no SVG/image content",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "mobile: pop-up blocked → tap-to-open message stays visible",
+   "pass": true,
+   "detail": "{\"msg\":\"Tap the button to open the official PDF map.\",\"fb\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean mode: tab = \"공식 PDF\", pane text localized",
+   "pass": true,
+   "detail": "{\"desk\":\"공식 PDF\",\"menu\":\"📄 공식 PDF\",\"pane\":\"📄 공식 노선도 (PDF) 아래 버튼을 눌러 공식 노선도 PDF를 여세요. 📄 PDF 열기\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Schematic tab renders (SVG background + station hit targets)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Geo map tab renders markers + route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Route search works (Incheon Airport T1 → Hongik Univ.)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no page errors in this profile",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "pass": true,
+   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "pass": true,
+   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no network request to the former English provider so far",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "precondition: English, route visible, station selected, sheet open",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"red\":1,\"sel\":36,\"sheet\":\"half\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 1 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 2 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 3 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): sheet still open (half)",
+   "pass": true,
+   "detail": "half"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switch 4 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "6 rapid toggles: one tile layer, matching the final language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no network request to the former English provider during all switching",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English tiles failing: route and markers untouched",
+   "pass": true,
+   "detail": "{\"red\":1,\"markers\":654}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tab label reads \"Official PDF\" (desktop tab + mobile menu)",
+   "pass": true,
+   "detail": "{\"desk\":\"Official PDF\",\"menu\":\"📄 Official PDF\",\"tabs\":[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "the old \"Official\" label is gone",
+   "pass": true,
+   "detail": "[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "mobile: opens map_korea.pdf in a separate tab automatically",
+   "pass": true,
+   "detail": "[\"map_korea.pdf\"]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "mobile: not blank — message + \"Open PDF\" button visible in the viewport, link = map_korea.pdf",
+   "pass": true,
+   "detail": "{\"vis\":true,\"inView\":true,\"text\":\"📄 Official PDF map The official PDF map was opened in a new tab. 📄 Open PDF\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "mobile: nothing embedded, no SVG/image content",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "mobile: pop-up blocked → tap-to-open message stays visible",
+   "pass": true,
+   "detail": "{\"msg\":\"Tap the button to open the official PDF map.\",\"fb\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean mode: tab = \"공식 PDF\", pane text localized",
+   "pass": true,
+   "detail": "{\"desk\":\"공식 PDF\",\"menu\":\"📄 공식 PDF\",\"pane\":\"📄 공식 노선도 (PDF) 아래 버튼을 눌러 공식 노선도 PDF를 여세요. 📄 PDF 열기\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Schematic tab renders (SVG background + station hit targets)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Geo map tab renders markers + route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Route search works (Incheon Airport T1 → Hongik Univ.)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no page errors in this profile",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "pass": true,
+   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "pass": true,
+   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "no network request to the former English provider so far",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "precondition: English, route visible, station selected",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"red\":1,\"sel\":36,\"sheet\":\"hidden\"}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 1 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 1 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 1 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 1 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 2 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 2 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 2 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 2 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 3 (→ 한): language is ko",
+   "pass": true,
+   "detail": "ko"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 3 (→ 한): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 3 (→ 한): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 3 (→ 한): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 4 (→ EN): language is en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "pass": true,
+   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
+   "pass": true,
+   "detail": "red 1/1 pins 3/3"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 4 (→ EN): station still selected",
+   "pass": true,
+   "detail": "36"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 4 (→ EN): map centre + zoom unchanged",
+   "pass": true,
+   "detail": "{\"c\":[37.52,127],\"z\":13}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switch 4 (→ EN): all 654 station markers present",
+   "pass": true,
+   "detail": "654"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "after switching, tapping a station still selects it and keeps the route",
+   "pass": true,
+   "detail": "{\"sel\":122,\"route\":true}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "6 rapid toggles: one tile layer, matching the final language",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "no network request to the former English provider during all switching",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "pass": true,
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "English tiles failing: route and markers untouched",
+   "pass": true,
+   "detail": "{\"red\":1,\"markers\":654}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "tab label reads \"Official PDF\" (desktop tab + mobile menu)",
+   "pass": true,
+   "detail": "{\"desk\":\"Official PDF\",\"menu\":\"📄 Official PDF\",\"tabs\":[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "the old \"Official\" label is gone",
+   "pass": true,
+   "detail": "[\"Geo map\",\"Schematic\",\"Lines\",\"Route\",\"Official PDF\",\"Guide\"]"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "desktop: PDF is embedded in the page (<object data=\"map_korea.pdf\">), viewport-sized",
+   "pass": true,
+   "detail": "{\"on\":true,\"vis\":\"flex\",\"hostW\":966,\"hostH\":696,\"obj\":\"map_korea.pdf#view=FitH&navpanes=0\",\"type\":\"application/pdf\",\"frame\":true,\"fbHidden\":true,\"imgs\":0,\"svgRef\":false,\"bar\":true}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "desktop: only the PDF is shown (no SVG / image / canvas / schematic reference), fallback hidden",
+   "pass": true,
+   "detail": "{\"imgs\":0,\"svgRef\":false,\"fb\":true}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "desktop: \"Open in new tab\" and \"Download\" links point to map_korea.pdf",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "desktop: the browser actually requested map_korea.pdf",
+   "pass": true,
+   "detail": "http://localhost:36805/seoul-metro-hub/map_korea.pdf"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "server returns map_korea.pdf as application/pdf (starts with %PDF-)",
+   "pass": true,
+   "detail": "{\"status\":200,\"type\":\"application/pdf\",\"magic\":\"%PDF-\",\"size\":1950427}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "switching away and back keeps one embedded PDF (no duplicates)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "desktop without a PDF viewer: opens map_korea.pdf in a new tab and shows the button (no blank page)",
+   "pass": true,
+   "detail": "{\"opened\":[\"map_korea.pdf\"],\"fb\":true,\"hostEmpty\":true}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "Korean mode: tab = \"공식 PDF\", pane text localized",
+   "pass": true,
+   "detail": "{\"desk\":\"공식 PDF\",\"menu\":\"📄 공식 PDF\",\"pane\":\"📄 공식 노선도 (PDF) 공식 노선도 PDF를 새 탭에서 열었습니다. 📄 PDF 열기\"}"
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "Schematic tab renders (SVG background + station hit targets)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "Geo map tab renders markers + route",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "Route search works (Incheon Airport T1 → Hongik Univ.)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop@/seoul-metro-hub/",
+   "name": "no page errors in this profile",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

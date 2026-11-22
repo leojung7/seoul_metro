@@ -1,5 +1,5 @@
 {
- "run": "2026-11-19T23:45:46.514Z",
+ "run": "2026-11-22T15:15:29.760Z",
  "total": 147,
  "pass": 147,
  "fail": 0,
@@ -80,7 +80,7 @@
    "prof": "desktop",
    "name": "English mode starts on English-labelled tiles (single layer)",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "desktop",
@@ -150,9 +150,9 @@
   },
   {
    "prof": "desktop",
-   "name": "→ en: base tiles switched to EN(carto) (single layer)",
+   "name": "→ en: base tiles switched to EN(esri) (single layer)",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "desktop",
@@ -224,7 +224,7 @@
    "prof": "desktop",
    "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "desktop",
@@ -272,13 +272,13 @@
    "prof": "desktop",
    "name": "six rapid toggles end with exactly one tile layer matching the language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
   },
   {
    "prof": "desktop",
    "name": "theme toggle keeps one tile layer in the current language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
   },
   {
    "prof": "desktop",
@@ -362,7 +362,7 @@
    "prof": "iphone",
    "name": "English mode starts on English-labelled tiles (single layer)",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "iphone",
@@ -438,9 +438,9 @@
   },
   {
    "prof": "iphone",
-   "name": "→ en: base tiles switched to EN(carto) (single layer)",
+   "name": "→ en: base tiles switched to EN(esri) (single layer)",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "iphone",
@@ -518,13 +518,13 @@
    "prof": "iphone",
    "name": "language toggle keeps the open station sheet, its state and scroll position",
    "pass": true,
-   "detail": "{\"a\":120,\"b\":121,\"s\":\"full\"}"
+   "detail": "{\"a\":120,\"b\":120,\"s\":\"full\"}"
   },
   {
    "prof": "iphone",
    "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "iphone",
@@ -572,13 +572,13 @@
    "prof": "iphone",
    "name": "six rapid toggles end with exactly one tile layer matching the language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
   },
   {
    "prof": "iphone",
    "name": "theme toggle keeps one tile layer in the current language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
   },
   {
    "prof": "iphone",
@@ -662,7 +662,7 @@
    "prof": "iphone-land",
    "name": "English mode starts on English-labelled tiles (single layer)",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "iphone-land",
@@ -738,9 +738,9 @@
   },
   {
    "prof": "iphone-land",
-   "name": "→ en: base tiles switched to EN(carto) (single layer)",
+   "name": "→ en: base tiles switched to EN(esri) (single layer)",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "iphone-land",
@@ -824,7 +824,7 @@
    "prof": "iphone-land",
    "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
    "pass": true,
-   "detail": "[\"EN(carto)\"]"
+   "detail": "[\"EN(esri)\"]"
   },
   {
    "prof": "iphone-land",
@@ -872,13 +872,13 @@
    "prof": "iphone-land",
    "name": "six rapid toggles end with exactly one tile layer matching the language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
   },
   {
    "prof": "iphone-land",
    "name": "theme toggle keeps one tile layer in the current language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
   },
   {
    "prof": "iphone-land",

@@ -16,7 +16,7 @@
     <button data-tab="sch"><span class="ic">🗺️</span><span class="tl">Schematic</span><span class="ts">Schematic</span></button>
     <button data-tab="lines"><span class="ic">🚇</span><span class="tl">Lines</span><span class="ts">Lines</span></button>
     <button data-tab="route"><span class="ic">⏱️</span><span class="tl">Route</span><span class="ts">Route</span></button>
-    <button data-tab="off" class="desk-only"><span class="ic">📄</span><span class="tl">Official</span><span class="ts">Official</span></button>
+    <button data-tab="off" class="desk-only"><span class="ic">📄</span><span class="tl">Official PDF</span><span class="ts">PDF</span></button>
     <button data-tab="guide" class="desk-only"><span class="ic">🧭</span><span class="tl">Guide</span><span class="ts">Guide</span></button>
   </nav>
   <input id="q" list="dl" placeholder="Search 🔍 (강남, Hongik…)" size="18" aria-label="Search stations">
@@ -27,7 +27,7 @@
 </header>
 <!-- Overflow menu lives OUTSIDE the header and is position:fixed, so opening it can never change the header's size. -->
 <div id="more-menu" role="menu" hidden>
-  <button type="button" role="menuitem" data-tab="off" class="mobile-menu-tab">📄 Official map</button>
+  <button type="button" role="menuitem" data-tab="off" class="mobile-menu-tab">📄 Official PDF</button>
   <button type="button" role="menuitem" data-tab="guide" class="mobile-menu-tab">🧭 Visitor guide</button>
   <button type="button" role="menuitem" id="th" title="Toggle Dark / Light theme">🌙 Theme</button>
   <div class="mm-sep" role="separator"></div>
@@ -172,15 +172,22 @@
       </div>
     </div>
 
-    <!-- 6. OFFICIAL MAP TAB -->
+    <!-- 6. OFFICIAL PDF TAB: shows map_korea.pdf and nothing else -->
     <div class="pane" id="p-off">
-      <div class="fl">
-        <a class="lk" style="background:var(--pn)" href="map_korea.pdf" target="_blank">PDF (한국어)</a>
-        <button id="oz">🎯 Fit</button>
+      <div id="pdf-bar" class="pdf-bar">
+        <b>Official PDF map</b>
+        <span class="sp"></span>
+        <a class="lk" href="map_korea.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        <a class="lk" href="map_korea.pdf" download>Download</a>
       </div>
-      <svg id="stim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5724 6516">
-        <image id="oimg" href="Seoul_subway_linemap_en.svg" width="5724" height="6516"/>
-      </svg>
+      <div id="pdf-host"></div>
+      <div id="pdf-fallback" class="pdf-fallback" hidden>
+        <div class="card">
+          <h3 style="margin:0 0 6px">📄 Official PDF map</h3>
+          <p id="pdf-fb-msg" class="mu" role="status">Tap the button to open the official PDF map.</p>
+          <a class="lk pdf-open" href="map_korea.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </div>
+      </div>
     </div>
   </div>
 

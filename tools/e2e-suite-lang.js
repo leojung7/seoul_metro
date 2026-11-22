@@ -10,7 +10,7 @@ async function suite(prof){
  const at=async(x,y)=>mobile?p.touchscreen.tap(x,y):p.mouse.click(x,y);
  const safe=async(name,fn)=>{try{await fn()}catch(e){ok(name,false,'EXCEPTION '+e.message.split('\n')[0])}};
  const wait=ms=>p.waitForTimeout(ms);
- const tilesNow=()=>p.evaluate(()=>window.__LMAP.tileUrls().map(u=>u.includes('cartocdn')?'EN(carto)':u.includes('openstreetmap')?'KO(osm)':u));
+ const tilesNow=()=>p.evaluate(()=>window.__LMAP.tileUrls().map(u=>u.includes('arcgisonline')?'EN(esri)':u.includes('openstreetmap')?'KO(osm)':u));
  // ============ 1. character length filter ============
  await safe('length',async()=>{
   const ex=await p.evaluate(()=>({a:nameForLength('Isu(Chongshin Univ.)'),b:nameForLength('이수(총신대입구)'),c:nameForLength('총신대입구(이수)'),d:nameForLength('Seoul Station(서울역)'),e:nameForLength('Seoul Station (서울역)'),f:nameForLength('동대문역사문화공원(DDP)'),g:nameForLength('plain')}));
@@ -47,7 +47,7 @@ async function suite(prof){
    return {sel:S.sel&&S.sel.i,lang:S.lang,c:m.c.slice(),z:m.z,sheet:document.body.dataset.sheet,route:S.route?S.route.join(','):null,red:red.map(q=>q.getAttribute('points')).join('|').length+':'+(red[0]?red[0].getAttribute('points').slice(0,60):''),pins:m.svg.querySelectorAll('g[data-pin]').length,markers:m.svg.querySelectorAll('circle[data-st]').length,tiles:m.tileUrls().length,ibScroll:Math.round(document.querySelector('#ib').scrollTop)}});
  await safe('tiles default',async()=>{
   await p.evaluate(()=>tab('geo'));await wait(200);
-  ok('English mode starts on English-labelled tiles (single layer)',JSON.stringify(await tilesNow())==='["EN(carto)"]',JSON.stringify(await tilesNow()));
+  ok('English mode starts on English-labelled tiles (single layer)',JSON.stringify(await tilesNow())==='["EN(esri)"]',JSON.stringify(await tilesNow()));
  });
  await safe('toggle with route + sheet',async()=>{
   await setup();
@@ -61,7 +61,7 @@ async function suite(prof){
   await p.evaluate(()=>{window.__LMAP.setView([37.52,127.0],13)});await wait(100);
   const before=await snapshot();
   ok('precondition: route visible, station selected, sheet open',before.route&&before.sel===o.i&&before.pins>=2&&(!mobile||before.sheet==='half'),JSON.stringify({sel:before.sel,sheet:before.sheet,pins:before.pins}));
-  for(const [lang,tile,word] of [['ko','KO(osm)','환승'],['en','EN(carto)','Transfer'],['ko','KO(osm)','환승']]){
+  for(const [lang,tile,word] of [['ko','KO(osm)','환승'],['en','EN(esri)','Transfer'],['ko','KO(osm)','환승']]){
    await tap('#lg');await wait(500);
    const a=await snapshot();const tl=await tilesNow();
    ok(`→ ${lang}: station selection preserved`,a.sel===before.sel);
@@ -98,7 +98,7 @@ async function suite(prof){
   await p.evaluate(()=>{window.__TILE_MODE={ko:'fail'};tab('route')});await p.fill('#ra','홍대입구');await p.fill('#rb','잠실');await p.click('#go');await wait(250);await p.click('[data-route-geo="0"]');await wait(500);
   await p.evaluate(()=>{select(S.route[3],false)});await wait(200);
   const a=await snapshot();await tap('#lg');await wait(700);const b=await snapshot();const tl=await tilesNow();
-  ok('Korean tiles unavailable → current (English) tiles preserved, single layer',tl.length===1&&tl[0]==='EN(carto)',JSON.stringify(tl));
+  ok('Korean tiles unavailable → current (English) tiles preserved, single layer',tl.length===1&&tl[0]==='EN(esri)',JSON.stringify(tl));
   ok('…a localized notice explains it',await p.evaluate(()=>/한국어 지도 타일/.test(document.querySelector('#toast').innerText)),await p.evaluate(()=>document.querySelector('#toast').innerText));
   ok('…but language is Korean: info sheet, route summary and markers all localized',await p.evaluate(()=>S.lang==='ko'&&/환승|역 코드/.test(document.querySelector('#ib').innerText)&&/서울|홍대|잠실|경로/.test(document.querySelector('#route-sum').innerText)));
   ok('…selection, route, centre, zoom preserved',b.sel===a.sel&&b.route===a.route&&b.red===a.red&&b.c[0]===a.c[0]&&b.c[1]===a.c[1]&&b.z===a.z);
