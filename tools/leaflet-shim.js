@@ -34,7 +34,7 @@
   Grp.prototype.addTo=function(m){this._map=m;m.groups.push(this);return this};
   const origClear=Grp.prototype.clearLayers;Grp.prototype.clearLayers=function(){this.layers=[];};
   const origAdd=Layer.prototype.addTo;Layer.prototype.addTo=function(g){(g.layers||(g.layers=[])).push(this);this._g=g;if(mapObj){clearTimeout(mapObj._t);mapObj._t=setTimeout(()=>mapObj.render(),0)}return this};
-  window.L={map:id=>new Map_(id),tileLayer:(url,o)=>{const h={};const lay={url,o,on(e,f){(h[e]=h[e]||[]).push(f);return this},fire(e){(h[e]||[]).forEach(f=>f({}))},addTo(m){m.tiles=m.tiles||[];m.tiles.push(this);this._m=m;const mode=window.__TILE_MODE&&window.__TILE_MODE[(url.includes('cartocdn')?'en':'ko')]||'ok';
+  window.L={map:id=>new Map_(id),tileLayer:(url,o)=>{const h={};const lay={url,o,on(e,f){(h[e]=h[e]||[]).push(f);return this},fire(e){(h[e]||[]).forEach(f=>f({}))},addTo(m){m.tiles=m.tiles||[];m.tiles.push(this);this._m=m;const mode=window.__TILE_MODE&&window.__TILE_MODE[(url.includes('arcgisonline')?'en':'ko')]||'ok';
       setTimeout(()=>{if(!m.tiles.includes(this))return;if(mode==='fail'){for(let i=0;i<5;i++)this.fire('tileerror')}else if(mode==='ok')this.fire('load')},30);return this},remove(){if(this._m)this._m.removeLayer(this);return this},bringToBack(){}};return lay},layerGroup:()=>new Grp(),polyline:(ll,o)=>new Poly(ll,o),circleMarker:(ll,o)=>new CM(ll,o),marker:(ll,o)=>new Mk(ll,o),
     divIcon:o=>o,latLngBounds:pts=>({pts}),control:{scale:()=>({addTo(){}})}};
 })();

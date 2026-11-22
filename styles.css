@@ -202,7 +202,15 @@ header h1 { font-size: 15px; margin: 0; white-space: nowrap; }
   pointer-events: none;
 }
 .fl > * { pointer-events: auto; box-shadow: 0 2px 8px #0005; }
-#stim { width: 100%; touch-action: none; cursor: grab; height: 100%; background: #fff; }
+/* Official PDF tab (map_korea.pdf only) */
+#p-off.on { display: flex; flex-direction: column; }
+.pdf-bar { flex: none; display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--pn); border-bottom: 1px solid var(--bd); }
+.pdf-bar[hidden], #pdf-host[hidden], .pdf-fallback[hidden] { display: none !important; }
+#pdf-host { flex: 1; min-height: 0; background: var(--bg); }
+#pdf-host object, #pdf-host iframe { display: block; width: 100%; height: 100%; border: 0; }
+.pdf-fallback { flex: 1; display: grid; place-items: center; padding: 16px; }
+.pdf-fallback .card { max-width: 420px; text-align: center; }
+.pdf-open { display: inline-block; margin-top: 8px; padding: 12px 18px; font-weight: 700; }
 
 /* Pick-on-map banner & Station Picker Modal */
 .pick-banner {
@@ -369,7 +377,7 @@ header > .sp { flex: 1 0 8px; }
   body[data-sheet="half"] .scroll { padding-bottom: calc(var(--sheet-half) * var(--vvh, 100dvh) + 16px); }
   body[data-sheet="full"] .scroll { padding-bottom: 16px; }
 
-  #sch, #stim { touch-action: none; }
+  #sch { touch-action: none; }
   #p-route .card > div:first-child { grid-template-columns: 1fr !important; }
   #p-route #sw { width: 100%; }
   #p-lines .row { min-height: 48px; }
