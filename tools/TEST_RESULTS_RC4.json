@@ -1,6 +1,6 @@
 {
- "total": 194,
- "passed": 194,
+ "total": 196,
+ "passed": 196,
  "failed": 0,
  "results": [
   {
@@ -17,13 +17,25 @@
   },
   {
    "prof": "static",
-   "name": "Korean tile source unchanged: OpenStreetMap",
+   "name": "Korean tile source unchanged: OpenStreetMap (same URL as before)",
    "pass": true,
    "detail": ""
   },
   {
    "prof": "static",
-   "name": "English tile source is Esri World Street Map (HTTPS, no key)",
+   "name": "English and Korean share ONE tile provider (OpenStreetMap, HTTPS, no key)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "no active line in app.js references the separate English provider that showed \"Map data not yet available\" (ArcGIS/Esri tile host)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "tile layer declares native zoom 19 only for OpenStreetMap, which really has data to zoom 19",
    "pass": true,
    "detail": ""
   },
@@ -31,7 +43,7 @@
    "prof": "static",
    "name": "repo-wide grep for the former provider (name, CDN host, style name): only comments / historical notes remain",
    "pass": true,
-   "detail": "2 hit(s), 0 active: "
+   "detail": "1 hit(s), 0 active: "
   },
   {
    "prof": "static",
@@ -41,15 +53,15 @@
   },
   {
    "prof": "desktop",
-   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "name": "Geo map, English mode: single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "desktop",
-   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "name": "tile URL is a well-formed HTTPS tile path with no key / token, valid at zoom 19",
    "pass": true,
-   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+   "detail": "https://tile.openstreetmap.org/19/447000/203000.png"
   },
   {
    "prof": "desktop",
@@ -71,7 +83,7 @@
   },
   {
    "prof": "desktop",
-   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -79,7 +91,7 @@
    "prof": "desktop",
    "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop",
@@ -107,15 +119,15 @@
   },
   {
    "prof": "desktop",
-   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 2 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "desktop",
    "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop",
@@ -143,7 +155,7 @@
   },
   {
    "prof": "desktop",
-   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -151,7 +163,7 @@
    "prof": "desktop",
    "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop",
@@ -179,15 +191,15 @@
   },
   {
    "prof": "desktop",
-   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 4 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "desktop",
    "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop",
@@ -217,7 +229,7 @@
    "prof": "desktop",
    "name": "6 rapid toggles: one tile layer, matching the final language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "desktop",
@@ -227,15 +239,15 @@
   },
   {
    "prof": "desktop",
-   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "name": "four language switches keep the very same tile layer (no swap, no reload, no flicker)",
    "pass": true,
-   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "desktop",
-   "name": "English tiles failing: route and markers untouched",
+   "name": "no \"tiles unavailable\" notice is produced by language switching",
    "pass": true,
-   "detail": "{\"red\":1,\"markers\":654}"
+   "detail": "Displaying route"
   },
   {
    "prof": "desktop",
@@ -271,7 +283,7 @@
    "prof": "desktop",
    "name": "desktop: the browser actually requested map_korea.pdf",
    "pass": true,
-   "detail": "http://localhost:35021/map_korea.pdf"
+   "detail": "http://localhost:41167/map_korea.pdf"
   },
   {
    "prof": "desktop",
@@ -323,15 +335,15 @@
   },
   {
    "prof": "iphone",
-   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "name": "Geo map, English mode: single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "iphone",
-   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "name": "tile URL is a well-formed HTTPS tile path with no key / token, valid at zoom 19",
    "pass": true,
-   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+   "detail": "https://tile.openstreetmap.org/19/447000/203000.png"
   },
   {
    "prof": "iphone",
@@ -353,7 +365,7 @@
   },
   {
    "prof": "iphone",
-   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -361,7 +373,7 @@
    "prof": "iphone",
    "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone",
@@ -395,15 +407,15 @@
   },
   {
    "prof": "iphone",
-   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 2 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "iphone",
    "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone",
@@ -437,7 +449,7 @@
   },
   {
    "prof": "iphone",
-   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -445,7 +457,7 @@
    "prof": "iphone",
    "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone",
@@ -479,15 +491,15 @@
   },
   {
    "prof": "iphone",
-   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 4 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "iphone",
    "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone",
@@ -517,7 +529,7 @@
    "prof": "iphone",
    "name": "6 rapid toggles: one tile layer, matching the final language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "iphone",
@@ -527,15 +539,15 @@
   },
   {
    "prof": "iphone",
-   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "name": "four language switches keep the very same tile layer (no swap, no reload, no flicker)",
    "pass": true,
-   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "iphone",
-   "name": "English tiles failing: route and markers untouched",
+   "name": "no \"tiles unavailable\" notice is produced by language switching",
    "pass": true,
-   "detail": "{\"red\":1,\"markers\":654}"
+   "detail": "Displaying route"
   },
   {
    "prof": "iphone",
@@ -605,15 +617,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "name": "Geo map, English mode: single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "iphone-land",
-   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "name": "tile URL is a well-formed HTTPS tile path with no key / token, valid at zoom 19",
    "pass": true,
-   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+   "detail": "https://tile.openstreetmap.org/19/447000/203000.png"
   },
   {
    "prof": "iphone-land",
@@ -635,7 +647,7 @@
   },
   {
    "prof": "iphone-land",
-   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -643,7 +655,7 @@
    "prof": "iphone-land",
    "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone-land",
@@ -677,15 +689,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 2 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "iphone-land",
    "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone-land",
@@ -719,7 +731,7 @@
   },
   {
    "prof": "iphone-land",
-   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -727,7 +739,7 @@
    "prof": "iphone-land",
    "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone-land",
@@ -761,15 +773,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 4 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "iphone-land",
    "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "iphone-land",
@@ -799,7 +811,7 @@
    "prof": "iphone-land",
    "name": "6 rapid toggles: one tile layer, matching the final language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "iphone-land",
@@ -809,15 +821,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "name": "four language switches keep the very same tile layer (no swap, no reload, no flicker)",
    "pass": true,
-   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "iphone-land",
-   "name": "English tiles failing: route and markers untouched",
+   "name": "no \"tiles unavailable\" notice is produced by language switching",
    "pass": true,
-   "detail": "{\"red\":1,\"markers\":654}"
+   "detail": "Displaying route"
   },
   {
    "prof": "iphone-land",
@@ -887,15 +899,15 @@
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "Geo map, English mode: single tile layer using Esri World Street Map",
+   "name": "Geo map, English mode: single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"]"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "English tile URL resolves to a well-formed HTTPS tile path (no key / token)",
+   "name": "tile URL is a well-formed HTTPS tile path with no key / token, valid at zoom 19",
    "pass": true,
-   "detail": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/11/794/1745"
+   "detail": "https://tile.openstreetmap.org/19/447000/203000.png"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -917,7 +929,7 @@
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 1 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -925,7 +937,7 @@
    "prof": "desktop@/seoul-metro-hub/",
    "name": "switch 1 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -953,15 +965,15 @@
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "switch 2 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 2 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
    "name": "switch 2 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -989,7 +1001,7 @@
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (Korean)",
+   "name": "switch 3 (→ 한): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
    "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
@@ -997,7 +1009,7 @@
    "prof": "desktop@/seoul-metro-hub/",
    "name": "switch 3 (→ 한): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -1025,15 +1037,15 @@
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "switch 4 (→ EN): exactly one tile layer, Esri (English)",
+   "name": "switch 4 (→ EN): exactly one tile layer, OpenStreetMap (both languages)",
    "pass": true,
-   "detail": "{\"u\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
    "name": "switch 4 (→ EN): route still visible (same path, red line + pins)",
    "pass": true,
-   "detail": "red 1/1 pins 3/3"
+   "detail": "red 1/1 pins 4/4"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -1063,7 +1075,7 @@
    "prof": "desktop@/seoul-metro-hub/",
    "name": "6 rapid toggles: one tile layer, matching the final language",
    "pass": true,
-   "detail": "{\"lang\":\"en\",\"ru\":[\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"],\"layers\":1}"
+   "detail": "{\"lang\":\"en\",\"ru\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"layers\":1}"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -1073,15 +1085,15 @@
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "English tiles failing: Korean (OSM) tiles stay, single layer, language stays English",
+   "name": "four language switches keep the very same tile layer (no swap, no reload, no flicker)",
    "pass": true,
-   "detail": "{\"u\":[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"],\"lang\":\"en\"}"
+   "detail": "[\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"]"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
-   "name": "English tiles failing: route and markers untouched",
+   "name": "no \"tiles unavailable\" notice is produced by language switching",
    "pass": true,
-   "detail": "{\"red\":1,\"markers\":654}"
+   "detail": "Displaying route"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
@@ -1117,7 +1129,7 @@
    "prof": "desktop@/seoul-metro-hub/",
    "name": "desktop: the browser actually requested map_korea.pdf",
    "pass": true,
-   "detail": "http://localhost:36805/seoul-metro-hub/map_korea.pdf"
+   "detail": "http://localhost:32887/seoul-metro-hub/map_korea.pdf"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",

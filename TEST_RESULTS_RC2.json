@@ -1,5 +1,5 @@
 {
- "run": "2026-11-22T15:17:51.186Z",
+ "run": "2026-11-25T19:34:12.307Z",
  "total": 317,
  "pass": 317,
  "fail": 0,
@@ -116,19 +116,19 @@
    "prof": "desktop",
    "name": "서울→강남: Geo map opened with overlay rendered",
    "pass": true,
-   "detail": "{\"pts\":21,\"stroke\":6}"
+   "detail": "{\"pts\":20,\"stroke\":6}"
   },
   {
    "prof": "desktop",
-   "name": "서울→강남: highlight passes through all 12 route stations (corrected coordinates)",
+   "name": "서울→강남: highlight passes through all 13 route stations (corrected coordinates)",
    "pass": true,
    "detail": "0 off line"
   },
   {
    "prof": "desktop",
-   "name": "서울→강남: A + B + 1 transfer pin(s)",
+   "name": "서울→강남: A + B + 2 transfer pin(s)",
    "pass": true,
-   "detail": "pins=3 transfers=1/1"
+   "detail": "pins=4 transfers=2/2"
   },
   {
    "prof": "desktop",
@@ -218,19 +218,19 @@
    "prof": "desktop",
    "name": "강남→서울역: Geo map opened with overlay rendered",
    "pass": true,
-   "detail": "{\"pts\":21,\"stroke\":6}"
+   "detail": "{\"pts\":20,\"stroke\":6}"
   },
   {
    "prof": "desktop",
-   "name": "강남→서울역: highlight passes through all 12 route stations (corrected coordinates)",
+   "name": "강남→서울역: highlight passes through all 13 route stations (corrected coordinates)",
    "pass": true,
    "detail": "0 off line"
   },
   {
    "prof": "desktop",
-   "name": "강남→서울역: A + B + 1 transfer pin(s)",
+   "name": "강남→서울역: A + B + 2 transfer pin(s)",
    "pass": true,
-   "detail": "pins=3 transfers=1/1"
+   "detail": "pins=4 transfers=2/2"
   },
   {
    "prof": "desktop",
@@ -264,15 +264,15 @@
   },
   {
    "prof": "desktop",
-   "name": "tap mid station on route → details open, route stays",
-   "pass": true,
-   "detail": "top=circle {\"sel\":126,\"routeKept\":true,\"sheet\":\"hidden\",\"panel\":true,\"want\":126}"
-  },
-  {
-   "prof": "desktop",
    "name": "tap destination station on route → details open, route stays",
    "pass": true,
    "detail": "top=circle {\"sel\":122,\"routeKept\":true,\"sheet\":\"hidden\",\"panel\":true,\"want\":122}"
+  },
+  {
+   "prof": "desktop",
+   "name": "tap mid station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":175,\"routeKept\":true,\"sheet\":\"hidden\",\"panel\":true,\"want\":175}"
   },
   {
    "prof": "desktop",
@@ -522,15 +522,15 @@
   },
   {
    "prof": "desktop",
-   "name": "EN route: \"Board Line 2\"",
+   "name": "EN route: \"Board Shinbundang Line\" (first line of the fastest route)",
    "pass": true,
-   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당"
+   "detail": "Shinbundang Line Board Shinbundang Line · 5 min | Gangnam (강남) → Sinsa (신사) 3 stop"
   },
   {
    "prof": "desktop",
    "name": "EN route: \"Transfer at … (한글)\"",
    "pass": true,
-   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당) Line 2 → Line 4 | Line 4 Board Line 4 | Sadang (사당) → Seoul Station (서울역) 7 stops | 🏁 Exit at Seoul Station (서울역)"
+   "detail": "Shinbundang Line Board Shinbundang Line · 5 min | Gangnam (강남) → Sinsa (신사) 3 stops | 🔄 Transfer at Sinsa (신사) Shinbundang Line → Line 3 · 3 min | Line 3 Board Line 3 · 11 min | Sinsa (신사) → Chungmur"
   },
   {
    "prof": "desktop",
@@ -540,9 +540,9 @@
   },
   {
    "prof": "desktop",
-   "name": "KO route: \"2호선 탑승\"",
+   "name": "KO route: \"신분당선 탑승\" (first line of the fastest route)",
    "pass": true,
-   "detail": "2호선 2호선 탑승 | 강남 → 사당 4개 역 | 🔄 사당 환승 2호선 → 4호선 | 4호선 4호선 탑승 | 사당 → 서울역 7개 역 | 🏁 서울역 하차"
+   "detail": "신분당선 신분당선 탑승 · 5분 | 강남 → 신사 3개 역 | 🔄 신사 환승 신분당선 → 3호선 · 3분 | 3호선 3호선 탑승 · 11분 | 신사 → 충무"
   },
   {
    "prof": "desktop",
@@ -710,19 +710,19 @@
    "prof": "iphone",
    "name": "서울→강남: Geo map opened with overlay rendered",
    "pass": true,
-   "detail": "{\"pts\":21,\"stroke\":6}"
+   "detail": "{\"pts\":20,\"stroke\":6}"
   },
   {
    "prof": "iphone",
-   "name": "서울→강남: highlight passes through all 12 route stations (corrected coordinates)",
+   "name": "서울→강남: highlight passes through all 13 route stations (corrected coordinates)",
    "pass": true,
    "detail": "0 off line"
   },
   {
    "prof": "iphone",
-   "name": "서울→강남: A + B + 1 transfer pin(s)",
+   "name": "서울→강남: A + B + 2 transfer pin(s)",
    "pass": true,
-   "detail": "pins=3 transfers=1/1"
+   "detail": "pins=4 transfers=2/2"
   },
   {
    "prof": "iphone",
@@ -812,19 +812,19 @@
    "prof": "iphone",
    "name": "강남→서울역: Geo map opened with overlay rendered",
    "pass": true,
-   "detail": "{\"pts\":21,\"stroke\":6}"
+   "detail": "{\"pts\":20,\"stroke\":6}"
   },
   {
    "prof": "iphone",
-   "name": "강남→서울역: highlight passes through all 12 route stations (corrected coordinates)",
+   "name": "강남→서울역: highlight passes through all 13 route stations (corrected coordinates)",
    "pass": true,
    "detail": "0 off line"
   },
   {
    "prof": "iphone",
-   "name": "강남→서울역: A + B + 1 transfer pin(s)",
+   "name": "강남→서울역: A + B + 2 transfer pin(s)",
    "pass": true,
-   "detail": "pins=3 transfers=1/1"
+   "detail": "pins=4 transfers=2/2"
   },
   {
    "prof": "iphone",
@@ -858,15 +858,15 @@
   },
   {
    "prof": "iphone",
-   "name": "tap mid station on route → details open, route stays",
-   "pass": true,
-   "detail": "top=circle {\"sel\":126,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":126}"
-  },
-  {
-   "prof": "iphone",
    "name": "tap destination station on route → details open, route stays",
    "pass": true,
    "detail": "top=circle {\"sel\":122,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":122}"
+  },
+  {
+   "prof": "iphone",
+   "name": "tap mid station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":175,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":175}"
   },
   {
    "prof": "iphone",
@@ -1176,15 +1176,15 @@
   },
   {
    "prof": "iphone",
-   "name": "EN route: \"Board Line 2\"",
+   "name": "EN route: \"Board Shinbundang Line\" (first line of the fastest route)",
    "pass": true,
-   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당"
+   "detail": "Shinbundang Line Board Shinbundang Line · 5 min | Gangnam (강남) → Sinsa (신사) 3 stop"
   },
   {
    "prof": "iphone",
    "name": "EN route: \"Transfer at … (한글)\"",
    "pass": true,
-   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당) Line 2 → Line 4 | Line 4 Board Line 4 | Sadang (사당) → Seoul Station (서울역) 7 stops | 🏁 Exit at Seoul Station (서울역)"
+   "detail": "Shinbundang Line Board Shinbundang Line · 5 min | Gangnam (강남) → Sinsa (신사) 3 stops | 🔄 Transfer at Sinsa (신사) Shinbundang Line → Line 3 · 3 min | Line 3 Board Line 3 · 11 min | Sinsa (신사) → Chungmur"
   },
   {
    "prof": "iphone",
@@ -1194,9 +1194,9 @@
   },
   {
    "prof": "iphone",
-   "name": "KO route: \"2호선 탑승\"",
+   "name": "KO route: \"신분당선 탑승\" (first line of the fastest route)",
    "pass": true,
-   "detail": "2호선 2호선 탑승 | 강남 → 사당 4개 역 | 🔄 사당 환승 2호선 → 4호선 | 4호선 4호선 탑승 | 사당 → 서울역 7개 역 | 🏁 서울역 하차"
+   "detail": "신분당선 신분당선 탑승 · 5분 | 강남 → 신사 3개 역 | 🔄 신사 환승 신분당선 → 3호선 · 3분 | 3호선 3호선 탑승 · 11분 | 신사 → 충무"
   },
   {
    "prof": "iphone",
@@ -1364,19 +1364,19 @@
    "prof": "iphone-land",
    "name": "서울→강남: Geo map opened with overlay rendered",
    "pass": true,
-   "detail": "{\"pts\":21,\"stroke\":6}"
+   "detail": "{\"pts\":20,\"stroke\":6}"
   },
   {
    "prof": "iphone-land",
-   "name": "서울→강남: highlight passes through all 12 route stations (corrected coordinates)",
+   "name": "서울→강남: highlight passes through all 13 route stations (corrected coordinates)",
    "pass": true,
    "detail": "0 off line"
   },
   {
    "prof": "iphone-land",
-   "name": "서울→강남: A + B + 1 transfer pin(s)",
+   "name": "서울→강남: A + B + 2 transfer pin(s)",
    "pass": true,
-   "detail": "pins=3 transfers=1/1"
+   "detail": "pins=4 transfers=2/2"
   },
   {
    "prof": "iphone-land",
@@ -1466,19 +1466,19 @@
    "prof": "iphone-land",
    "name": "강남→서울역: Geo map opened with overlay rendered",
    "pass": true,
-   "detail": "{\"pts\":21,\"stroke\":6}"
+   "detail": "{\"pts\":20,\"stroke\":6}"
   },
   {
    "prof": "iphone-land",
-   "name": "강남→서울역: highlight passes through all 12 route stations (corrected coordinates)",
+   "name": "강남→서울역: highlight passes through all 13 route stations (corrected coordinates)",
    "pass": true,
    "detail": "0 off line"
   },
   {
    "prof": "iphone-land",
-   "name": "강남→서울역: A + B + 1 transfer pin(s)",
+   "name": "강남→서울역: A + B + 2 transfer pin(s)",
    "pass": true,
-   "detail": "pins=3 transfers=1/1"
+   "detail": "pins=4 transfers=2/2"
   },
   {
    "prof": "iphone-land",
@@ -1512,15 +1512,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "tap mid station on route → details open, route stays",
-   "pass": true,
-   "detail": "top=circle {\"sel\":126,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":126}"
-  },
-  {
-   "prof": "iphone-land",
    "name": "tap destination station on route → details open, route stays",
    "pass": true,
    "detail": "top=circle {\"sel\":122,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":122}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "tap mid station on route → details open, route stays",
+   "pass": true,
+   "detail": "top=circle {\"sel\":175,\"routeKept\":true,\"sheet\":\"peek\",\"panel\":true,\"want\":175}"
   },
   {
    "prof": "iphone-land",
@@ -1830,15 +1830,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "EN route: \"Board Line 2\"",
+   "name": "EN route: \"Board Shinbundang Line\" (first line of the fastest route)",
    "pass": true,
-   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당"
+   "detail": "Shinbundang Line Board Shinbundang Line · 5 min | Gangnam (강남) → Sinsa (신사) 3 stop"
   },
   {
    "prof": "iphone-land",
    "name": "EN route: \"Transfer at … (한글)\"",
    "pass": true,
-   "detail": "Line 2 Board Line 2 | Gangnam (강남) → Sadang (사당) 4 stops | 🔄 Transfer at Sadang (사당) Line 2 → Line 4 | Line 4 Board Line 4 | Sadang (사당) → Seoul Station (서울역) 7 stops | 🏁 Exit at Seoul Station (서울역)"
+   "detail": "Shinbundang Line Board Shinbundang Line · 5 min | Gangnam (강남) → Sinsa (신사) 3 stops | 🔄 Transfer at Sinsa (신사) Shinbundang Line → Line 3 · 3 min | Line 3 Board Line 3 · 11 min | Sinsa (신사) → Chungmur"
   },
   {
    "prof": "iphone-land",
@@ -1848,9 +1848,9 @@
   },
   {
    "prof": "iphone-land",
-   "name": "KO route: \"2호선 탑승\"",
+   "name": "KO route: \"신분당선 탑승\" (first line of the fastest route)",
    "pass": true,
-   "detail": "2호선 2호선 탑승 | 강남 → 사당 4개 역 | 🔄 사당 환승 2호선 → 4호선 | 4호선 4호선 탑승 | 사당 → 서울역 7개 역 | 🏁 서울역 하차"
+   "detail": "신분당선 신분당선 탑승 · 5분 | 강남 → 신사 3개 역 | 🔄 신사 환승 신분당선 → 3호선 · 3분 | 3호선 3호선 탑승 · 11분 | 신사 → 충무"
   },
   {
    "prof": "iphone-land",

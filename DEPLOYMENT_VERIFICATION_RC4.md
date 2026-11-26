@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT — superseded by V1.3.** This describes the RC4 fix (a second English base-map provider). That provider later ran out of map data when zooming in, so V1.3 uses the single OpenStreetMap provider for both languages (see `RELEASE_NOTES_V1_3.md`). Everything below is kept as a historical record of the earlier root-cause analysis.
+
 # SEOUL METRO HUB — RC4 Deployment Verification
 
 ## 1. Root cause of the English tile failure

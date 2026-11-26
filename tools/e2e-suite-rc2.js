@@ -73,8 +73,10 @@ async function suite(prof){
    // "mid" = the route station that is farthest (in pixels) from every other station marker, i.e. one a finger can hit
    const others=i=>ST.filter(s=>s.i!==i).map(s=>P(s.i));let best=null,bd=-1;
    S.route.slice(1,-1).forEach(i=>{const a=P(i);let d=1e9;ST.forEach(s=>{if(s.i===i)return;const b=P(s.i);const dd=Math.hypot(a[0]-b[0],a[1]-b[1]);if(dd<d)d=dd});if(d>bd){bd=d;best=i}});
-   return [['origin',S.route[0]],['mid',best],['destination',S.route[S.route.length-1]]].map(([n,i])=>{const [x,y]=P(i);const top=document.elementFromPoint(r.left+x,r.top+y);return {n,i,x:r.left+x,y:r.top+y,top:top&&(top.tagName+(top.closest('[data-pin]')?'[PIN]':''))}})});
-  for(const q of pts){await p.evaluate(()=>{S.sel=null;if(isMobile())setSheet(null)});await p.waitForTimeout(450);await at(q.x,q.y);await p.waitForTimeout(450);
+   return [['origin',S.route[0]],['destination',S.route[S.route.length-1]],['mid',best]].map(([n,i])=>{const [x,y]=P(i);const top=document.elementFromPoint(r.left+x,r.top+y);return {n,i,x:r.left+x,y:r.top+y,top:top&&(top.tagName+(top.closest('[data-pin]')?'[PIN]':''))}})});
+  for(const q of pts){await p.evaluate(()=>{S.sel=null;if(isMobile())setSheet(null)});await p.waitForTimeout(450);
+   if(q.n==='mid'){const z=await p.evaluate(i=>{const m=window.__LMAP;m.setView([ST[i].lat,ST[i].lng],16);const r=m.el.getBoundingClientRect(),[x,y]=m._P([ST[i].lat,ST[i].lng]);return {x:r.left+x,y:r.top+y}},q.i);q.x=z.x;q.y=z.y;await p.waitForTimeout(150)}
+   await at(q.x,q.y);await p.waitForTimeout(450);
    const r=await p.evaluate(i=>({sel:S.sel&&S.sel.i,routeKept:!!S.route&&[...document.querySelectorAll('#map svg polyline')].some(q=>q.getAttribute('stroke')==='#e11d2e'),sheet:document.body.dataset.sheet,panel:document.querySelector('#ib').innerText.length>40,want:i}),q.i);
    ok(`tap ${q.n} station on route → details open, route stays`,r.sel===q.i&&r.routeKept&&r.panel&&(!mobile||r.sheet!=='hidden'),`top=${q.top} ${JSON.stringify(r)}`);
   }
@@ -177,12 +179,15 @@ async function suite(prof){
   await p.evaluate(()=>tab('route'));await p.fill('#ra','강남');await p.fill('#rb','서울역');await p.click('#go');await p.waitForTimeout(250);
   await p.evaluate(()=>document.querySelectorAll('[data-route-steps]').forEach(b=>b.click()));
   const en=await p.evaluate(()=>document.querySelector('#route-steps-0').innerText);
-  ok('EN route: "Board Line 2"',/Board Line 2/.test(en),en.slice(0,80).replace(/\n/g,' | '));
+  // V1.3: the fastest route is chosen by official travel times, so the first line is read from the real route instead of being hard-coded
+  const firstEn=await p.evaluate(()=>LN(S.routes[0].SG.find(x=>!x.t).g));
+  ok(`EN route: "Board ${firstEn}" (first line of the fastest route)`,en.includes('Board '+firstEn),en.slice(0,80).replace(/\n/g,' | '));
   ok('EN route: "Transfer at … (한글)"',/Transfer at [^\n]*\([가-힣·\s]+\)/.test(en),en.replace(/\n/g,' | ').slice(0,220));
   ok('EN route: "Exit at Seoul Station (서울역)"',/Exit at Seoul Station \(서울역\)/.test(en));
   await p.click('#lg');await p.waitForTimeout(250);
   const ko=await p.evaluate(()=>{document.querySelectorAll('[data-route-steps]').forEach(b=>{const pn=document.querySelector('#route-steps-'+b.dataset.routeSteps);if(pn.hidden)b.click()});return document.querySelector('#route-steps-0').innerText});
-  ok('KO route: "2호선 탑승"',/2호선 탑승/.test(ko),ko.slice(0,80).replace(/\n/g,' | '));
+  const firstKo=await p.evaluate(()=>LN(S.routes[0].SG.find(x=>!x.t).g));
+  ok(`KO route: "${firstKo} 탑승" (first line of the fastest route)`,ko.includes(firstKo+' 탑승'),ko.slice(0,80).replace(/\n/g,' | '));
   ok('KO route: "… 환승"',/\S+ 환승/.test(ko));
   ok('KO route: "서울역 하차"',/서울역 하차/.test(ko));
   // station page localization

@@ -1,7 +1,7 @@
 {
- "run": "2026-11-22T15:15:29.760Z",
- "total": 147,
- "pass": 147,
+ "run": "2026-11-25T19:31:32.708Z",
+ "total": 135,
+ "pass": 135,
  "fail": 0,
  "results": [
   {
@@ -78,15 +78,15 @@
   },
   {
    "prof": "desktop",
-   "name": "English mode starts on English-labelled tiles (single layer)",
+   "name": "English mode uses the single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "desktop",
    "name": "precondition: route visible, station selected, sheet open",
    "pass": true,
-   "detail": "{\"sel\":36,\"sheet\":\"hidden\",\"pins\":3}"
+   "detail": "{\"sel\":36,\"sheet\":\"hidden\",\"pins\":4}"
   },
   {
    "prof": "desktop",
@@ -104,13 +104,13 @@
    "prof": "desktop",
    "name": "→ ko: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "desktop",
-   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "name": "→ ko: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "desktop",
@@ -122,7 +122,7 @@
    "prof": "desktop",
    "name": "→ ko: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | 출발 | 환승 | 도착 | ← 경로 결과 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | ✕ | 1호선4호선GTX-A공항철도"
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | ⏱ 25분 · 🔄 환승 2회 · 🚉 12개 역 · 📏 ≈ 11.5 km | 출발 | 환승 | 도착 | || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | ✕ | 1호선4호선GTX-A공항철도"
   },
   {
    "prof": "desktop",
@@ -146,13 +146,13 @@
    "prof": "desktop",
    "name": "→ en: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "desktop",
-   "name": "→ en: base tiles switched to EN(esri) (single layer)",
+   "name": "→ en: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "desktop",
@@ -164,7 +164,7 @@
    "prof": "desktop",
    "name": "→ en: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | 🔄 1 transfer · 🚉 11 stops · 📏  || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
+   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | ⏱ 25 min · 🔄 2 transfers · 🚉 12 || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
   },
   {
    "prof": "desktop",
@@ -188,13 +188,13 @@
    "prof": "desktop",
    "name": "→ ko: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "desktop",
-   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "name": "→ ko: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "desktop",
@@ -206,7 +206,7 @@
    "prof": "desktop",
    "name": "→ ko: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | 출발 | 환승 | 도착 | ← 경로 결과 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | ✕ | 1호선4호선GTX-A공항철도"
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | ⏱ 25분 · 🔄 환승 2회 · 🚉 12개 역 · 📏 ≈ 11.5 km | 출발 | 환승 | 도착 | || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | ✕ | 1호선4호선GTX-A공항철도"
   },
   {
    "prof": "desktop",
@@ -222,19 +222,13 @@
   },
   {
    "prof": "desktop",
-   "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
+   "name": "language toggle keeps the same tile layer object (shared provider; even with failing tiles nothing is swapped)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "desktop",
-   "name": "…a localized notice explains it",
-   "pass": true,
-   "detail": "한국어 지도 타일을 불러올 수 없어 현재 지도를 유지합니다. 역 이름 등은 선택한 언어로 표시됩니다."
-  },
-  {
-   "prof": "desktop",
-   "name": "…but language is Korean: info sheet, route summary and markers all localized",
+   "name": "…no tile notice, and the UI is fully localized: info sheet, route summary, markers",
    "pass": true,
    "detail": ""
   },
@@ -246,39 +240,21 @@
   },
   {
    "prof": "desktop",
-   "name": "hit-testing still works while tiles fell back",
+   "name": "hit-testing still works after switching language",
    "pass": true,
    "detail": ""
   },
   {
    "prof": "desktop",
-   "name": "after tiles recover, switching language swaps to Korean tiles again",
+   "name": "six rapid toggles end with exactly one OpenStreetMap tile layer",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"}"
   },
   {
    "prof": "desktop",
-   "name": "English tiles unavailable → Korean (current) tiles preserved",
+   "name": "theme toggle keeps one OpenStreetMap tile layer",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
-  },
-  {
-   "prof": "desktop",
-   "name": "…English notice shown, UI still English",
-   "pass": true,
-   "detail": ""
-  },
-  {
-   "prof": "desktop",
-   "name": "six rapid toggles end with exactly one tile layer matching the language",
-   "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
-  },
-  {
-   "prof": "desktop",
-   "name": "theme toggle keeps one tile layer in the current language",
-   "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"}"
   },
   {
    "prof": "desktop",
@@ -360,15 +336,15 @@
   },
   {
    "prof": "iphone",
-   "name": "English mode starts on English-labelled tiles (single layer)",
+   "name": "English mode uses the single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone",
    "name": "precondition: route visible, station selected, sheet open",
    "pass": true,
-   "detail": "{\"sel\":36,\"sheet\":\"half\",\"pins\":3}"
+   "detail": "{\"sel\":36,\"sheet\":\"half\",\"pins\":4}"
   },
   {
    "prof": "iphone",
@@ -386,13 +362,13 @@
    "prof": "iphone",
    "name": "→ ko: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "iphone",
-   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "name": "→ ko: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone",
@@ -410,7 +386,7 @@
    "prof": "iphone",
    "name": "→ ko: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | ⏱ 25분 · 🔄 환승 2회 · 🚉 12개 역 · 📏 ≈ 11.5 km | ← 경로 결과 | 🗺️  || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
   },
   {
    "prof": "iphone",
@@ -434,13 +410,13 @@
    "prof": "iphone",
    "name": "→ en: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "iphone",
-   "name": "→ en: base tiles switched to EN(esri) (single layer)",
+   "name": "→ en: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone",
@@ -458,7 +434,7 @@
    "prof": "iphone",
    "name": "→ en: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | 🔄 1 transfer · 🚉 11 stops · 📏  || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
+   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | ⏱ 25 min · 🔄 2 transfers · 🚉 12 || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
   },
   {
    "prof": "iphone",
@@ -482,13 +458,13 @@
    "prof": "iphone",
    "name": "→ ko: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "iphone",
-   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "name": "→ ko: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone",
@@ -506,7 +482,7 @@
    "prof": "iphone",
    "name": "→ ko: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | ⏱ 25분 · 🔄 환승 2회 · 🚉 12개 역 · 📏 ≈ 11.5 km | ← 경로 결과 | 🗺️  || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
   },
   {
    "prof": "iphone",
@@ -522,19 +498,13 @@
   },
   {
    "prof": "iphone",
-   "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
+   "name": "language toggle keeps the same tile layer object (shared provider; even with failing tiles nothing is swapped)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone",
-   "name": "…a localized notice explains it",
-   "pass": true,
-   "detail": "한국어 지도 타일을 불러올 수 없어 현재 지도를 유지합니다. 역 이름 등은 선택한 언어로 표시됩니다."
-  },
-  {
-   "prof": "iphone",
-   "name": "…but language is Korean: info sheet, route summary and markers all localized",
+   "name": "…no tile notice, and the UI is fully localized: info sheet, route summary, markers",
    "pass": true,
    "detail": ""
   },
@@ -546,39 +516,21 @@
   },
   {
    "prof": "iphone",
-   "name": "hit-testing still works while tiles fell back",
+   "name": "hit-testing still works after switching language",
    "pass": true,
    "detail": ""
   },
   {
    "prof": "iphone",
-   "name": "after tiles recover, switching language swaps to Korean tiles again",
+   "name": "six rapid toggles end with exactly one OpenStreetMap tile layer",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"}"
   },
   {
    "prof": "iphone",
-   "name": "English tiles unavailable → Korean (current) tiles preserved",
+   "name": "theme toggle keeps one OpenStreetMap tile layer",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
-  },
-  {
-   "prof": "iphone",
-   "name": "…English notice shown, UI still English",
-   "pass": true,
-   "detail": ""
-  },
-  {
-   "prof": "iphone",
-   "name": "six rapid toggles end with exactly one tile layer matching the language",
-   "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
-  },
-  {
-   "prof": "iphone",
-   "name": "theme toggle keeps one tile layer in the current language",
-   "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"}"
   },
   {
    "prof": "iphone",
@@ -660,15 +612,15 @@
   },
   {
    "prof": "iphone-land",
-   "name": "English mode starts on English-labelled tiles (single layer)",
+   "name": "English mode uses the single OpenStreetMap tile layer (same provider as Korean)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone-land",
    "name": "precondition: route visible, station selected, sheet open",
    "pass": true,
-   "detail": "{\"sel\":36,\"sheet\":\"half\",\"pins\":3}"
+   "detail": "{\"sel\":36,\"sheet\":\"half\",\"pins\":4}"
   },
   {
    "prof": "iphone-land",
@@ -686,13 +638,13 @@
    "prof": "iphone-land",
    "name": "→ ko: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "iphone-land",
-   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "name": "→ ko: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone-land",
@@ -710,7 +662,7 @@
    "prof": "iphone-land",
    "name": "→ ko: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | ⏱ 25분 · 🔄 환승 2회 · 🚉 12개 역 · 📏 ≈ 11.5 km | ← 경로 결과 | 🗺️  || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
   },
   {
    "prof": "iphone-land",
@@ -734,13 +686,13 @@
    "prof": "iphone-land",
    "name": "→ en: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "iphone-land",
-   "name": "→ en: base tiles switched to EN(esri) (single layer)",
+   "name": "→ en: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone-land",
@@ -758,7 +710,7 @@
    "prof": "iphone-land",
    "name": "→ en: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | 🔄 1 transfer · 🚉 11 stops · 📏  || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
+   "detail": "🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) | ✕ | ⏱ 25 min · 🔄 2 transfers · 🚉 12 || sheet: Line 1 Line 4 AREX Airport Railroad Gyeongui-Jungang Line | Seoul Station (서울역) | ソウル | GTX-A | Seou"
   },
   {
    "prof": "iphone-land",
@@ -782,13 +734,13 @@
    "prof": "iphone-land",
    "name": "→ ko: route highlight unchanged (same path, same pins)",
    "pass": true,
-   "detail": "pins 3/3"
+   "detail": "pins 4/4"
   },
   {
    "prof": "iphone-land",
-   "name": "→ ko: base tiles switched to KO(osm) (single layer)",
+   "name": "→ ko: base tiles unchanged — OSM (single layer, same provider)",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone-land",
@@ -806,7 +758,7 @@
    "prof": "iphone-land",
    "name": "→ ko: station sheet + route summary localized",
    "pass": true,
-   "detail": "🟢 서울역 → 🔴 강남 | ✕ | 🔄 환승 1회 · 🚉 11개 역 · 📏 ≈ 13.9 km | ← 경로 결과 | 🗺️ 노선도 || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
+   "detail": "🟢 서울역 → 🔴 강남 | ✕ | ⏱ 25분 · 🔄 환승 2회 · 🚉 12개 역 · 📏 ≈ 11.5 km | ← 경로 결과 | 🗺️  || sheet: 1호선 4호선 공항철도 경의·중앙선 | 서울역 | Seoul Station · ソウル | GTX-A | 서울 | Seoul · ソウル | ☆ | 1호선4호선GTX-A공항철도경의·중"
   },
   {
    "prof": "iphone-land",
@@ -822,19 +774,13 @@
   },
   {
    "prof": "iphone-land",
-   "name": "Korean tiles unavailable → current (English) tiles preserved, single layer",
+   "name": "language toggle keeps the same tile layer object (shared provider; even with failing tiles nothing is swapped)",
    "pass": true,
-   "detail": "[\"EN(esri)\"]"
+   "detail": "[\"OSM\"]"
   },
   {
    "prof": "iphone-land",
-   "name": "…a localized notice explains it",
-   "pass": true,
-   "detail": "한국어 지도 타일을 불러올 수 없어 현재 지도를 유지합니다. 역 이름 등은 선택한 언어로 표시됩니다."
-  },
-  {
-   "prof": "iphone-land",
-   "name": "…but language is Korean: info sheet, route summary and markers all localized",
+   "name": "…no tile notice, and the UI is fully localized: info sheet, route summary, markers",
    "pass": true,
    "detail": ""
   },
@@ -846,39 +792,21 @@
   },
   {
    "prof": "iphone-land",
-   "name": "hit-testing still works while tiles fell back",
+   "name": "hit-testing still works after switching language",
    "pass": true,
    "detail": ""
   },
   {
    "prof": "iphone-land",
-   "name": "after tiles recover, switching language swaps to Korean tiles again",
+   "name": "six rapid toggles end with exactly one OpenStreetMap tile layer",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"}"
   },
   {
    "prof": "iphone-land",
-   "name": "English tiles unavailable → Korean (current) tiles preserved",
+   "name": "theme toggle keeps one OpenStreetMap tile layer",
    "pass": true,
-   "detail": "[\"KO(osm)\"]"
-  },
-  {
-   "prof": "iphone-land",
-   "name": "…English notice shown, UI still English",
-   "pass": true,
-   "detail": ""
-  },
-  {
-   "prof": "iphone-land",
-   "name": "six rapid toggles end with exactly one tile layer matching the language",
-   "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
-  },
-  {
-   "prof": "iphone-land",
-   "name": "theme toggle keeps one tile layer in the current language",
-   "pass": true,
-   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\"}"
+   "detail": "{\"lang\":\"en\",\"n\":1,\"url\":\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\"}"
   },
   {
    "prof": "iphone-land",
