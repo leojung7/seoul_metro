@@ -1,5 +1,5 @@
 {
- "run": "2026-11-22T15:16:40.581Z",
+ "run": "2026-11-25T19:29:44.038Z",
  "total": 192,
  "pass": 192,
  "fail": 0,
@@ -68,7 +68,7 @@
    "prof": "desktop",
    "name": "서울→강남: highlight follows displayed network",
    "pass": true,
-   "detail": "0/21 vertices off base"
+   "detail": "0/20 vertices off base"
   },
   {
    "prof": "desktop",
@@ -78,9 +78,9 @@
   },
   {
    "prof": "desktop",
-   "name": "서울→강남: A, B + 1 transfer pins",
+   "name": "서울→강남: A, B + 2 transfer pins",
    "pass": true,
-   "detail": "pins=3"
+   "detail": "pins=4"
   },
   {
    "prof": "desktop",
@@ -416,7 +416,7 @@
    "prof": "iphone",
    "name": "서울→강남: highlight follows displayed network",
    "pass": true,
-   "detail": "0/21 vertices off base"
+   "detail": "0/20 vertices off base"
   },
   {
    "prof": "iphone",
@@ -426,9 +426,9 @@
   },
   {
    "prof": "iphone",
-   "name": "서울→강남: A, B + 1 transfer pins",
+   "name": "서울→강남: A, B + 2 transfer pins",
    "pass": true,
-   "detail": "pins=3"
+   "detail": "pins=4"
   },
   {
    "prof": "iphone",
@@ -818,7 +818,7 @@
    "prof": "iphone-land",
    "name": "서울→강남: highlight follows displayed network",
    "pass": true,
-   "detail": "0/21 vertices off base"
+   "detail": "0/20 vertices off base"
   },
   {
    "prof": "iphone-land",
@@ -828,9 +828,9 @@
   },
   {
    "prof": "iphone-land",
-   "name": "서울→강남: A, B + 1 transfer pins",
+   "name": "서울→강남: A, B + 2 transfer pins",
    "pass": true,
-   "detail": "pins=3"
+   "detail": "pins=4"
   },
   {
    "prof": "iphone-land",
@@ -1076,7 +1076,7 @@
    "prof": "iphone-land",
    "name": "content scrolls in full",
    "pass": true,
-   "detail": "scrollTop=207"
+   "detail": "scrollTop=209"
   },
   {
    "prof": "iphone-land",

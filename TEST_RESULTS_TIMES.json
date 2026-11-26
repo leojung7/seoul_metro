@@ -1,0 +1,1106 @@
+{
+ "run": "2026-11-25T19:33:00.501Z",
+ "total": 183,
+ "pass": 183,
+ "fail": 0,
+ "results": [
+  {
+   "prof": "static",
+   "name": "all six source CSV files are shipped in data-sources/travel-times/",
+   "pass": true,
+   "detail": "coverage_before_name_fix.json, 국가철도공단_공항철도_역간거리_20260630.CSV, 국가철도공단_수도권9호선_역간거리_20260630.CSV, 국가철도공단_수인분당선_역간거리_20260630.CSV, 국가철도공단_신분당선_역간거리_20260630.CSV, 서울교통공사 역간거리 및 소요시간_240810.csv, 서울교통공사_환승역거리 소요시간 정보_20250331.csv"
+  },
+  {
+   "prof": "static",
+   "name": "travel-times.js: 270 exact running times, 125 official distances, 101 transfer pairs",
+   "pass": true,
+   "detail": "270/125/101"
+  },
+  {
+   "prof": "static",
+   "name": "time model is seconds = 23.9 + 63.27 x km (fitted on the exact segments)",
+   "pass": true,
+   "detail": "{\"fixedSec\":23.9,\"secPerKm\":63.27,\"cruiseKmh\":56.9,\"n\":270,\"r2\":0.563,\"residSdSec\":19.5,\"kappa\":1.036}"
+  },
+  {
+   "prof": "static",
+   "name": "every exact / distance edge connects two real stations that are adjacent on that line in the app graph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "every transfer pair joins two lines of the SAME station (no missing / wrong transfers)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "no duplicated stations / duplicated (line, station code) in data.js",
+   "pass": true,
+   "detail": "654 stations"
+  },
+  {
+   "prof": "static",
+   "name": "transfer stations unchanged: 120 multi-line stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "all numeric values are positive and finite",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "raw Seoul Metro CSV re-read independently: 262 consecutive rows compared, every running time and km equal to the generated value",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "raw transfer CSV re-read independently: 137 rows compared, distance and walking time equal",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "transfer walking time = distance / 1.2 m/s in the source (rounded to the second)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "raw 국가철도공단 distance files re-read independently: 125 segments compared, all equal",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "bracketed station names now mapped (11/11 of the examples have official distances attached)",
+   "pass": true,
+   "detail": "missing: "
+  },
+  {
+   "prof": "static",
+   "name": "only 당고개 and 능길 stay unmapped (they do not exist in data.js; no placeholder stations were invented)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "static",
+   "name": "TRAVEL_TIME_DATA_REPORT.md contains the before/after coverage and the Issue #11 audit",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "official segment: Line 2 강남→교대 uses the exact CSV seconds (tier \"official\", no model)",
+   "pass": true,
+   "detail": "{\"sec\":90,\"km\":1.2,\"tier\":\"official\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "distance-only segment: Line 9 uses the official NRA km and the model (tier \"derived\")",
+   "pass": true,
+   "detail": "{\"sec\":75,\"km\":0.8,\"tier\":\"derived\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "no-data segment: GTX-A uses straight-line km x kappa and the same model (tier \"estimated\")",
+   "pass": true,
+   "detail": "{\"sec\":575,\"km\":8.703,\"tier\":\"estimated\",\"hv\":8.400724393256088}"
+  },
+  {
+   "prof": "desktop",
+   "name": "whole graph: exact + derived + estimated segments = all adjacent pairs, exact first",
+   "pass": true,
+   "detail": "{\"official\":269,\"derived\":125,\"estimated\":382}"
+  },
+  {
+   "prof": "desktop",
+   "name": "\"Include express lines\" speeds up derived airport-type segments but never touches exact official times",
+   "pass": true,
+   "detail": "{\"aSec\":233,\"bSec\":194,\"exactSame\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "route level: \"Include express lines\" makes the airport route faster (70 km/h class) …",
+   "pass": true,
+   "detail": "{\"airL\":71,\"airX\":59,\"l2L\":35,\"l2X\":35,\"sbL\":18,\"sbX\":18}"
+  },
+  {
+   "prof": "desktop",
+   "name": "… and never changes a route made only of official times (Line 2), nor slows a line below the data-calibrated model",
+   "pass": true,
+   "detail": "{\"airL\":71,\"airX\":59,\"l2L\":35,\"l2X\":35,\"sbL\":18,\"sbX\":18}"
+  },
+  {
+   "prof": "desktop",
+   "name": "official transfer: 서울역 Line 1 → Line 4 = 2:13 (133 s) over 159 m walking, source \"official\", plus the configured connecting-train wait (120 s)",
+   "pass": true,
+   "detail": "{\"sec\":253,\"walkSec\":133,\"waitSec\":120,\"meters\":159,\"src\":\"official\",\"cls\":null}"
+  },
+  {
+   "prof": "desktop",
+   "name": "no official transfer time → configurable default class (Easy 2 / Medium 4 / Long 7 min)",
+   "pass": true,
+   "detail": "{\"def\":{\"sec\":240,\"walkSec\":240,\"waitSec\":0,\"meters\":null,\"src\":\"default\",\"cls\":\"medium\",\"via\":\"default\"},\"defaults\":{\"easy\":2,\"medium\":4,\"long\":7}}"
+  },
+  {
+   "prof": "desktop",
+   "name": "transfer defaults and per-interchange overrides are configurable",
+   "pass": true,
+   "detail": "{\"sec\":540,\"walkSec\":540,\"waitSec\":0,\"meters\":null,\"src\":\"default\",\"cls\":\"long\",\"via\":\"override\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "60 random origin/destination pairs: no duplicate routes, FASTEST really fastest, FEWEST TRANSFERS really fewest, unique ranks",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "every route's displayed leg minutes add up exactly to its displayed total",
+   "pass": true,
+   "detail": "196 routes checked"
+  },
+  {
+   "prof": "desktop",
+   "name": "alternates are produced for many pairs; labels are FASTEST / FEWEST TRANSFERS / ALTERNATE",
+   "pass": true,
+   "detail": "{\"FASTEST\":38,\"FEWEST TRANSFERS\":38,\"ALTERNATE\":54,\"ALTERNATE 2\":44,\"FASTEST · FEWEST TRANSFERS\":22}"
+  },
+  {
+   "prof": "desktop",
+   "name": "route search stays fast (worst case of the sample)",
+   "pass": true,
+   "detail": "41 ms"
+  },
+  {
+   "prof": "desktop",
+   "name": "FASTEST time equals an independent shortest-path search (40 pairs)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "1-8 (Line 4+2): 사당 → 동대문역사문화공원 gets a time (22 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":11,\"official\":11,\"derived\":0,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Line 9: 김포공항 → 여의도 gets a time (24 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":13,\"official\":0,\"derived\":13,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Airport Railroad: 서울역 → 인천공항1터미널 gets a time (59 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":12,\"official\":0,\"derived\":12,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Suin-Bundang: 수원 → 왕십리 gets a time (68 min, partial)",
+   "pass": true,
+   "detail": "{\"segments\":24,\"official\":4,\"derived\":0,\"estimated\":20,\"transfers\":2,\"transfersOfficial\":1,\"transfersDefault\":1}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Shinbundang: 강남 → 판교 gets a time (18 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":4,\"official\":0,\"derived\":4,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Line 2: 홍대입구 → 잠실 gets a time (35 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":20,\"official\":20,\"derived\":0,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "4→7: 동작 → 남성 gets a time (8 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":2,\"official\":2,\"derived\":0,\"estimated\":0,\"transfers\":1,\"transfersOfficial\":1,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "GTX-A: 서울역 → 수서 gets a time (12 min, estimated)",
+   "pass": true,
+   "detail": "{\"segments\":1,\"official\":0,\"derived\":0,\"estimated\":1,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Sillim: 신림 → 샛강 gets a time (10 min, estimated)",
+   "pass": true,
+   "detail": "{\"segments\":7,\"official\":0,\"derived\":0,\"estimated\":7,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Line 9 times are flagged \"derived from official distance\" (never \"official running time\")",
+   "pass": true,
+   "detail": "{\"segments\":13,\"official\":0,\"derived\":13,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Line 2 route is 100% official running times and says so",
+   "pass": true,
+   "detail": "official"
+  },
+  {
+   "prof": "desktop",
+   "name": "route cards: 3 options with type, time, transfers, stations, distance",
+   "pass": true,
+   "detail": "{\"labels\":[\"FASTEST · FEWEST TRANSFERS\",\"ALTERNATE\",\"ALTERNATE 2\"],\"times\":[\"22 min\",\"30 min\",\"33 min\"],\"stats\":\"🔄 0 transfers 🚉 11 stations 📏 13.4 km\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "FASTEST is the first card and is selected by default",
+   "pass": true,
+   "detail": "[true,false,false]"
+  },
+  {
+   "prof": "desktop",
+   "name": "other cards show how they differ from the fastest (time / transfers / km)",
+   "pass": true,
+   "detail": "vs fastest: +8 min · 2 more transfers · +2.4 km | vs fastest: +11 min · 3 more transfers · +1.2 km"
+  },
+  {
+   "prof": "desktop",
+   "name": "breakdown panel: line segment durations + transfers + total; the parts add up to the total",
+   "pass": true,
+   "detail": "{\"legs\":1,\"total\":22,\"sum\":22}"
+  },
+  {
+   "prof": "desktop",
+   "name": "breakdown shows the origin → destination of each leg and where the time comes from",
+   "pass": true,
+   "detail": "Selected route: FASTEST · FEWEST TRANSFERS | Line 4 | Sadang (사당) → Dongdaemun History Culture Park (동대문역사문화공원) | 22 min | 18 min running + 4 min at 10 stations · 11 stations · 13.4 km · 11 official | Total | 22 min | 18 min running + 4 min"
+  },
+  {
+   "prof": "desktop",
+   "name": "station-by-station list has every station of every leg",
+   "pass": true,
+   "detail": "12 vs 12"
+  },
+  {
+   "prof": "desktop",
+   "name": "clicking a route makes it active: card highlighted, one \"Selected\" tag, details switch to it",
+   "pass": true,
+   "detail": "{\"idx\":1,\"sel\":[false,true,false,false],\"det\":\"1\",\"t\":26,\"want\":26,\"tags\":1,\"head\":\"Selected route: FEWEST TRANSFERS\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "keyboard (Enter on a focused card) selects it too",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "\"Show on map\" selects that route and highlights IT on the Geo map; the on-map summary shows its time",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"idx\":1,\"meta\":26,\"want\":26,\"red\":true,\"sum\":\"🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) ✕ ⏱ 26 min · 🔄 1 transfer · 🚉 11 stops · 📏 ≈ 15.0 km Start Transfer End ← Route results 🗺️ Schematic\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "selecting another option while a route is drawn on the map moves the map route with it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "preference \"Fewest transfers\" opens with that option selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "fully official route says \"Official running times for all N segments\"",
+   "pass": true,
+   "detail": "✅ Official running times for all 20 segments"
+  },
+  {
+   "prof": "desktop",
+   "name": "airport route (distance-only line) is labelled \"derived from official distances\"",
+   "pass": true,
+   "detail": "🟠 Official running times for 0 of 12 segments; 12 derived from official distances"
+  },
+  {
+   "prof": "desktop",
+   "name": "the estimate caveat states: running + station stops + transfer walking, no waiting, not real-time",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "transfer rows show duration and whether it is official or a default",
+   "pass": true,
+   "detail": "🔄 Transfer Sinsa (신사) · Shinbundang Line → Line 3 | 3 min | official walking time: 1 min + 2 min waiting for the connecting train (assumed) · 77 m"
+  },
+  {
+   "prof": "desktop",
+   "name": "Google Maps link: https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=transit",
+   "pass": true,
+   "detail": "https://www.google.com/maps/dir/?api=1&origin=%EC%82%AC%EB%8B%B9%EC%97%AD&destination=%EB%8F%99%EB%8C%80%EB%AC%B8%EC%97%AD%EC%82%AC%EB%AC%B8%ED%99%94%EA%B3%B5%EC%9B%90%EC%97%AD&travelmode=transit"
+  },
+  {
+   "prof": "desktop",
+   "name": "…origin / destination are the selected stations, properly URL-encoded",
+   "pass": true,
+   "detail": "사당역 → 동대문역사문화공원역"
+  },
+  {
+   "prof": "desktop",
+   "name": "…opens in a new tab safely (target=_blank, rel=noopener)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Kakao Map link uses the documented route URL (public transit, lat,lng pairs)",
+   "pass": true,
+   "detail": "[{\"text\":\"🟨 Open in Kakao Map\",\"href\":\"https://m.map.kakao.com/scheme/route?sp=37.476746,126.981597&ep=37.565137,127.007431&by=publictransit\",\"target\":\"_blank\",\"rel\":\"noopener\"}]"
+  },
+  {
+   "prof": "desktop",
+   "name": "Naver Map app link is hidden on desktop (it only works in the Naver app)",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "prof": "desktop",
+   "name": "the link follows a new search (강남 → 강남역)",
+   "pass": true,
+   "detail": "강남역"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean mode: route types, times (분), breakdown and links are localized",
+   "pass": true,
+   "detail": "{\"l\":[\"가장 빠름 · 환승 최소\",\"대안 경로\",\"대안 경로 2\"],\"t\":[\"22분\",\"30분\",\"33분\"],\"links\":[\"🗺️ Google 지도에서 열기\",\"🗺️ Google 지도에서 열기\",\"🟨 카카오맵에서 열기\"]}"
+  },
+  {
+   "prof": "desktop",
+   "name": "language switch keeps the selected route",
+   "pass": true,
+   "detail": "1 → 1"
+  },
+  {
+   "prof": "desktop",
+   "name": "English mode restored: \"FASTEST\", \"N min\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean breakdown has no leftover English sentences (station English names aside)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "if the travel-time engine is unavailable the ORIGINAL planner still produces routes (no times shown, no errors)",
+   "pass": true,
+   "detail": "{\"cards\":1,\"metrics\":1,\"time\":0,\"text\":\"Gangnam (강남) → Seoul Station (서울역)\\nCompare the calculated alternatives below. Th\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "route search works with both express settings",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "station search aliases still work in the planner (Seoul, aliases)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "same origin and destination is rejected politely",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "no console / page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "official segment: Line 2 강남→교대 uses the exact CSV seconds (tier \"official\", no model)",
+   "pass": true,
+   "detail": "{\"sec\":90,\"km\":1.2,\"tier\":\"official\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "distance-only segment: Line 9 uses the official NRA km and the model (tier \"derived\")",
+   "pass": true,
+   "detail": "{\"sec\":75,\"km\":0.8,\"tier\":\"derived\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "no-data segment: GTX-A uses straight-line km x kappa and the same model (tier \"estimated\")",
+   "pass": true,
+   "detail": "{\"sec\":575,\"km\":8.703,\"tier\":\"estimated\",\"hv\":8.400724393256088}"
+  },
+  {
+   "prof": "iphone",
+   "name": "whole graph: exact + derived + estimated segments = all adjacent pairs, exact first",
+   "pass": true,
+   "detail": "{\"official\":269,\"derived\":125,\"estimated\":382}"
+  },
+  {
+   "prof": "iphone",
+   "name": "\"Include express lines\" speeds up derived airport-type segments but never touches exact official times",
+   "pass": true,
+   "detail": "{\"aSec\":233,\"bSec\":194,\"exactSame\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "route level: \"Include express lines\" makes the airport route faster (70 km/h class) …",
+   "pass": true,
+   "detail": "{\"airL\":71,\"airX\":59,\"l2L\":35,\"l2X\":35,\"sbL\":18,\"sbX\":18}"
+  },
+  {
+   "prof": "iphone",
+   "name": "… and never changes a route made only of official times (Line 2), nor slows a line below the data-calibrated model",
+   "pass": true,
+   "detail": "{\"airL\":71,\"airX\":59,\"l2L\":35,\"l2X\":35,\"sbL\":18,\"sbX\":18}"
+  },
+  {
+   "prof": "iphone",
+   "name": "official transfer: 서울역 Line 1 → Line 4 = 2:13 (133 s) over 159 m walking, source \"official\", plus the configured connecting-train wait (120 s)",
+   "pass": true,
+   "detail": "{\"sec\":253,\"walkSec\":133,\"waitSec\":120,\"meters\":159,\"src\":\"official\",\"cls\":null}"
+  },
+  {
+   "prof": "iphone",
+   "name": "no official transfer time → configurable default class (Easy 2 / Medium 4 / Long 7 min)",
+   "pass": true,
+   "detail": "{\"def\":{\"sec\":240,\"walkSec\":240,\"waitSec\":0,\"meters\":null,\"src\":\"default\",\"cls\":\"medium\",\"via\":\"default\"},\"defaults\":{\"easy\":2,\"medium\":4,\"long\":7}}"
+  },
+  {
+   "prof": "iphone",
+   "name": "transfer defaults and per-interchange overrides are configurable",
+   "pass": true,
+   "detail": "{\"sec\":540,\"walkSec\":540,\"waitSec\":0,\"meters\":null,\"src\":\"default\",\"cls\":\"long\",\"via\":\"override\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "60 random origin/destination pairs: no duplicate routes, FASTEST really fastest, FEWEST TRANSFERS really fewest, unique ranks",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "every route's displayed leg minutes add up exactly to its displayed total",
+   "pass": true,
+   "detail": "196 routes checked"
+  },
+  {
+   "prof": "iphone",
+   "name": "alternates are produced for many pairs; labels are FASTEST / FEWEST TRANSFERS / ALTERNATE",
+   "pass": true,
+   "detail": "{\"FASTEST\":38,\"FEWEST TRANSFERS\":38,\"ALTERNATE\":54,\"ALTERNATE 2\":44,\"FASTEST · FEWEST TRANSFERS\":22}"
+  },
+  {
+   "prof": "iphone",
+   "name": "route search stays fast (worst case of the sample)",
+   "pass": true,
+   "detail": "46 ms"
+  },
+  {
+   "prof": "iphone",
+   "name": "FASTEST time equals an independent shortest-path search (40 pairs)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "1-8 (Line 4+2): 사당 → 동대문역사문화공원 gets a time (22 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":11,\"official\":11,\"derived\":0,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Line 9: 김포공항 → 여의도 gets a time (24 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":13,\"official\":0,\"derived\":13,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Airport Railroad: 서울역 → 인천공항1터미널 gets a time (59 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":12,\"official\":0,\"derived\":12,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Suin-Bundang: 수원 → 왕십리 gets a time (68 min, partial)",
+   "pass": true,
+   "detail": "{\"segments\":24,\"official\":4,\"derived\":0,\"estimated\":20,\"transfers\":2,\"transfersOfficial\":1,\"transfersDefault\":1}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Shinbundang: 강남 → 판교 gets a time (18 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":4,\"official\":0,\"derived\":4,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Line 2: 홍대입구 → 잠실 gets a time (35 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":20,\"official\":20,\"derived\":0,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "4→7: 동작 → 남성 gets a time (8 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":2,\"official\":2,\"derived\":0,\"estimated\":0,\"transfers\":1,\"transfersOfficial\":1,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "GTX-A: 서울역 → 수서 gets a time (12 min, estimated)",
+   "pass": true,
+   "detail": "{\"segments\":1,\"official\":0,\"derived\":0,\"estimated\":1,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Sillim: 신림 → 샛강 gets a time (10 min, estimated)",
+   "pass": true,
+   "detail": "{\"segments\":7,\"official\":0,\"derived\":0,\"estimated\":7,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Line 9 times are flagged \"derived from official distance\" (never \"official running time\")",
+   "pass": true,
+   "detail": "{\"segments\":13,\"official\":0,\"derived\":13,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Line 2 route is 100% official running times and says so",
+   "pass": true,
+   "detail": "official"
+  },
+  {
+   "prof": "iphone",
+   "name": "route cards: 3 options with type, time, transfers, stations, distance",
+   "pass": true,
+   "detail": "{\"labels\":[\"FASTEST · FEWEST TRANSFERS\",\"ALTERNATE\",\"ALTERNATE 2\"],\"times\":[\"22 min\",\"30 min\",\"33 min\"],\"stats\":\"🔄 0 transfers 🚉 11 stations 📏 13.4 km\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "FASTEST is the first card and is selected by default",
+   "pass": true,
+   "detail": "[true,false,false]"
+  },
+  {
+   "prof": "iphone",
+   "name": "other cards show how they differ from the fastest (time / transfers / km)",
+   "pass": true,
+   "detail": "vs fastest: +8 min · 2 more transfers · +2.4 km | vs fastest: +11 min · 3 more transfers · +1.2 km"
+  },
+  {
+   "prof": "iphone",
+   "name": "breakdown panel: line segment durations + transfers + total; the parts add up to the total",
+   "pass": true,
+   "detail": "{\"legs\":1,\"total\":22,\"sum\":22}"
+  },
+  {
+   "prof": "iphone",
+   "name": "breakdown shows the origin → destination of each leg and where the time comes from",
+   "pass": true,
+   "detail": "Selected route: FASTEST · FEWEST TRANSFERS | Line 4 | Sadang (사당) → Dongdaemun History Culture Park (동대문역사문화공원) | 22 min | 18 min running + 4 min at 10 stations · 11 stations · 13.4 km · 11 official | Total | 22 min | 18 min running + 4 min"
+  },
+  {
+   "prof": "iphone",
+   "name": "station-by-station list has every station of every leg",
+   "pass": true,
+   "detail": "12 vs 12"
+  },
+  {
+   "prof": "iphone",
+   "name": "clicking a route makes it active: card highlighted, one \"Selected\" tag, details switch to it",
+   "pass": true,
+   "detail": "{\"idx\":1,\"sel\":[false,true,false,false],\"det\":\"1\",\"t\":26,\"want\":26,\"tags\":1,\"head\":\"Selected route: FEWEST TRANSFERS\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "keyboard (Enter on a focused card) selects it too",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "\"Show on map\" selects that route and highlights IT on the Geo map; the on-map summary shows its time",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"idx\":1,\"meta\":26,\"want\":26,\"red\":true,\"sum\":\"🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) ✕ ⏱ 26 min · 🔄 1 transfer · 🚉 11 stops · 📏 ≈ 15.0 km ← Route results 🗺️ Schematic\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "selecting another option while a route is drawn on the map moves the map route with it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "preference \"Fewest transfers\" opens with that option selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "fully official route says \"Official running times for all N segments\"",
+   "pass": true,
+   "detail": "✅ Official running times for all 20 segments"
+  },
+  {
+   "prof": "iphone",
+   "name": "airport route (distance-only line) is labelled \"derived from official distances\"",
+   "pass": true,
+   "detail": "🟠 Official running times for 0 of 12 segments; 12 derived from official distances"
+  },
+  {
+   "prof": "iphone",
+   "name": "the estimate caveat states: running + station stops + transfer walking, no waiting, not real-time",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "transfer rows show duration and whether it is official or a default",
+   "pass": true,
+   "detail": "🔄 Transfer Sinsa (신사) · Shinbundang Line → Line 3 | 3 min | official walking time: 1 min + 2 min waiting for the connecting train (assumed) · 77 m"
+  },
+  {
+   "prof": "iphone",
+   "name": "Google Maps link: https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=transit",
+   "pass": true,
+   "detail": "https://www.google.com/maps/dir/?api=1&origin=%EC%82%AC%EB%8B%B9%EC%97%AD&destination=%EB%8F%99%EB%8C%80%EB%AC%B8%EC%97%AD%EC%82%AC%EB%AC%B8%ED%99%94%EA%B3%B5%EC%9B%90%EC%97%AD&travelmode=transit"
+  },
+  {
+   "prof": "iphone",
+   "name": "…origin / destination are the selected stations, properly URL-encoded",
+   "pass": true,
+   "detail": "사당역 → 동대문역사문화공원역"
+  },
+  {
+   "prof": "iphone",
+   "name": "…opens in a new tab safely (target=_blank, rel=noopener)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Kakao Map link uses the documented route URL (public transit, lat,lng pairs)",
+   "pass": true,
+   "detail": "[{\"text\":\"🟨 Open in Kakao Map\",\"href\":\"https://m.map.kakao.com/scheme/route?sp=37.476746,126.981597&ep=37.565137,127.007431&by=publictransit\",\"target\":\"_blank\",\"rel\":\"noopener\"}]"
+  },
+  {
+   "prof": "iphone",
+   "name": "Naver Map (app link nmap://route/public…) is offered on phones/tablets",
+   "pass": true,
+   "detail": "nmap://route/public?slat=37.476746&slng=126.981597&sname=%EC%82%AC%EB%8B%B9%EC%9"
+  },
+  {
+   "prof": "iphone",
+   "name": "the link follows a new search (강남 → 강남역)",
+   "pass": true,
+   "detail": "강남역"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean mode: route types, times (분), breakdown and links are localized",
+   "pass": true,
+   "detail": "{\"l\":[\"가장 빠름 · 환승 최소\",\"대안 경로\",\"대안 경로 2\"],\"t\":[\"22분\",\"30분\",\"33분\"],\"links\":[\"🗺️ Google 지도에서 열기\",\"🗺️ Google 지도에서 열기\",\"🟨 카카오맵에서 열기\",\"🟩 네이버 지도에서 열기 (앱)\"]}"
+  },
+  {
+   "prof": "iphone",
+   "name": "language switch keeps the selected route",
+   "pass": true,
+   "detail": "1 → 1"
+  },
+  {
+   "prof": "iphone",
+   "name": "English mode restored: \"FASTEST\", \"N min\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean breakdown has no leftover English sentences (station English names aside)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "if the travel-time engine is unavailable the ORIGINAL planner still produces routes (no times shown, no errors)",
+   "pass": true,
+   "detail": "{\"cards\":1,\"metrics\":1,\"time\":0,\"text\":\"Gangnam (강남) → Seoul Station (서울역)\\nCompare the calculated alternatives below. Th\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "route search works with both express settings",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "station search aliases still work in the planner (Seoul, aliases)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "same origin and destination is rejected politely",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "no console / page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "official segment: Line 2 강남→교대 uses the exact CSV seconds (tier \"official\", no model)",
+   "pass": true,
+   "detail": "{\"sec\":90,\"km\":1.2,\"tier\":\"official\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "distance-only segment: Line 9 uses the official NRA km and the model (tier \"derived\")",
+   "pass": true,
+   "detail": "{\"sec\":75,\"km\":0.8,\"tier\":\"derived\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no-data segment: GTX-A uses straight-line km x kappa and the same model (tier \"estimated\")",
+   "pass": true,
+   "detail": "{\"sec\":575,\"km\":8.703,\"tier\":\"estimated\",\"hv\":8.400724393256088}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "whole graph: exact + derived + estimated segments = all adjacent pairs, exact first",
+   "pass": true,
+   "detail": "{\"official\":269,\"derived\":125,\"estimated\":382}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "\"Include express lines\" speeds up derived airport-type segments but never touches exact official times",
+   "pass": true,
+   "detail": "{\"aSec\":233,\"bSec\":194,\"exactSame\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route level: \"Include express lines\" makes the airport route faster (70 km/h class) …",
+   "pass": true,
+   "detail": "{\"airL\":71,\"airX\":59,\"l2L\":35,\"l2X\":35,\"sbL\":18,\"sbX\":18}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "… and never changes a route made only of official times (Line 2), nor slows a line below the data-calibrated model",
+   "pass": true,
+   "detail": "{\"airL\":71,\"airX\":59,\"l2L\":35,\"l2X\":35,\"sbL\":18,\"sbX\":18}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "official transfer: 서울역 Line 1 → Line 4 = 2:13 (133 s) over 159 m walking, source \"official\", plus the configured connecting-train wait (120 s)",
+   "pass": true,
+   "detail": "{\"sec\":253,\"walkSec\":133,\"waitSec\":120,\"meters\":159,\"src\":\"official\",\"cls\":null}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no official transfer time → configurable default class (Easy 2 / Medium 4 / Long 7 min)",
+   "pass": true,
+   "detail": "{\"def\":{\"sec\":240,\"walkSec\":240,\"waitSec\":0,\"meters\":null,\"src\":\"default\",\"cls\":\"medium\",\"via\":\"default\"},\"defaults\":{\"easy\":2,\"medium\":4,\"long\":7}}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "transfer defaults and per-interchange overrides are configurable",
+   "pass": true,
+   "detail": "{\"sec\":540,\"walkSec\":540,\"waitSec\":0,\"meters\":null,\"src\":\"default\",\"cls\":\"long\",\"via\":\"override\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "60 random origin/destination pairs: no duplicate routes, FASTEST really fastest, FEWEST TRANSFERS really fewest, unique ranks",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "every route's displayed leg minutes add up exactly to its displayed total",
+   "pass": true,
+   "detail": "196 routes checked"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "alternates are produced for many pairs; labels are FASTEST / FEWEST TRANSFERS / ALTERNATE",
+   "pass": true,
+   "detail": "{\"FASTEST\":38,\"FEWEST TRANSFERS\":38,\"ALTERNATE\":54,\"ALTERNATE 2\":44,\"FASTEST · FEWEST TRANSFERS\":22}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route search stays fast (worst case of the sample)",
+   "pass": true,
+   "detail": "34 ms"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "FASTEST time equals an independent shortest-path search (40 pairs)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "1-8 (Line 4+2): 사당 → 동대문역사문화공원 gets a time (22 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":11,\"official\":11,\"derived\":0,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Line 9: 김포공항 → 여의도 gets a time (24 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":13,\"official\":0,\"derived\":13,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Airport Railroad: 서울역 → 인천공항1터미널 gets a time (59 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":12,\"official\":0,\"derived\":12,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Suin-Bundang: 수원 → 왕십리 gets a time (68 min, partial)",
+   "pass": true,
+   "detail": "{\"segments\":24,\"official\":4,\"derived\":0,\"estimated\":20,\"transfers\":2,\"transfersOfficial\":1,\"transfersDefault\":1}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Shinbundang: 강남 → 판교 gets a time (18 min, derived)",
+   "pass": true,
+   "detail": "{\"segments\":4,\"official\":0,\"derived\":4,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Line 2: 홍대입구 → 잠실 gets a time (35 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":20,\"official\":20,\"derived\":0,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "4→7: 동작 → 남성 gets a time (8 min, official)",
+   "pass": true,
+   "detail": "{\"segments\":2,\"official\":2,\"derived\":0,\"estimated\":0,\"transfers\":1,\"transfersOfficial\":1,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "GTX-A: 서울역 → 수서 gets a time (12 min, estimated)",
+   "pass": true,
+   "detail": "{\"segments\":1,\"official\":0,\"derived\":0,\"estimated\":1,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Sillim: 신림 → 샛강 gets a time (10 min, estimated)",
+   "pass": true,
+   "detail": "{\"segments\":7,\"official\":0,\"derived\":0,\"estimated\":7,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Line 9 times are flagged \"derived from official distance\" (never \"official running time\")",
+   "pass": true,
+   "detail": "{\"segments\":13,\"official\":0,\"derived\":13,\"estimated\":0,\"transfers\":0,\"transfersOfficial\":0,\"transfersDefault\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Line 2 route is 100% official running times and says so",
+   "pass": true,
+   "detail": "official"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route cards: 3 options with type, time, transfers, stations, distance",
+   "pass": true,
+   "detail": "{\"labels\":[\"FASTEST · FEWEST TRANSFERS\",\"ALTERNATE\",\"ALTERNATE 2\"],\"times\":[\"22 min\",\"30 min\",\"33 min\"],\"stats\":\"🔄 0 transfers 🚉 11 stations 📏 13.4 km\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "FASTEST is the first card and is selected by default",
+   "pass": true,
+   "detail": "[true,false,false]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "other cards show how they differ from the fastest (time / transfers / km)",
+   "pass": true,
+   "detail": "vs fastest: +8 min · 2 more transfers · +2.4 km | vs fastest: +11 min · 3 more transfers · +1.2 km"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "breakdown panel: line segment durations + transfers + total; the parts add up to the total",
+   "pass": true,
+   "detail": "{\"legs\":1,\"total\":22,\"sum\":22}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "breakdown shows the origin → destination of each leg and where the time comes from",
+   "pass": true,
+   "detail": "Selected route: FASTEST · FEWEST TRANSFERS | Line 4 | Sadang (사당) → Dongdaemun History Culture Park (동대문역사문화공원) | 22 min | 18 min running + 4 min at 10 stations · 11 stations · 13.4 km · 11 official | Total | 22 min | 18 min running + 4 min"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "station-by-station list has every station of every leg",
+   "pass": true,
+   "detail": "12 vs 12"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "clicking a route makes it active: card highlighted, one \"Selected\" tag, details switch to it",
+   "pass": true,
+   "detail": "{\"idx\":1,\"sel\":[false,true,false,false],\"det\":\"1\",\"t\":26,\"want\":26,\"tags\":1,\"head\":\"Selected route: FEWEST TRANSFERS\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "keyboard (Enter on a focused card) selects it too",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "\"Show on map\" selects that route and highlights IT on the Geo map; the on-map summary shows its time",
+   "pass": true,
+   "detail": "{\"tab\":\"geo\",\"idx\":1,\"meta\":26,\"want\":26,\"red\":true,\"sum\":\"🟢 Seoul Station (서울역) → 🔴 Gangnam (강남) ✕ ⏱ 26 min · 🔄 1 transfer · 🚉 11 stops · 📏 ≈ 15.0 km ← Route results 🗺️ Schematic\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "selecting another option while a route is drawn on the map moves the map route with it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "preference \"Fewest transfers\" opens with that option selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "fully official route says \"Official running times for all N segments\"",
+   "pass": true,
+   "detail": "✅ Official running times for all 20 segments"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "airport route (distance-only line) is labelled \"derived from official distances\"",
+   "pass": true,
+   "detail": "🟠 Official running times for 0 of 12 segments; 12 derived from official distances"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "the estimate caveat states: running + station stops + transfer walking, no waiting, not real-time",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "transfer rows show duration and whether it is official or a default",
+   "pass": true,
+   "detail": "🔄 Transfer Sinsa (신사) · Shinbundang Line → Line 3 | 3 min | official walking time: 1 min + 2 min waiting for the connecting train (assumed) · 77 m"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Google Maps link: https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=transit",
+   "pass": true,
+   "detail": "https://www.google.com/maps/dir/?api=1&origin=%EC%82%AC%EB%8B%B9%EC%97%AD&destination=%EB%8F%99%EB%8C%80%EB%AC%B8%EC%97%AD%EC%82%AC%EB%AC%B8%ED%99%94%EA%B3%B5%EC%9B%90%EC%97%AD&travelmode=transit"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "…origin / destination are the selected stations, properly URL-encoded",
+   "pass": true,
+   "detail": "사당역 → 동대문역사문화공원역"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "…opens in a new tab safely (target=_blank, rel=noopener)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Kakao Map link uses the documented route URL (public transit, lat,lng pairs)",
+   "pass": true,
+   "detail": "[{\"text\":\"🟨 Open in Kakao Map\",\"href\":\"https://m.map.kakao.com/scheme/route?sp=37.476746,126.981597&ep=37.565137,127.007431&by=publictransit\",\"target\":\"_blank\",\"rel\":\"noopener\"}]"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Naver Map (app link nmap://route/public…) is offered on phones/tablets",
+   "pass": true,
+   "detail": "nmap://route/public?slat=37.476746&slng=126.981597&sname=%EC%82%AC%EB%8B%B9%EC%9"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "the link follows a new search (강남 → 강남역)",
+   "pass": true,
+   "detail": "강남역"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean mode: route types, times (분), breakdown and links are localized",
+   "pass": true,
+   "detail": "{\"l\":[\"가장 빠름 · 환승 최소\",\"대안 경로\",\"대안 경로 2\"],\"t\":[\"22분\",\"30분\",\"33분\"],\"links\":[\"🗺️ Google 지도에서 열기\",\"🗺️ Google 지도에서 열기\",\"🟨 카카오맵에서 열기\",\"🟩 네이버 지도에서 열기 (앱)\"]}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "language switch keeps the selected route",
+   "pass": true,
+   "detail": "1 → 1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English mode restored: \"FASTEST\", \"N min\"",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean breakdown has no leftover English sentences (station English names aside)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "if the travel-time engine is unavailable the ORIGINAL planner still produces routes (no times shown, no errors)",
+   "pass": true,
+   "detail": "{\"cards\":1,\"metrics\":1,\"time\":0,\"text\":\"Gangnam (강남) → Seoul Station (서울역)\\nCompare the calculated alternatives below. Th\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "route search works with both express settings",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "station search aliases still work in the planner (Seoul, aliases)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "same origin and destination is rejected politely",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no console / page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

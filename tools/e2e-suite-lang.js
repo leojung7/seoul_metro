@@ -10,7 +10,7 @@ async function suite(prof){
  const at=async(x,y)=>mobile?p.touchscreen.tap(x,y):p.mouse.click(x,y);
  const safe=async(name,fn)=>{try{await fn()}catch(e){ok(name,false,'EXCEPTION '+e.message.split('\n')[0])}};
  const wait=ms=>p.waitForTimeout(ms);
- const tilesNow=()=>p.evaluate(()=>window.__LMAP.tileUrls().map(u=>u.includes('arcgisonline')?'EN(esri)':u.includes('openstreetmap')?'KO(osm)':u));
+ const tilesNow=()=>p.evaluate(()=>window.__LMAP.tileUrls().map(u=>u.includes('openstreetmap')?'OSM':u));
  // ============ 1. character length filter ============
  await safe('length',async()=>{
   const ex=await p.evaluate(()=>({a:nameForLength('Isu(Chongshin Univ.)'),b:nameForLength('이수(총신대입구)'),c:nameForLength('총신대입구(이수)'),d:nameForLength('Seoul Station(서울역)'),e:nameForLength('Seoul Station (서울역)'),f:nameForLength('동대문역사문화공원(DDP)'),g:nameForLength('plain')}));
@@ -47,7 +47,7 @@ async function suite(prof){
    return {sel:S.sel&&S.sel.i,lang:S.lang,c:m.c.slice(),z:m.z,sheet:document.body.dataset.sheet,route:S.route?S.route.join(','):null,red:red.map(q=>q.getAttribute('points')).join('|').length+':'+(red[0]?red[0].getAttribute('points').slice(0,60):''),pins:m.svg.querySelectorAll('g[data-pin]').length,markers:m.svg.querySelectorAll('circle[data-st]').length,tiles:m.tileUrls().length,ibScroll:Math.round(document.querySelector('#ib').scrollTop)}});
  await safe('tiles default',async()=>{
   await p.evaluate(()=>tab('geo'));await wait(200);
-  ok('English mode starts on English-labelled tiles (single layer)',JSON.stringify(await tilesNow())==='["EN(esri)"]',JSON.stringify(await tilesNow()));
+  ok('English mode uses the single OpenStreetMap tile layer (same provider as Korean)',JSON.stringify(await tilesNow())==='["OSM"]',JSON.stringify(await tilesNow()));
  });
  await safe('toggle with route + sheet',async()=>{
   await setup();
@@ -61,13 +61,13 @@ async function suite(prof){
   await p.evaluate(()=>{window.__LMAP.setView([37.52,127.0],13)});await wait(100);
   const before=await snapshot();
   ok('precondition: route visible, station selected, sheet open',before.route&&before.sel===o.i&&before.pins>=2&&(!mobile||before.sheet==='half'),JSON.stringify({sel:before.sel,sheet:before.sheet,pins:before.pins}));
-  for(const [lang,tile,word] of [['ko','KO(osm)','환승'],['en','EN(esri)','Transfer'],['ko','KO(osm)','환승']]){
+  for(const [lang,tile,word] of [['ko','OSM','환승'],['en','OSM','Transfer'],['ko','OSM','환승']]){
    await tap('#lg');await wait(500);
    const a=await snapshot();const tl=await tilesNow();
    ok(`→ ${lang}: station selection preserved`,a.sel===before.sel);
    ok(`→ ${lang}: map centre and zoom unchanged`,a.c[0]===before.c[0]&&a.c[1]===before.c[1]&&a.z===before.z,JSON.stringify({c:a.c,z:a.z}));
    ok(`→ ${lang}: route highlight unchanged (same path, same pins)`,a.red===before.red&&a.route===before.route&&a.pins===before.pins,`pins ${a.pins}/${before.pins}`);
-   ok(`→ ${lang}: base tiles switched to ${tile} (single layer)`,tl.length===1&&tl[0]===tile,JSON.stringify(tl));
+   ok(`→ ${lang}: base tiles unchanged — ${tile} (single layer, same provider)`,tl.length===1&&tl[0]===tile,JSON.stringify(tl));
    ok(`→ ${lang}: all ${before.markers} station markers still present`,a.markers===before.markers,`${a.markers}`);
    if(mobile)ok(`→ ${lang}: sheet stays open in the same state`,a.sheet===before.sheet,a.sheet);
    const loc=await p.evaluate(()=>({sheet:document.querySelector('#ib').innerText,sum:document.querySelector('#route-sum').innerText,tip:tipHTML(ST[S.sel.i||S.sel],null)}));
@@ -93,38 +93,27 @@ async function suite(prof){
   ok('language toggle keeps the open station sheet, its state and scroll position',b.sel===a.sel&&(!mobile||b.sheet===a.sheet)&&Math.abs(b.ibScroll-a.ibScroll)<=60,JSON.stringify({a:a.ibScroll,b:b.ibScroll,s:b.sheet}));
   await tap('#lg');await wait(300);
  });
- await safe('tile fallback ko',async()=>{
-  await setup();if(await p.evaluate(()=>S.lang)==='ko'){await tap('#lg');await wait(400)}
-  await p.evaluate(()=>{window.__TILE_MODE={ko:'fail'};tab('route')});await p.fill('#ra','홍대입구');await p.fill('#rb','잠실');await p.click('#go');await wait(250);await p.click('[data-route-geo="0"]');await wait(500);
-  await p.evaluate(()=>{select(S.route[3],false)});await wait(200);
-  const a=await snapshot();await tap('#lg');await wait(700);const b=await snapshot();const tl=await tilesNow();
-  ok('Korean tiles unavailable → current (English) tiles preserved, single layer',tl.length===1&&tl[0]==='EN(esri)',JSON.stringify(tl));
-  ok('…a localized notice explains it',await p.evaluate(()=>/한국어 지도 타일/.test(document.querySelector('#toast').innerText)),await p.evaluate(()=>document.querySelector('#toast').innerText));
-  ok('…but language is Korean: info sheet, route summary and markers all localized',await p.evaluate(()=>S.lang==='ko'&&/환승|역 코드/.test(document.querySelector('#ib').innerText)&&/서울|홍대|잠실|경로/.test(document.querySelector('#route-sum').innerText)));
+ await safe('tile layer identity',async()=>{
+  await setup();await p.evaluate(()=>{window.__TILE_MODE={ko:'fail'};tab('route')});await p.fill('#ra','홍대입구');await p.fill('#rb','잠실');await p.click('#go');await wait(250);await p.click('[data-route-geo="0"]');await wait(500);
+  await p.evaluate(()=>{select(S.route[3],false);window.__layer0=window.__LMAP.tiles[0]});await wait(200);
+  const a=await snapshot();await tap('#lg');await wait(600);const b=await snapshot();
+  const same=await p.evaluate(()=>window.__LMAP.tiles.length===1&&window.__LMAP.tiles[0]===window.__layer0);
+  ok('language toggle keeps the same tile layer object (shared provider; even with failing tiles nothing is swapped)',same,JSON.stringify(await tilesNow()));
+  ok('…no tile notice, and the UI is fully localized: info sheet, route summary, markers',await p.evaluate(()=>!/unavailable|불러올 수 없어/.test(document.querySelector('#toast').innerText)&&/환승|역 코드|Station codes/.test(document.querySelector('#ib').innerText)&&/서울|홍대|잠실|경로|Hongik|Jamsil|Route/.test(document.querySelector('#route-sum').innerText)));
   ok('…selection, route, centre, zoom preserved',b.sel===a.sel&&b.route===a.route&&b.red===a.red&&b.c[0]===a.c[0]&&b.c[1]===a.c[1]&&b.z===a.z);
   const d=await p.evaluate(()=>{const m=window.__LMAP,r=m.el.getBoundingClientRect(),i=S.route[0],[x,y]=m._P([ST[i].lat,ST[i].lng]);return {x:r.left+x,y:r.top+y,i}});
   if(mobile){await p.evaluate(()=>setSheet(null));await wait(450)}
-  await at(d.x,d.y);await wait(450);ok('hit-testing still works while tiles fell back',await p.evaluate(i=>S.sel&&S.sel.i===i,d.i));
-  // retry later succeeds
-  await p.evaluate(()=>{window.__TILE_MODE={};for(const k in TILE_DOWN)delete TILE_DOWN[k]});await tap('#lg');await wait(300);await tap('#lg');await wait(600);
-  ok('after tiles recover, switching language swaps to Korean tiles again',JSON.stringify(await tilesNow())==='["KO(osm)"]',JSON.stringify(await tilesNow()));
-  if(await p.evaluate(()=>S.lang)==='en'){await tap('#lg');await wait(300)}
- });
- await safe('tile fallback en',async()=>{
-  await setup();
-  if(await p.evaluate(()=>S.lang)!=='ko'){await tap('#lg');await wait(500)}
-  await p.evaluate(()=>{window.__TILE_MODE={en:'fail'}});const a=await snapshot();await tap('#lg');await wait(700);const tl=await tilesNow();
-  ok('English tiles unavailable → Korean (current) tiles preserved',tl.length===1&&tl[0]==='KO(osm)',JSON.stringify(tl));
-  ok('…English notice shown, UI still English',await p.evaluate(()=>S.lang==='en'&&/English map tiles are unavailable/.test(document.querySelector('#toast').innerText)));
-  await p.evaluate(()=>{window.__TILE_MODE={};for(const k in TILE_DOWN)delete TILE_DOWN[k]});
+  await at(d.x,d.y);await wait(450);ok('hit-testing still works after switching language',await p.evaluate(i=>S.sel&&S.sel.i===i,d.i));
+  await p.evaluate(()=>{window.__TILE_MODE={}});
+  if(await p.evaluate(()=>S.lang)==='ko'){await tap('#lg');await wait(300)}
  });
  await safe('rapid toggle + theme',async()=>{
   await setup();for(let i=0;i<6;i++){await p.evaluate(()=>document.querySelector('#lg').click());await wait(60)}await wait(600);
   const r=await p.evaluate(()=>({lang:S.lang,n:window.__LMAP.tiles.length,url:window.__LMAP.tileUrls()[0]}));
-  ok('six rapid toggles end with exactly one tile layer matching the language',r.n===1&&((r.lang==='ko')===r.url.includes('openstreetmap')),JSON.stringify(r));
+  ok('six rapid toggles end with exactly one OpenStreetMap tile layer',r.n===1&&r.url.includes('openstreetmap'),JSON.stringify(r));
   await p.evaluate(()=>document.querySelector('#more-btn').click());await wait(100);await p.evaluate(()=>document.querySelector('#th').click());await wait(500);
   const r2=await p.evaluate(()=>({lang:S.lang,n:window.__LMAP.tiles.length,url:window.__LMAP.tileUrls()[0]}));
-  ok('theme toggle keeps one tile layer in the current language',r2.n===1&&((r2.lang==='ko')===r2.url.includes('openstreetmap')),JSON.stringify(r2));
+  ok('theme toggle keeps one OpenStreetMap tile layer',r2.n===1&&r2.url.includes('openstreetmap'),JSON.stringify(r2));
   await p.evaluate(()=>{document.querySelector('#th').click();document.querySelector('#more-btn').click()});
  });
  ok('no console/page errors',t.errors.length===0,t.errors.join(' | '));

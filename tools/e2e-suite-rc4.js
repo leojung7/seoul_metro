@@ -6,8 +6,8 @@ const results=[];
 const FORMER=new RegExp(['ca','rto'].join('')+'|'+['voy','ager'].join(''),'i');   // the former English tile provider
 const FORMER_NAME=['car','to'].join('');
 const mk=(prof)=>(name,pass,detail='')=>{results.push({prof,name,pass:!!pass,detail:String(detail).slice(0,260)});console.log((pass?'PASS ':'FAIL ')+`[${prof}] ${name}${detail?' — '+String(detail).slice(0,260):''}`)};
-const EN_URL='https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
 const KO_URL='https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const EN_URL=KO_URL;      // V1.3: both languages use the same, reliable provider (the separate English provider ran out of map data when zooming)
 
 // ---------------- 0. static source checks ----------------
 (function staticChecks(){
@@ -18,10 +18,12 @@ const KO_URL='https://tile.openstreetmap.org/{z}/{x}/{y}.png';
   const tl=active.filter(l=>/L\.tileLayer\(/.test(l));
   ok('exactly one L.tileLayer( call in app.js, fed by TILE_SOURCES',tl.length===1&&/TILE_SOURCES|c\.url/.test(tl[0]),tl.join(' | '));
   const src=app.join('\n');
-  ok('Korean tile source unchanged: OpenStreetMap',src.includes('ko: { url: "'+KO_URL+'"'));
-  ok('English tile source is Esri World Street Map (HTTPS, no key)',src.includes('en: { url: "'+EN_URL+'"')&&!/[?&](key|apikey|api_key|token|access_token)=/i.test(EN_URL));
+  ok('Korean tile source unchanged: OpenStreetMap (same URL as before)',/ko: TILE_OSM/.test(src)&&src.includes('const TILE_OSM = { url: "'+KO_URL+'"'));
+  ok('English and Korean share ONE tile provider (OpenStreetMap, HTTPS, no key)',/const TILE_SOURCES = \{ ko: TILE_OSM, en: TILE_OSM \}/.test(src)&&src.includes('const TILE_OSM = { url: "'+KO_URL+'"')&&!/[?&](key|apikey|api_key|token|access_token)=/i.test(KO_URL));
+  ok('no active line in app.js references the separate English provider that showed "Map data not yet available" (ArcGIS/Esri tile host)',!active.some(l=>/arcgisonline|World_Street_Map|esri/i.test(l)),active.filter(l=>/arcgisonline|World_Street_Map|esri/i.test(l)).join(' | '));
+  ok('tile layer declares native zoom 19 only for OpenStreetMap, which really has data to zoom 19',/maxNativeZoom: 19/.test(src)&&/TILE_OSM/.test(src));
   // every file in the project: any mention of the former provider must be a comment or an explicit historical note
-  const hits=[];(function walk(d){for(const f of fs.readdirSync(d)){if(f==='node_modules'||f==='evidence'||f==='__pycache__')continue;const p=path.join(d,f);const st=fs.statSync(p);if(st.isDirectory())walk(p);else if(/\.(js|html|css|md|json|py|txt)$/.test(f)){fs.readFileSync(p,'utf8').split('\n').forEach((l,i)=>{if(FORMER.test(l)&&!/TEST_RESULTS_RC4\.json$/.test(p))hits.push(path.relative(ROOT,p)+':'+(i+1)+':'+l.trim().slice(0,120))})}}})(ROOT);
+  const hits=[];(function walk(d){for(const f of fs.readdirSync(d)){if(f==='node_modules'||f==='evidence'||f==='__pycache__')continue;const p=path.join(d,f);const st=fs.statSync(p);if(st.isDirectory())walk(p);else if(/\.(js|html|css|md|json|py|txt)$/.test(f)){if(/^> \*\*HISTORICAL DOCUMENT/.test(fs.readFileSync(p,'utf8').slice(0,40)))continue;fs.readFileSync(p,'utf8').split('\n').forEach((l,i)=>{if(FORMER.test(l)&&!/TEST_RESULTS_RC4\.json$/.test(p))hits.push(path.relative(ROOT,p)+':'+(i+1)+':'+l.trim().slice(0,120))})}}})(ROOT);
   const bad=hits.filter(h=>{const f=h.split(':')[0];const line=h.split(':').slice(2).join(':');const isComment=/^\/\//.test(line)||/^\*/.test(line);const hist=/historical|formerly|former|superseded|root cause|no longer|removed|replaced|REMOVED|RC4/i.test(line);return !(isComment||hist)});
   ok('repo-wide grep for the former provider (name, CDN host, style name): only comments / historical notes remain',bad.length===0,`${hits.length} hit(s), ${bad.length} active: `+bad.join(' || '));
   ok('map_korea.pdf is present and is a real PDF',fs.existsSync(path.join(ROOT,'map_korea.pdf'))&&fs.readFileSync(path.join(ROOT,'map_korea.pdf')).slice(0,5).toString()==='%PDF-',String(fs.statSync(path.join(ROOT,'map_korea.pdf')).size)+' bytes');
@@ -42,9 +44,9 @@ async function suite(prof,base='/'){
     await p.evaluate(()=>{if(S.lang!=='en')document.querySelector('#lg').click()});await wait(250);
     await p.evaluate(()=>tab('geo'));await wait(400);
     const u=await tiles();
-    ok('Geo map, English mode: single tile layer using Esri World Street Map',u.length===1&&u[0]===EN_URL,JSON.stringify(u));
-    const sample=EN_URL.replace('{z}','11').replace('{y}','794').replace('{x}','1745');
-    ok('English tile URL resolves to a well-formed HTTPS tile path (no key / token)',/^https:\/\/server\.arcgisonline\.com\/ArcGIS\/rest\/services\/World_Street_Map\/MapServer\/tile\/11\/794\/1745$/.test(sample),sample);
+    ok('Geo map, English mode: single OpenStreetMap tile layer (same provider as Korean)',u.length===1&&u[0]===EN_URL,JSON.stringify(u));
+    const sample=EN_URL.replace('{z}','19').replace('{x}','447000').replace('{y}','203000');
+    ok('tile URL is a well-formed HTTPS tile path with no key / token, valid at zoom 19',/^https:\/\/tile\.openstreetmap\.org\/19\/447000\/203000\.png$/.test(sample),sample);
     ok('no network request to the former English provider so far',!t.requests.some(r=>FORMER.test(r)),t.requests.filter(r=>FORMER.test(r)).join(','));
   });
 
@@ -64,7 +66,7 @@ async function suite(prof,base='/'){
       const a=await snap(),u=await tiles();
       const tag=`switch ${n} (→ ${lang==='en'?'EN':'한'})`;
       ok(`${tag}: language is ${lang}`,a.lang===lang,a.lang);
-      ok(`${tag}: exactly one tile layer, ${lang==='en'?'Esri (English)':'OpenStreetMap (Korean)'}`,u.length===1&&u[0]===expectUrl(lang)&&a.layers===1,JSON.stringify({u,layers:a.layers}));
+      ok(`${tag}: exactly one tile layer, OpenStreetMap (both languages)`,u.length===1&&u[0]===expectUrl(lang)&&a.layers===1,JSON.stringify({u,layers:a.layers}));
       ok(`${tag}: route still visible (same path, red line + pins)`,a.red===before.red&&a.route===before.route&&a.pins===before.pins,`red ${a.red}/${before.red} pins ${a.pins}/${before.pins}`);
       ok(`${tag}: station still selected`,a.sel===before.sel,String(a.sel));
       if(mobile)ok(`${tag}: sheet still open (${before.sheet})`,a.sheet===before.sheet,a.sheet);
@@ -87,14 +89,15 @@ async function suite(prof,base='/'){
     if(r.lang!=='en'){await p.evaluate(()=>document.querySelector('#lg').click());await wait(400)}
   });
 
-  // ---------- C. English tiles cannot load -> graceful fallback ----------
-  await safe('English tiles failing',async()=>{
-    await p.evaluate(()=>{for(const k in TILE_DOWN)delete TILE_DOWN[k];window.__TILE_MODE={en:'fail'};if(S.lang==='en')document.querySelector('#lg').click()});await wait(500);
-    await p.evaluate(()=>document.querySelector('#lg').click());await wait(700);        // ko -> en with failing English tiles
-    const u=await tiles(),a=await snap();
-    ok('English tiles failing: Korean (OSM) tiles stay, single layer, language stays English',u.length===1&&u[0]===KO_URL&&a.lang==='en'&&a.layers===1,JSON.stringify({u,lang:a.lang}));
-    ok('English tiles failing: route and markers untouched',a.red>0&&a.markers>600,JSON.stringify({red:a.red,markers:a.markers}));
-    await p.evaluate(()=>{window.__TILE_MODE={};for(const k in TILE_DOWN)delete TILE_DOWN[k]});
+  // ---------- C. one provider: language switches never swap / reload the base map, even when tiles fail ----------
+  await safe('tiles shared by both languages',async()=>{
+    await p.evaluate(()=>{window.__TILE_MODE={ko:'fail'};if(S.lang!=='en')document.querySelector('#lg').click()});await wait(300);
+    const id0=await p.evaluate(()=>{const m=window.__LMAP;window.__layer0=m.tiles[0];return m.tiles.length});
+    for(let i=0;i<4;i++){await p.evaluate(()=>document.querySelector('#lg').click());await wait(250)}
+    const r=await p.evaluate(()=>({n:window.__LMAP.tiles.length,same:window.__LMAP.tiles[0]===window.__layer0,urls:window.__LMAP.tileUrls(),toast:(document.querySelector('#toast')||{}).innerText||''}));
+    ok('four language switches keep the very same tile layer (no swap, no reload, no flicker)',id0===1&&r.n===1&&r.same&&r.urls[0]===KO_URL,JSON.stringify(r.urls));
+    ok('no "tiles unavailable" notice is produced by language switching',!/unavailable|불러올 수 없어/.test(r.toast),r.toast);
+    await p.evaluate(()=>{window.__TILE_MODE={}});
   });
 
   // ---------- D. Official PDF tab ----------

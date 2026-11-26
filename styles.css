@@ -530,3 +530,35 @@ body.picking #route-sum { display: none !important; }
   #q { flex: 0 1 150px; min-width: 110px; }
   #tabs button { padding-left: 8px; padding-right: 8px; }
 }
+
+/* ===== Route cards with travel times + selected-route breakdown (V1.3) ===== */
+.route-option { cursor: pointer; }
+.route-option:focus-visible { outline: 2px solid var(--ac); outline-offset: 2px; }
+.route-option .rt-type { letter-spacing: .6px; font-size: 12px; text-transform: uppercase; color: var(--mu); }
+.route-option.selected .rt-type { color: var(--ac); }
+.rt-time { font-size: 34px; font-weight: 800; line-height: 1.1; margin: 2px 0 4px; }
+.rt-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-weight: 600; }
+.rt-diff { margin-top: 4px; font-size: 13px; color: var(--mu); }
+.rt-basis { margin-top: 2px; font-size: 12px; }
+.route-detail { margin-top: 12px; padding: 12px 14px; border: 1px solid var(--ac); border-radius: 12px; background: var(--pn); }
+.rd-head { font-size: 15px; margin-bottom: 8px; }
+.rd-legs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rd-leg { padding: 8px 10px; border-left: 4px solid var(--bd); border-radius: 6px; background: color-mix(in srgb, var(--bd) 18%, transparent); }
+.rd-xfer { border-left-color: #f59e0b; }
+.rd-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.rd-min { white-space: nowrap; font-size: 17px; }
+.rd-sub { font-size: 12px; margin-top: 3px; }
+.rd-total { margin-top: 10px; padding-top: 8px; border-top: 2px solid var(--bd); font-size: 17px; }
+.rd-stations { margin-top: 10px; }
+.rd-stations summary { cursor: pointer; font-weight: 600; }
+.rd-st-leg { display: flex; gap: 10px; align-items: flex-start; margin-top: 8px; }
+.rd-st-leg ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 24px; font-size: 13px; }
+.rd-st-leg li.end { font-weight: 700; }
+.rd-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.rd-links .lk { padding: 8px 12px; }
+@media (max-width: 900px) {
+  .rt-time { font-size: 30px; }
+  .rd-st-leg { flex-direction: column; gap: 4px; }
+  .rd-st-leg ol { columns: 1; }
+  .rd-min { font-size: 16px; }
+}

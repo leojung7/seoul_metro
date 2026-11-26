@@ -1,0 +1,157 @@
+{
+ "note": "Coverage BEFORE the parenthetical-name normalization fix (first run of the builder).",
+ "lines": {
+  "1": {
+   "pairs": 101,
+   "exact": 9,
+   "dist": 0,
+   "neither": 92
+  },
+  "2": {
+   "pairs": 51,
+   "exact": 51,
+   "dist": 0,
+   "neither": 0
+  },
+  "3": {
+   "pairs": 43,
+   "exact": 33,
+   "dist": 0,
+   "neither": 10
+  },
+  "4": {
+   "pairs": 50,
+   "exact": 24,
+   "dist": 0,
+   "neither": 26
+  },
+  "5": {
+   "pairs": 55,
+   "exact": 55,
+   "dist": 0,
+   "neither": 0
+  },
+  "6": {
+   "pairs": 39,
+   "exact": 39,
+   "dist": 0,
+   "neither": 0
+  },
+  "7": {
+   "pairs": 52,
+   "exact": 41,
+   "dist": 0,
+   "neither": 11
+  },
+  "8": {
+   "pairs": 23,
+   "exact": 18,
+   "dist": 0,
+   "neither": 5
+  },
+  "9": {
+   "pairs": 37,
+   "exact": 0,
+   "dist": 37,
+   "neither": 0
+  },
+  "GTX-A": {
+   "pairs": 8,
+   "exact": 0,
+   "dist": 0,
+   "neither": 8
+  },
+  "경강선": {
+   "pairs": 11,
+   "exact": 0,
+   "dist": 0,
+   "neither": 11
+  },
+  "경의선": {
+   "pairs": 56,
+   "exact": 0,
+   "dist": 0,
+   "neither": 56
+  },
+  "경춘선": {
+   "pairs": 24,
+   "exact": 0,
+   "dist": 0,
+   "neither": 24
+  },
+  "공항철도": {
+   "pairs": 13,
+   "exact": 0,
+   "dist": 13,
+   "neither": 0
+  },
+  "김포도시철도": {
+   "pairs": 9,
+   "exact": 0,
+   "dist": 0,
+   "neither": 9
+  },
+  "서해선": {
+   "pairs": 20,
+   "exact": 0,
+   "dist": 0,
+   "neither": 20
+  },
+  "수인분당선": {
+   "pairs": 62,
+   "exact": 0,
+   "dist": 41,
+   "neither": 21
+  },
+  "신림선": {
+   "pairs": 10,
+   "exact": 0,
+   "dist": 0,
+   "neither": 10
+  },
+  "신분당선": {
+   "pairs": 15,
+   "exact": 0,
+   "dist": 11,
+   "neither": 4
+  },
+  "용인경전철": {
+   "pairs": 14,
+   "exact": 0,
+   "dist": 0,
+   "neither": 14
+  },
+  "우이신설경전철": {
+   "pairs": 12,
+   "exact": 0,
+   "dist": 0,
+   "neither": 12
+  },
+  "의정부경전철": {
+   "pairs": 14,
+   "exact": 0,
+   "dist": 0,
+   "neither": 14
+  },
+  "인천2호선": {
+   "pairs": 26,
+   "exact": 0,
+   "dist": 0,
+   "neither": 26
+  },
+  "인천선": {
+   "pairs": 32,
+   "exact": 0,
+   "dist": 0,
+   "neither": 32
+  },
+  "all": {
+   "pairs": 777,
+   "exact": 270,
+   "dist": 102,
+   "neither": 405
+  }
+ },
+ "transfer_pairs": 101,
+ "unmapped_names": "{'서울교통공사 역간거리 및 소요시간_240810.csv': [('4', '당고개')], '국가철도공단_수인분당선_역간거리_20260630.CSV': [('수인분당선', '복정(동서울대학)'), ('수인분당선', '이매(성남아트센터)'), ('수인분당선', '수내(한국잡월드)'), ('수인분당선', '미금(분당서울대병원)'), ('수인분당선', '죽전(단국대)'), ('수인분당선', '기흥(백남준아트센터)'), ('수인분당선', '상갈(루터대학교)'), ('수인분당선', '영통(경희대)'), ('수인분당선', '수원시청(경기도문화의전당)'), ('수인분당선', '능길'), ('수인분당선', '숭의(인하대병원)')], '국가철도공단_신분당선_역간거리_20260630.CSV': [('신분당선', '판교(판교테크노밸리)'), ('신분당선', '미금(분당서울대병원)')]}"
+}

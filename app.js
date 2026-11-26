@@ -709,7 +709,7 @@ function renderRouteSummary() {
   const a = ST[m.origin], b = ST[m.dest];
   box.hidden = false;
   box.innerHTML = `<div class="rs-head"><b>🟢 ${a ? esc(snm(a, m.firstLine)) : ""} → 🔴 ${b ? esc(snm(b, m.lastLine)) : ""}</b><button type="button" id="rs-clear" class="mini-btn" aria-label="${esc(t("Clear route"))}">✕</button></div>
-    <div class="rs-metrics">🔄 ${t(m.tr === 1 ? "{n} transfer" : "{n} transfers", { n: m.tr })} · 🚉 ${t("{n} stops", { n: m.stops })} · 📏 ≈ ${m.km.toFixed(1)} km</div>
+    <div class="rs-metrics">${m.minutes != null ? `⏱ ${esc(fmtMin(m.minutes))} · ` : ""}🔄 ${t(m.tr === 1 ? "{n} transfer" : "{n} transfers", { n: m.tr })} · 🚉 ${t("{n} stops", { n: m.stops })} · 📏 ≈ ${m.km.toFixed(1)} km</div>
     <div class="rs-legend"><span><i style="background:#16a34a"></i>${t("Start")}</span><span><i style="background:#f59e0b"></i>${t("Transfer")}</span><span><i style="background:#dc2626"></i>${t("End")}</span></div>
     ${S.tab === "sch" && names.length ? `<div class="rs-warn" role="status">⚠ ${t("{n} station(s) on this route have no position on the official map ({names}). The red line is bridged with a dashed connector; the Geo map shows the full path.", { n: names.length, names: esc(names.slice(0, 5).join(", ")) + (names.length > 5 ? "…" : "") })}</div>` : ""}
     ${S.tab === "sch" && approx && !names.length ? `<div class="mu">${t("{n} segment(s) drawn as a straight connector.", { n: approx })}</div>` : ""}
@@ -730,6 +730,7 @@ function makeRouteMeta(route, idx) {
   const hops = route.hops || [];
   return { idx, origin: route.path[0], dest: route.path[route.path.length - 1], hops,
     transfers: route.SG.filter(x => x.t).map(x => x.s.i), tr: route.tr, stops: route.stops, km: route.km,
+    minutes: route.time ? route.time.totalMin : null,
     label: route.label, firstLine: hops.length ? hops[0].g : null, lastLine: hops.length ? hops[hops.length - 1].g : null };
 }
 // One call does everything: switch to the map, highlight, zoom, summary, toast.
@@ -912,24 +913,25 @@ function geoRoutePath(hops) {
 // ============================================================================
 let MAP = null, GL, TL;
 
-// Base map per language. Both providers are keyless HTTPS raster tile services that work from any static host
-// (GitHub Pages) with plain Leaflet; no API key or token is involved anywhere.
-//   ko -> OpenStreetMap standard tiles (UNCHANGED): place labels in the local language (Korean in Korea).
-//   en -> Esri World Street Map tiles: place labels in English.
-// Station labels, markers, tooltips and sheets are localized by the app itself and never depend on the tiles.
+// Base map: ONE provider for BOTH languages - OpenStreetMap standard tiles (keyless, HTTPS, works from any static host such
+// as GitHub Pages, real map data at every zoom level up to 19).  Map reliability matters more than English basemap labels:
+// the street/place labels baked into the tiles are in the local language (Korean in Korea), while everything the app draws
+// itself - station names, markers, tooltips, popups, route details and summaries, filters, legends, UI text - is localized
+// by the app and never depends on the tiles.
 //
-// HISTORICAL NOTE (root cause of the "API KEY REQUIRED" map): English mode used to load the Voyager raster tiles from the
-// provider that was formerly the "en" entry here. That provider now answers every tile request with a normal 200 PNG that is
-// itself a notice reading "API KEY REQUIRED". Leaflet therefore fired "load", not "tileerror", and the switch-over logic
-// in setTiles() accepted the notice image as a working base map. Korean mode (OpenStreetMap) was never affected.
-const TILE_SOURCES = {
-  ko: { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", sub: "abc", maxNativeZoom: 19,
-        attr: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' },
-  en: { url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", sub: "", maxNativeZoom: 19,
-        attr: 'Tiles &copy; <a href="https://www.esri.com">Esri</a> &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong) and the GIS User Community' }
-};
-// If the English tiles cannot be loaded at all on first paint, fall back to the Korean (OpenStreetMap) tiles instead of a blank map.
-const TILE_FALLBACK = { en: "ko" };
+// HISTORICAL NOTES (why English mode no longer has its own provider):
+//  1. English mode first used a raster provider that now requires an API key. It answers every tile request with a normal
+//     200 PNG that is itself a notice reading "API KEY REQUIRED", so Leaflet fired "load" (not "tileerror") and the switch-over
+//     logic accepted the notice image as a working base map.
+//  2. It was then replaced by a second provider (a different server and API from the Korean one) whose tiles run out of real
+//     map data at the closer zoom levels in Korea. Beyond that limit it also answers with a normal 200 PNG, reading
+//     "Map data not yet available", which cannot be detected as an error either. This config had declared real data up to
+//     zoom 19 (maxNativeZoom) for it, so zooming in showed that notice.
+// Using the Korean-mode provider for both removes that whole class of failure (and the swap on every language toggle).
+const TILE_OSM = { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", sub: "abc", maxNativeZoom: 19,
+  attr: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' };
+const TILE_SOURCES = { ko: TILE_OSM, en: TILE_OSM };
+const TILE_FALLBACK = {};                               // nothing to fall back to: both languages already use the reliable provider
 let TL_LANG = null, TL_PENDING = null, TL_TOKEN = 0;    // TL_PENDING / TL_TOKEN: only the newest language switch may change the base map
 const TILE_DOWN = {};                                   // lang -> timestamp of the last failed attempt (retry after 60 s)
 function cancelPendingTiles() { if (TL_PENDING) { try { MAP.removeLayer(TL_PENDING); } catch (e) {} TL_PENDING = null; } }
@@ -937,13 +939,16 @@ function setTiles(lang, force) {
   if (!MAP) return;
   // Already showing this language: just drop any half-finished switch to another language.
   if (TL && TL_LANG === lang && !force) { if (TL_PENDING) { cancelPendingTiles(); TL_TOKEN++; } return; }
+  // Both languages share one provider: a language switch must not touch the base map at all (no reload, no flicker,
+  // zoom/centre untouched).
+  if (TL && !force && TL.__url === (TILE_SOURCES[lang] || TILE_SOURCES.ko).url) { TL_LANG = lang; if (TL_PENDING) { cancelPendingTiles(); TL_TOKEN++; } return; }
   if (TILE_DOWN[lang] && Date.now() - TILE_DOWN[lang] < 60000 && !force) return;
   cancelPendingTiles();
   const c = TILE_SOURCES[lang] || TILE_SOURCES.ko, old = TL, token = ++TL_TOKEN;
   const opts = { maxZoom: 19, maxNativeZoom: c.maxNativeZoom, attribution: c.attr };
   if (c.sub) opts.subdomains = c.sub;
   const next = L.tileLayer(c.url, opts);
-  next.__lang = lang;
+  next.__lang = lang; next.__url = c.url;
   let errors = 0, loaded = false, done = false;
   const finish = ok => {
     if (done) return; done = true;
@@ -1201,7 +1206,10 @@ function summarizeRoute(a, E, b) {
       tr++; walk += e.w; SG.push({ t: 1, s: e.s, w: e.w, g1: e.g1, g2: e.g2 });
     }
   });
-  return { km, tr, walk, min, stops, gs, SG, path, hops };
+  const out = { km, tr, walk, min, stops, gs, SG, path, hops };
+  // Travel-time breakdown (exact / derived / estimated - see route-engine.js). Absent only for edges from the original plan().
+  if (window.RouteEngine && E.some(e => e.sec != null)) out.time = RouteEngine.timing(E);
+  return out;
 }
 
 // Transfer label uses each line's own naming when they differ (e.g. 총신대입구(이수) → 이수(총신대입구)).
@@ -1211,24 +1219,134 @@ function stepStation(s, g1, g2) {
   return S.lang === "ko" ? `${a.ko} → ${b.ko}` : `${a.en} → ${b.en} (${a.ko} → ${b.ko})`;
 }
 const snm = (s, g) => { const n = dnames(s, g); return bi(n.en, n.ko); };   // "Seoul Station (서울역)" / "서울역"
-function routeOptionHTML(route, a, b, index, selected) {
-  const rides = route.SG.filter(x => !x.t);
-  const steps = route.SG.map(x => x.t
-    ? `<div class="route-step transfer-step">🔄 <b>${esc(t("Transfer at {name}", { name: stepStation(x.s, x.g1, x.g2) }))}</b> <span class="mu">${esc(LN(x.g1))} → ${esc(LN(x.g2))}</span></div>`
-    : `<div class="route-step" style="border-left-color:${LC(x.g)}"><span class="bd" style="background:${LC(x.g)}">${esc(LN(x.g))}</span> <b>${esc(t("Board {line}", { line: LN(x.g) }))}</b><br>${esc(snm(ST[x.from], x.g))} → ${esc(snm(ST[x.to], x.g))} <span class="mu">${esc(t("{n} stops", { n: x.c }))}</span></div>`
-  ).join("") + (rides.length ? `<div class="route-step">🏁 <b>${esc(t("Exit at {name}", { name: snm(ST[rides[rides.length - 1].to], rides[rides.length - 1].g) }))}</b></div>` : "");
-  return `<article class="route-option ${selected ? "selected" : ""}">
-    <div class="route-option-head"><b>${esc(t(route.label))}</b>${selected ? `<span class="route-tag">${t("Matches your preference")}</span>` : ""}</div>
+// ---------------------------------------------------------------------------
+// Travel-time presentation. Times come from route-engine.js (official data first; see travel-times.js).
+// ---------------------------------------------------------------------------
+const fmtMin = n => (S.lang === "ko" ? `${n}분` : `${n} min`);
+const fmtKm = (km, approx) => `${approx ? "≈ " : ""}${km.toFixed(1)} km`;
+const routeLabel = r => t(r.label);
+// "Where does this time come from?" - one short line, always honest about exact vs derived vs estimated data.
+function timeBasisText(time) {
+  const B = time.basis, parts = [];
+  if (!B.derived && !B.estimated) parts.push(`✅ ${t("Official running times for all {n} segments", { n: B.segments })}`);
+  else {
+    const rest = [];
+    if (B.derived) rest.push(t("{n} derived from official distances", { n: B.derived }));
+    if (B.estimated) rest.push(t("{n} estimated from station positions", { n: B.estimated }));
+    parts.push(`${B.official ? "🟡" : "🟠"} ${t("Official running times for {o} of {n} segments", { o: B.official, n: B.segments })}; ${rest.join(", ")}`);
+  }
+  if (B.transfers) parts.push(B.transfersDefault
+    ? t("Transfers: {o} official, {d} default time", { o: B.transfersOfficial, d: B.transfersDefault })
+    : t("Transfers: all {o} official", { o: B.transfersOfficial }));
+  return parts.join(" · ");
+}
+const timeCaveat = () => t("Estimated time = official running times + about {s} s standing at each intermediate station + transfer walking + about {w} s waiting for the connecting train. Waiting for the first train is not included, and this is not real-time information.", { s: RouteEngine.config.dwellSeconds, w: RouteEngine.config.transferWaitSeconds });
+// Difference to the fastest route, so the options can be compared at a glance.
+function diffText(route, fastest) {
+  if (!route.time || !fastest || !fastest.time || route === fastest) return "";
+  const parts = [], dm = route.time.totalMin - fastest.time.totalMin, dt = route.tr - fastest.tr, dk = route.km - fastest.km;
+  parts.push(dm === 0 ? t("same time") : dm > 0 ? t("+{n} min", { n: dm }) : t("−{n} min", { n: -dm }));
+  parts.push(dt === 0 ? t("same transfers")
+    : dt > 0 ? t(dt === 1 ? "{n} more transfer" : "{n} more transfers", { n: dt })
+    : t(dt === -1 ? "{n} fewer transfer" : "{n} fewer transfers", { n: -dt }));
+  parts.push(`${dk >= 0 ? "+" : "−"}${Math.abs(dk).toFixed(1)} km`);
+  return `${t("vs fastest")}: ${parts.join(" · ")}`;
+}
+// ---- external map links (origin / destination = the selected route's stations) ----
+const mapName = (s, g) => { const n = dnames(s, g).ko.replace(/\s*\([^)]*\)/g, "").trim(); return /역$/.test(n) ? n : n + "역"; };
+function externalLinks(route) {
+  const hops = route.hops || [], a = ST[route.path[0]], b = ST[route.path[route.path.length - 1]];
+  if (!a || !b) return "";
+  const fl = hops.length ? hops[0].g : null, ll = hops.length ? hops[hops.length - 1].g : null;
+  const google = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(mapName(a, fl))}&destination=${encodeURIComponent(mapName(b, ll))}&travelmode=transit`;
+  const kakao = `https://m.map.kakao.com/scheme/route?sp=${a.lat},${a.lng}&ep=${b.lat},${b.lng}&by=publictransit`;
+  const naver = `nmap://route/public?slat=${a.lat}&slng=${a.lng}&sname=${encodeURIComponent(mapName(a, fl))}&dlat=${b.lat}&dlng=${b.lng}&dname=${encodeURIComponent(mapName(b, ll))}&appname=${encodeURIComponent(location.hostname || "seoul-metro-hub")}`;
+  // Naver only documents an app link (no web directions URL), so it is offered on phones/tablets only.
+  const touchDevice = isMobile() || (window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
+  const naverBtn = touchDevice ? `<a class="lk" id="rt-naver" href="${naver}">${t("🟩 Open in Naver Map (app)")}</a>` : "";
+  return `<div class="rd-links">${lnk(google, t("🗺️ Open in Google Maps"))}${lnk(kakao, t("🟨 Open in Kakao Map"))}${naverBtn}</div>`;
+}
+
+function routeOptionHTML(route, a, b, index, selected, fastest) {
+  const rides = route.SG.filter(x => !x.t), T = route.time;
+  const steps = (T ? T.legs : route.SG).map((x, li) => {
+    if (x.type === "transfer" || x.t) {
+      const s = x.s, mins = T ? ` <span class="mu">· ${esc(fmtMin(x.min))}</span>` : "";
+      return `<div class="route-step transfer-step">🔄 <b>${esc(t("Transfer at {name}", { name: stepStation(s, x.g1, x.g2) }))}</b> <span class="mu">${esc(LN(x.g1))} → ${esc(LN(x.g2))}</span>${mins}</div>`;
+    }
+    const g = x.g, from = x.from, to = x.to, mins = T ? ` <span class="mu">· ${esc(fmtMin(x.min))}</span>` : "";
+    const cnt = T ? x.stops : x.c;
+    return `<div class="route-step" style="border-left-color:${LC(g)}"><span class="bd" style="background:${LC(g)}">${esc(LN(g))}</span> <b>${esc(t("Board {line}", { line: LN(g) }))}</b>${mins}<br>${esc(snm(ST[from], g))} → ${esc(snm(ST[to], g))} <span class="mu">${esc(t("{n} stops", { n: cnt }))}</span></div>`;
+  }).join("") + (rides.length ? `<div class="route-step">🏁 <b>${esc(t("Exit at {name}", { name: snm(ST[rides[rides.length - 1].to], rides[rides.length - 1].g) }))}</b></div>` : "");
+  const approxKm = T && T.basis.estimated > 0;
+  const stats = T
+    ? `<div class="rt-stats"><span>🔄 ${t(route.tr === 1 ? "{n} transfer" : "{n} transfers", { n: route.tr })}</span><span>🚉 ${t("{n} stations", { n: route.stops })}</span><span>📏 ${fmtKm(route.km, approxKm)}</span></div>`
+    : `<div class="route-metrics"><span>🚉 ${t("Stops")}: ${route.stops}</span><span>🔄 ${t("Transfers")}: ${route.tr}</span><span>📏 ${t("Distance")}: ≈ ${route.km.toFixed(1)} km</span></div>`;
+  const diff = diffText(route, fastest);
+  return `<article class="route-option ${selected ? "selected" : ""}" data-route-idx="${index}" tabindex="0" aria-label="${esc(routeLabel(route) + (T ? ", " + fmtMin(T.totalMin) : ""))}">
+    <div class="route-option-head"><b class="rt-type">${esc(routeLabel(route))}</b>${selected ? `<span class="route-tag">${t("Selected")}</span>` : ""}</div>
+    ${T ? `<div class="rt-time" data-total-min="${T.totalMin}">${esc(fmtMin(T.totalMin))}</div>` : ""}
+    ${stats}
+    ${diff ? `<div class="rt-diff">${esc(diff)}</div>` : ""}
     <div style="display:flex;gap:4px;flex-wrap:wrap;margin:6px 0">${rides.map(x => lineBadge(x.g)).join('<span class="mu">→</span>')}</div>
-    <div class="route-metrics"><span>🚉 ${t("Stops")}: ${route.stops}</span><span>🔄 ${t("Transfers")}: ${route.tr}</span><span>📏 ${t("Distance")}: ≈ ${route.km.toFixed(1)} km</span></div>
-    <div class="mu">${t("Route path and distance are calculated from station positions. No live service information (arrivals, delays) is shown.")}</div>
+    ${T ? `<div class="mu rt-basis">${esc(timeBasisText(T))}</div>` : `<div class="mu">${t("Route path and distance are calculated from station positions. No live service information (arrivals, delays) is shown.")}</div>`}
     <div class="route-actions"><button type="button" class="on" data-route-geo="${index}">${t("🌍 Show on map")}</button><button type="button" data-route-map="${index}">${t("🗺️ Schematic")}</button><button type="button" data-route-steps="${index}" aria-expanded="false" aria-controls="route-steps-${index}">${t("Show / hide steps")}</button></div>
     <div class="route-steps" id="route-steps-${index}" hidden>${steps}</div>
   </article>`;
 }
 
+// ---- detailed time breakdown + station-by-station list for the SELECTED route ----
+function routeDetailHTML(route, index) {
+  const T = route.time; if (!T) return "";
+  const legRows = T.legs.map(l => {
+    if (l.type === "transfer") {
+      const how = l.src === "official"
+        ? `${t("official walking time")}: ${fmtMin(Math.max(1, Math.round(l.walkSec / 60)))}${l.waitSec ? ` + ${fmtMin(Math.round(l.waitSec / 60))} ${t("waiting for the connecting train (assumed)")}` : ""}`
+        : t("default {c} transfer", { c: t(l.cls === "easy" ? "easy" : l.cls === "long" ? "long" : "medium") });
+      return `<li class="rd-leg rd-xfer"><div class="rd-row"><span>🔄 <b>${esc(t("Transfer"))}</b> <span class="mu">${esc(stepStation(l.s, l.g1, l.g2))} · ${esc(LN(l.g1))} → ${esc(LN(l.g2))}</span></span><b class="rd-min">${esc(fmtMin(l.min))}</b></div><div class="mu rd-sub">${esc(how)}${l.meters ? ` · ${l.meters} m` : ""}</div></li>`;
+    }
+    const tiers = [l.tiers.official ? t("{n} official", { n: l.tiers.official }) : "", l.tiers.derived ? t("{n} derived", { n: l.tiers.derived }) : "", l.tiers.estimated ? t("{n} estimated", { n: l.tiers.estimated }) : ""].filter(Boolean).join(", ");
+    const parts = `${fmtMin(Math.round(l.runSec / 60))} ${t("running")}${l.dwellSec ? ` + ${fmtMin(Math.round(l.dwellSec / 60))} ${t("at {n} stations", { n: l.stationStops })}` : ""}`;
+    return `<li class="rd-leg" style="border-left-color:${LC(l.g)}"><div class="rd-row"><span><span class="bd" style="background:${LC(l.g)}">${esc(LN(l.g))}</span><br>${esc(snm(ST[l.from], l.g))} → ${esc(snm(ST[l.to], l.g))}</span><b class="rd-min">${esc(fmtMin(l.min))}</b></div><div class="mu rd-sub">${esc(parts)} · ${esc(t("{n} stations", { n: l.stops }))} · ${l.km.toFixed(1)} km · ${esc(tiers)}</div></li>`;
+  }).join("");
+  const stations = T.legs.filter(l => l.type === "ride").map(l => {
+    const ids = [l.edges[0].a, ...l.edges.map(e => e.b)];
+    return `<div class="rd-st-leg"><span class="bd" style="background:${LC(l.g)}">${esc(LN(l.g))}</span><ol>${ids.map((i, k) => `<li${k === 0 || k === ids.length - 1 ? ' class="end"' : ""}>${esc(snm(ST[i], l.g))}</li>`).join("")}</ol></div>`;
+  }).join("");
+  return `<section class="route-detail" id="route-detail" data-route-idx="${index}" aria-live="polite">
+    <div class="rd-head"><b>${esc(t("Selected route"))}: ${esc(routeLabel(route))}</b></div>
+    <ol class="rd-legs">${legRows}</ol>
+    <div class="rd-row rd-total"><b>${esc(t("Total"))}</b><b class="rd-min" data-total-min="${T.totalMin}">${esc(fmtMin(T.totalMin))}</b></div>
+    <div class="mu rd-sub">${esc(t("{r} running + {d} standing at stations + {x} transfers", { r: fmtMin(Math.round(T.runSec / 60)), d: fmtMin(Math.round(T.dwellSec / 60)), x: fmtMin(Math.round(T.transferSec / 60)) }))}</div>
+    <div class="mu rd-sub">${esc(timeBasisText(T))}</div>
+    <div class="mu rd-sub">${esc(timeCaveat())}</div>
+    <details class="rd-stations"><summary>${esc(t("Station by station"))}</summary>${stations}</details>
+    ${externalLinks(route)}
+  </section>`;
+}
+function renderRouteDetail() {
+  const box = $("#route-detail-slot"); if (!box) return;
+  const r = S.routes && S.routes[S.routeIdx];
+  box.innerHTML = r ? routeDetailHTML(r, S.routeIdx) : "";
+}
+// Make one option the active route: highlight its card, show its breakdown, keep an on-map route in sync.
+function selectRoute(idx) {
+  const r = S.routes && S.routes[idx]; if (!r) return;
+  S.routeIdx = idx;
+  const fastest = S.routes.find(x => x.key === "f") || S.routes[0];
+  document.querySelectorAll("#rres .route-option").forEach((el, i) => {
+    const on = i === idx; el.classList.toggle("selected", on);
+    let tag = el.querySelector(".route-tag");
+    if (on && !tag) { tag = document.createElement("span"); tag.className = "route-tag"; tag.textContent = t("Selected"); el.querySelector(".route-option-head").appendChild(tag); }
+    if (!on && tag) tag.remove();
+  });
+  renderRouteDetail();
+  if (S.route) { S.route = r.path; S.routeMeta = makeRouteMeta(r, idx); }       // a route already shown on a map follows the selection
+}
+
 function doRoute(keepSelection) {
-  const prev = keepSelection ? { route: S.route, meta: S.routeMeta, idx: S.routeIdx } : null;
+  // keepSelection is only ever the literal `true` (language re-render); the Calculate button passes its click event here.
+  const prev = keepSelection === true ? { route: S.route, meta: S.routeMeta, idx: S.routeIdx, sig: S.routes && S.routes[S.routeIdx] ? S.routes[S.routeIdx].signature : null } : null;
   const a = resolveStation($("#ra").value);
   const b = resolveStation($("#rb").value);
   const o = $("#rres");
@@ -1239,9 +1357,13 @@ function doRoute(keepSelection) {
   ROUTE_DATA_WARNINGS.length = 0;
   S.route = null; S.routeMeta = null; S.routes = [];
   const express = $("#rx").value;
-  const candidates = [
-    { key: "f", label: "📏 Shortest route", edges: plan(a.i, b.i, "f", express) },
-    { key: "t", label: "🔄 Fewer transfers", edges: plan(a.i, b.i, "t", express) }
+  // Travel-time engine first (Fastest / Fewest transfers / Alternates, ranked). The original plan() stays as the fallback.
+  let candidates = [];
+  try { const eng = window.RouteEngine && RouteEngine.options(a.i, b.i, express); if (eng) candidates = eng.map(x => ({ key: x.key, label: x.label, edges: x.E })); }
+  catch (err) { console.warn("route-engine failed, using the original planner", err); }
+  if (!candidates.length) candidates = [
+    { key: "f", label: "FASTEST", edges: plan(a.i, b.i, "f", express) },
+    { key: "t", label: "FEWEST TRANSFERS", edges: plan(a.i, b.i, "t", express) }
   ].filter(x => x.edges);
   if (!candidates.length) {
     const warningCount = ROUTE_DATA_WARNINGS.length;
@@ -1253,31 +1375,44 @@ function doRoute(keepSelection) {
     const summary = summarizeRoute(a, candidate.edges, b);
     const signature = summary.path.join(",") + "|" + summary.SG.map(x => x.t ? `${x.g1}>${x.g2}@${x.s.i}` : x.g).join(",");
     const existing = routes.find(r => r.signature === signature);
-    if (existing) existing.label = "📏 Shortest and fewest transfers (same route)";
+    if (existing) existing.label = "FASTEST · FEWEST TRANSFERS";
     else routes.push({ ...summary, label: candidate.label, key: candidate.key, signature });
   });
-  const preferred = $("#rp").value;
+  const preferred = $("#rp").value;                                  // "f" = Fastest (default), "t" = Fewest transfers
   const preferredRoute = routes.find(r => r.key === preferred) || routes[0];
-  S.routes = routes; S.routeIdx = Math.max(0, routes.indexOf(preferredRoute));
+  S.routes = routes;
+  const keepIdx = prev && prev.sig ? routes.findIndex(r => r.signature === prev.sig) : -1;
+  S.routeIdx = keepIdx >= 0 ? keepIdx : Math.max(0, routes.indexOf(preferredRoute));
+  const selectedRoute = routes[S.routeIdx], fastest = routes.find(r => r.key === "f") || routes[0];
   const typedLine = (st, text) => st.displayNames ? (Object.keys(st.displayNames).find(g => st.displayNames[g].ko === String(text).trim()) || null) : null;
-  const fl = typedLine(a, $("#ra").value) || (preferredRoute.hops[0] ? preferredRoute.hops[0].g : null), ll = typedLine(b, $("#rb").value) || (preferredRoute.hops.length ? preferredRoute.hops[preferredRoute.hops.length - 1].g : null);
-  o.innerHTML = `<div class="route-intro"><b>${esc(snm(a, fl))} → ${esc(snm(b, ll))}</b><div class="mu">${t("Compare the calculated alternatives below. This is a planning aid, not live train information.")}</div>
-    ${lnk(`https://www.google.com/maps/dir/?api=1&origin=${a.lat},${a.lng}&destination=${b.lat},${b.lng}&travelmode=transit`, t("🗺️ Open directions in Google Maps"))}</div>
-    <div class="route-compare">${routes.map((r, i) => routeOptionHTML(r, a, b, i, r === preferredRoute)).join("")}</div>`;
+  const fl = typedLine(a, $("#ra").value) || (selectedRoute.hops[0] ? selectedRoute.hops[0].g : null), ll = typedLine(b, $("#rb").value) || (selectedRoute.hops.length ? selectedRoute.hops[selectedRoute.hops.length - 1].g : null);
+  const gUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(mapName(a, fl))}&destination=${encodeURIComponent(mapName(b, ll))}&travelmode=transit`;
+  o.innerHTML = `<div class="route-intro"><b>${esc(snm(a, fl))} → ${esc(snm(b, ll))}</b><div class="mu">${t(selectedRoute.time ? "Compare the options below and tap one to see where its time comes from. This is a planning aid, not live train information." : "Compare the calculated alternatives below. This is a planning aid, not live train information.")}</div>
+    ${lnk(gUrl, t("🗺️ Open in Google Maps"))}</div>
+    <div class="route-compare">${routes.map((r, i) => routeOptionHTML(r, a, b, i, i === S.routeIdx, fastest)).join("")}</div>
+    <div id="route-detail-slot"></div>`;
+  renderRouteDetail();
+  const press = (idx, fn) => { selectRoute(idx); fn(); };
   o.querySelectorAll("[data-route-map]").forEach(button => {
-    button.onclick = () => showRouteOnMap(+button.dataset.routeMap, "sch");
+    button.onclick = () => press(+button.dataset.routeMap, () => showRouteOnMap(+button.dataset.routeMap, "sch"));
   });
   o.querySelectorAll("[data-route-geo]").forEach(button => {
-    button.onclick = () => showRouteOnMap(+button.dataset.routeGeo, "geo");
+    button.onclick = () => press(+button.dataset.routeGeo, () => showRouteOnMap(+button.dataset.routeGeo, "geo"));
   });
   o.querySelectorAll("[data-route-steps]").forEach(button => {
     button.onclick = () => {
       const panel = $("#route-steps-" + button.dataset.routeSteps);
       panel.hidden = !panel.hidden;
       button.setAttribute("aria-expanded", String(!panel.hidden));
+      selectRoute(+button.dataset.routeSteps);
     };
   });
-  if (prev && prev.route && prev.idx < routes.length) { S.route = prev.route; S.routeMeta = prev.meta; S.routeIdx = prev.idx; }
+  // click / Enter / Space on a card makes it the active route (buttons and links keep their own behaviour)
+  o.querySelectorAll(".route-option").forEach(card => {
+    card.addEventListener("click", e => { if (!e.target.closest("button,a")) selectRoute(+card.dataset.routeIdx); });
+    card.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target === card) { e.preventDefault(); selectRoute(+card.dataset.routeIdx); } });
+  });
+  if (prev && prev.route && prev.idx < routes.length) { S.route = routes[S.routeIdx].path; S.routeMeta = makeRouteMeta(routes[S.routeIdx], S.routeIdx); }
   warnRouteData();
 }
 function warnRouteData() { if (ROUTE_DATA_WARNINGS.length) console.warn(ROUTE_DATA_WARNINGS.length + " route-data issue(s) skipped safely", ROUTE_DATA_WARNINGS.slice(0, 10)); }
@@ -1506,7 +1641,7 @@ function applyLanguage() {
   if (!$("#search-modal").hidden) renderMobileSearch();
   if (!$("#cov-modal").hidden) renderCoverage();
   if (!$("#pick-banner").hidden) $("#pick-banner-txt").textContent = t(pkTarget === "ra" ? "Tap any station on the map to set Origin (🟢)" : "Tap any station on the map to set Destination (🔴)");
-  if (S.route && S.route.length && $("#rres") && $("#rres").innerHTML) { try { doRoute(true); } catch (e) { console.warn(e); } }
+  if (S.routes && S.routes.length && $("#rres") && $("#rres").innerHTML) { try { doRoute(true); } catch (e) { console.warn(e); } }   // keeps the selected option
   renderRouteSummary();
 }
 $("#lg").onclick = () => { S.lang = S.lang === "en" ? "ko" : "en"; S.svgLang = S.lang; applyLanguage(); };
