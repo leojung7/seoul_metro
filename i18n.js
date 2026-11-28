@@ -35,7 +35,7 @@ window.KO = {
   "Transfers only (환승역)": "환승역만",
   "Filter by station or line name…": "역 또는 노선 이름으로 필터…",
   "{n} stations": "역 {n}개", "{n} stops": "{n}개 역", "express service": "급행 운행",
-  "No stations match.": "일치하는 역이 없습니다.", "All": "전체", "{n} letters": "{n}글자",
+  "No stations match.": "일치하는 역이 없습니다.", "All": "전체", "{n} letters": "{n}글자", "Exact length (6–{max})": "정확한 글자 수 (6–{max})",
   // ---- route planner ----
   "Compare journeys": "경로 비교",
   "🟢 Origin": "🟢 출발", "🔴 Destination": "🔴 도착",

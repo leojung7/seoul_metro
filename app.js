@@ -29,7 +29,7 @@ const S = {
   route: null,
   hubs: 0,
   pickTarget: null, // 'ra' | 'rb' when picking on map
-  lines: { g: "1", all: 0, len: "all", q: "", tr: 0, cl: "ko", so: "o" },
+  lines: { g: "1", all: 0, len: "all", lenN: 6, q: "", tr: 0, cl: "ko", so: "o" },
   day: "wd"
 };
 
@@ -1063,10 +1063,34 @@ function drawGeo() {
 // ============================================================================
 // 4. LINES TAB (CONNECTED TRUNKS & BRANCHES)
 // ============================================================================
-// Length filters/statistics ignore any parenthetical text, including the parentheses: "Isu(Chongshin Univ.)" -> "Isu" (3),
-// "총신대입구(이수)" -> "총신대입구" (5). Only the COUNT changes; the displayed name is untouched.
-const nameForLength = name => String(name).replace(/\s*\([^)]*\)/g, "");
-const cl = (s, g) => { const n = dnames(s, g); return S.lines.cl === "ko" ? nameForLength(n.ko).replace(/\s/g, "").length : nameForLength(n.en).replace(/[^A-Za-z0-9]/g, "").length; };
+// ---- Character-length filter: counting rules ----
+// Text inside parentheses (and the parentheses themselves) is ignored: "이수(총신대입구)" -> "이수" (2).
+// Only the COUNT changes; the displayed name is untouched.
+//   Korean : the Korean station name, spaces ignored.
+//   English: the English station name, LETTERS ONLY (spaces, punctuation, digits and "&" are ignored):
+//            "Dongdaemun History & Culture Park" -> 29 letters.
+const nameForLength = name => String(name).replace(/\s*[(（][^)）]*[)）]/g, "");
+const countLen = (name, mode) => {
+  const base = nameForLength(name);
+  return mode === "ko" ? base.replace(/\s/g, "").length : (base.match(/\p{L}/gu) || []).length;
+};
+const cl = (s, g) => { const n = dnames(s, g); return S.lines.cl === "ko" ? countLen(n.ko, "ko") : countLen(n.en, "en"); };
+
+// The longest station name per counting language, calculated from the loaded dataset (nothing is hard-coded).
+// Every name a station can show is considered: its default name plus each line-specific display name.
+function computeLengthStats() {
+  const out = { ko: { max: 0, name: "", i: -1 }, en: { max: 0, name: "", i: -1 }, stations: ST.length };
+  for (const s of ST) {
+    for (const n of [dnames(s, null), ...allDisplayNames(s)]) {
+      const k = countLen(n.ko, "ko"), e = countLen(n.en, "en");
+      if (k > out.ko.max) out.ko = { max: k, name: n.ko, i: s.i };
+      if (e > out.en.max) out.en = { max: e, name: n.en, i: s.i };
+    }
+  }
+  return out;
+}
+let LEN_STATS = computeLengthStats();
+console.log(`[length-filter] longest station name computed from ${LEN_STATS.stations} stations: Korean = ${LEN_STATS.ko.max} ("${LEN_STATS.ko.name}"), English = ${LEN_STATS.en.max} ("${LEN_STATS.en.name}"); the "6+" dropdown lists 6..${LEN_STATS[S.lines.cl].max} for the current counting language (${S.lines.cl}).`);
 const lineRow = (s, g, cls = "") => { const n = dnames(s, g); return `<div class="row ${cls}" data-i="${s.i}" role="button" tabindex="0"><div class="trk" style="--c:${LC(g)}"><b class="${hub(s) ? "h" : ""}"></b></div><div style="flex:1;min-width:0">${nameHTML(n.ko, n.en)} <span class="mu">${cl(s, g)}${S.lang === "ko" ? "자" : ""}</span><br>${bdg(s)}</div></div>`; };
 
 function drawLines() {
@@ -1080,27 +1104,36 @@ function drawLines() {
   const matchFn = s => {
     if (S.lines.tr && !hub(s)) return false;
     const L = cl(s, g), m = S.lines.len;
-    if (m !== "all" && (m === "6+" ? L < 6 : L !== +m)) return false;
+    if (m === "6+") { if (L !== S.lines.lenN) return false; }     // "6+" mode: exactly the length picked in the dropdown (6 … longest name)
+    else if (m !== "all" && L !== +m) return false;
     return !q || s.ko.includes(q) || s.en.toLowerCase().includes(q) || allDisplayNames(s).some(n => n.ko.includes(q) || n.en.toLowerCase().includes(q)) || s.ln.some(k => D.L[k].k.toLowerCase().includes(q) || D.L[k].e.toLowerCase().includes(q));
   };
 
-  $("#lens").innerHTML = ["all", "2", "3", "4", "5", "6+"].map(x => `<button data-len="${x}" class="${S.lines.len == x ? "on" : ""}">${x === "all" ? t("All") : t("{n} letters",{n:x})}</button>`).join("");
+  // "6+" opens an exact-length dropdown whose range is generated from the data: 6 … longest name for the counting language.
+  const lenMax = Math.max(6, LEN_STATS[S.lines.cl].max);
+  S.lines.lenN = Math.min(lenMax, Math.max(6, S.lines.lenN | 0));    // keep the selection valid when the counting language (and so the maximum) changes
+  const lenSelect = S.lines.len === "6+"
+    ? `<select id="len-sel" aria-label="${esc(t("Exact length (6–{max})", { max: lenMax }))}" title="${esc(t("Exact length (6–{max})", { max: lenMax }))}">${Array.from({ length: lenMax - 5 }, (_, k) => k + 6).map(n => `<option value="${n}"${n === S.lines.lenN ? " selected" : ""}>${n}</option>`).join("")}</select>`
+    : "";
+  $("#lens").innerHTML = ["all", "2", "3", "4", "5", "6+"].map(x => `<button data-len="${x}" class="${S.lines.len == x ? "on" : ""}">${x === "all" ? t("All") : t("{n} letters",{n:x})}</button>${x === "6+" ? lenSelect : ""}`).join("");
   $("#lban").innerHTML = `<span class="bd" style="background:${LC(g)}">${LN(g)}</span> <b>${esc(S.lang === "ko" ? D.L[g].e : D.L[g].k)}</b> <span class="mu">${t("{n} stops",{n:GS[g].length})}${D.L[g].x ? " · " + t("express service") : ""}</span>`;
 
   // Group into connected Trunk & Branch sections in route order
   const branches = RT.filter(r => r.g === g && r.id !== "5a");
   let totalShown = 0;
+  const shownIds = new Set();    // a junction station (e.g. 성수, 신도림) is listed under its trunk AND its branch but is ONE station
 
   if (S.lines.so === "o") {
     $("#lst").classList.remove("flat");
     $("#lst").innerHTML = branches.map(br => {
       const sts = br.a.map(i => ST[i]).filter(matchFn);
-      totalShown += sts.length;
+      sts.forEach(s => shownIds.add(s.i));
       if (!sts.length) return "";
       const title = S.lang === "ko" ? br.label.ko : br.label.en;
       const rows = sts.map((s, idx) => lineRow(s, g, idx === 0 ? "first" : idx === sts.length - 1 ? "last" : "")).join("");
       return `<div class="branch-hdr" style="--c:${LC(g)}"><span>${title}</span><span class="mu">${t("{n} stations",{n:sts.length})}</span></div>${rows}`;
     }).join("") || `<div class="mu" style="padding:30px;text-align:center">${t("No stations match.")}</div>`;
+    totalShown = shownIds.size;
   } else {
     const f = GS[g].map(i => ST[i]).filter(matchFn);
     totalShown = f.length;
@@ -1114,6 +1147,11 @@ function drawLines() {
 
 $("#lgrid").onclick = e => { const b = e.target.closest("[data-g]"); if (b) { S.lines.g = b.dataset.g; S.lines.all = 0; drawLines(); } };
 $("#lens").onclick = e => { const b = e.target.closest("[data-len]"); if (b) { S.lines.len = b.dataset.len; drawLines(); } };
+$("#lens").onchange = e => {
+  const sel = e.target.closest("#len-sel"); if (!sel) return;
+  S.lines.lenN = +sel.value; drawLines();
+  const again = $("#len-sel"); if (again) again.focus();             // drawLines re-renders the row; keep keyboard focus where the user was
+};
 $("#so").onchange = e => { S.lines.so = e.target.value; drawLines(); };
 $("#cl").onchange = e => { S.lines.cl = e.target.value; drawLines(); };
 $("#lf").oninput = e => { S.lines.q = e.target.value; drawLines(); };

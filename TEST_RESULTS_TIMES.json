@@ -1,5 +1,5 @@
 {
- "run": "2026-11-25T19:33:00.501Z",
+ "run": "2026-11-27T20:02:46.512Z",
  "total": 183,
  "pass": 183,
  "fail": 0,
@@ -176,7 +176,7 @@
    "prof": "desktop",
    "name": "route search stays fast (worst case of the sample)",
    "pass": true,
-   "detail": "41 ms"
+   "detail": "33 ms"
   },
   {
    "prof": "desktop",
@@ -512,7 +512,7 @@
    "prof": "iphone",
    "name": "route search stays fast (worst case of the sample)",
    "pass": true,
-   "detail": "46 ms"
+   "detail": "53 ms"
   },
   {
    "prof": "iphone",
@@ -848,7 +848,7 @@
    "prof": "iphone-land",
    "name": "route search stays fast (worst case of the sample)",
    "pass": true,
-   "detail": "34 ms"
+   "detail": "30 ms"
   },
   {
    "prof": "iphone-land",

@@ -562,3 +562,6 @@ body.picking #route-sum { display: none !important; }
   .rd-st-leg ol { columns: 1; }
   .rd-min { font-size: 16px; }
 }
+/* Character-length filter: exact-length dropdown that appears beside the "6+" button */
+#lens { align-items: center; }
+#len-sel { min-width: 68px; }

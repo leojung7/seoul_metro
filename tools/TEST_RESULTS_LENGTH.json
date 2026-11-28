@@ -1,0 +1,876 @@
+{
+ "run": "2026-11-27T19:57:27.283Z",
+ "independent_expected_max": {
+  "ko": 9,
+  "en": 42
+ },
+ "total": 144,
+ "pass": 144,
+ "fail": 0,
+ "results": [
+  {
+   "prof": "desktop",
+   "name": "console log at initialization reports the detected maximum lengths",
+   "pass": true,
+   "detail": "[length-filter] longest station name computed from 654 stations: Korean = 9 (\"동대문역사문화공원\"), English = 42 (\"Gyeonggi Provincial Government Northern Office\"); the \"6+\" dropdown lists 6..9 for the current counting language (ko)."
+  },
+  {
+   "prof": "desktop",
+   "name": "longest Korean name = 9 and English = 42 (matches the independent computation, 654 stations)",
+   "pass": true,
+   "detail": "{\"ko\":9,\"en\":42,\"n\":654}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: no dropdown while All / 2 / 3 / 4 / 5 is selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: \"6+\" shows a dropdown 6…9 (max generated from the data = 9), consecutive",
+   "pass": true,
+   "detail": "6…9 (4 options)"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: dropdown defaults to 6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: dropdown sits beside the 6+ button",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: 96 line×length combinations show exactly the expected stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: every displayed row has exactly the selected length",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: the station count beside the filter equals the distinct stations shown (all combinations)",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: choosing 6 in the dropdown (line 1) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":6,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: choosing 7 in the dropdown (line 1) shows exactly 1 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":1,\"fc\":1,\"val\":7,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: choosing 9 in the dropdown (line 1) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":9,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: transfer-only + exact length = only transfer stations of that length",
+   "pass": true,
+   "detail": "1/1"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: sort \"en\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: sort \"ko\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: sort \"o\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":false}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: search text combines with the exact-length filter",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"bad\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: no dropdown while All / 2 / 3 / 4 / 5 is selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: \"6+\" shows a dropdown 6…42 (max generated from the data = 42), consecutive",
+   "pass": true,
+   "detail": "6…42 (37 options)"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: dropdown defaults to 6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: dropdown sits beside the 6+ button",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: 888 line×length combinations show exactly the expected stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: every displayed row has exactly the selected length",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: the station count beside the filter equals the distinct stations shown (all combinations)",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: choosing 6 in the dropdown (line 경의선) shows exactly 10 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":10,\"fc\":10,\"val\":6,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: choosing 24 in the dropdown (line 경의선) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":24,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: choosing 42 in the dropdown (line 경의선) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":42,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: transfer-only + exact length = only transfer stations of that length",
+   "pass": true,
+   "detail": "4/12"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: sort \"en\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: sort \"ko\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: sort \"o\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":false}"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: search text combines with the exact-length filter",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"bad\":0}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: 이수(총신대입구) counts as 2 (text in parentheses ignored)",
+   "pass": true,
+   "detail": "{\"k7\":2,\"k4\":5,\"e7\":3,\"e4\":13,\"dd\":28,\"ddName\":\"Dongdaemun History  Culture Park\",\"sample\":28,\"ds\":28}"
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean: 총신대입구(이수) counts as 5",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "English: Isu(Chongshin Univ.) counts as 3 letters; Chongshin Univ.(Isu) counts as 13 (Chongshin 9 + Univ 4)",
+   "pass": true,
+   "detail": "3/13"
+  },
+  {
+   "prof": "desktop",
+   "name": "English: \"Dongdaemun History & Culture Park\" counts letters only (28; spaces and & ignored); the dataset's own spelling gives the same 28",
+   "pass": true,
+   "detail": "{\"sample\":28,\"ds\":28,\"name\":\"Dongdaemun History  Culture Park\"}"
+  },
+  {
+   "prof": "desktop",
+   "name": "adding a longer name raises the maximum (42 → 59) and the dropdown follows; removing it restores 42",
+   "pass": true,
+   "detail": "{\"before\":42,\"synth\":59,\"top\":59,\"detected\":59,\"restored\":42}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switching English → Korean clamps 42 to the Korean maximum 9",
+   "pass": true,
+   "detail": "{\"sel\":9,\"last\":9}"
+  },
+  {
+   "prof": "desktop",
+   "name": "switching back to English restores the full range",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "desktop",
+   "name": "Korean UI: \"6+글자\" button, dropdown present with a Korean accessible label",
+   "pass": true,
+   "detail": "{\"btn\":\"6+글자\",\"label\":\"정확한 글자 수 (6–42)\",\"has\":true}"
+  },
+  {
+   "prof": "desktop",
+   "name": "desktop layout: dropdown inside the viewport, no horizontal overflow, touch-sized",
+   "pass": true,
+   "detail": "{\"l\":490,\"r\":558,\"w\":1366,\"lensRight\":932,\"h\":33,\"sw\":1366}"
+  },
+  {
+   "prof": "desktop",
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "console log at initialization reports the detected maximum lengths",
+   "pass": true,
+   "detail": "[length-filter] longest station name computed from 654 stations: Korean = 9 (\"동대문역사문화공원\"), English = 42 (\"Gyeonggi Provincial Government Northern Office\"); the \"6+\" dropdown lists 6..9 for the current counting language (ko)."
+  },
+  {
+   "prof": "iphone",
+   "name": "longest Korean name = 9 and English = 42 (matches the independent computation, 654 stations)",
+   "pass": true,
+   "detail": "{\"ko\":9,\"en\":42,\"n\":654}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: no dropdown while All / 2 / 3 / 4 / 5 is selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: \"6+\" shows a dropdown 6…9 (max generated from the data = 9), consecutive",
+   "pass": true,
+   "detail": "6…9 (4 options)"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: dropdown defaults to 6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: dropdown sits beside the 6+ button",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: 96 line×length combinations show exactly the expected stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: every displayed row has exactly the selected length",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: the station count beside the filter equals the distinct stations shown (all combinations)",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: choosing 6 in the dropdown (line 1) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":6,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: choosing 7 in the dropdown (line 1) shows exactly 1 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":1,\"fc\":1,\"val\":7,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: choosing 9 in the dropdown (line 1) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":9,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: transfer-only + exact length = only transfer stations of that length",
+   "pass": true,
+   "detail": "1/1"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: sort \"en\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: sort \"ko\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: sort \"o\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":false}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: search text combines with the exact-length filter",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"bad\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: no dropdown while All / 2 / 3 / 4 / 5 is selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: \"6+\" shows a dropdown 6…42 (max generated from the data = 42), consecutive",
+   "pass": true,
+   "detail": "6…42 (37 options)"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: dropdown defaults to 6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: dropdown sits beside the 6+ button",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: 888 line×length combinations show exactly the expected stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: every displayed row has exactly the selected length",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: the station count beside the filter equals the distinct stations shown (all combinations)",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: choosing 6 in the dropdown (line 경의선) shows exactly 10 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":10,\"fc\":10,\"val\":6,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: choosing 24 in the dropdown (line 경의선) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":24,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: choosing 42 in the dropdown (line 경의선) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":42,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: transfer-only + exact length = only transfer stations of that length",
+   "pass": true,
+   "detail": "4/12"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: sort \"en\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: sort \"ko\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: sort \"o\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":false}"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: search text combines with the exact-length filter",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"bad\":0}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: 이수(총신대입구) counts as 2 (text in parentheses ignored)",
+   "pass": true,
+   "detail": "{\"k7\":2,\"k4\":5,\"e7\":3,\"e4\":13,\"dd\":28,\"ddName\":\"Dongdaemun History  Culture Park\",\"sample\":28,\"ds\":28}"
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean: 총신대입구(이수) counts as 5",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "English: Isu(Chongshin Univ.) counts as 3 letters; Chongshin Univ.(Isu) counts as 13 (Chongshin 9 + Univ 4)",
+   "pass": true,
+   "detail": "3/13"
+  },
+  {
+   "prof": "iphone",
+   "name": "English: \"Dongdaemun History & Culture Park\" counts letters only (28; spaces and & ignored); the dataset's own spelling gives the same 28",
+   "pass": true,
+   "detail": "{\"sample\":28,\"ds\":28,\"name\":\"Dongdaemun History  Culture Park\"}"
+  },
+  {
+   "prof": "iphone",
+   "name": "adding a longer name raises the maximum (42 → 59) and the dropdown follows; removing it restores 42",
+   "pass": true,
+   "detail": "{\"before\":42,\"synth\":59,\"top\":59,\"detected\":59,\"restored\":42}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switching English → Korean clamps 42 to the Korean maximum 9",
+   "pass": true,
+   "detail": "{\"sel\":9,\"last\":9}"
+  },
+  {
+   "prof": "iphone",
+   "name": "switching back to English restores the full range",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone",
+   "name": "Korean UI: \"6+글자\" button, dropdown present with a Korean accessible label",
+   "pass": true,
+   "detail": "{\"btn\":\"6+글자\",\"label\":\"정확한 글자 수 (6–42)\",\"has\":true}"
+  },
+  {
+   "prof": "iphone",
+   "name": "mobile layout: dropdown inside the viewport, no horizontal overflow, touch-sized",
+   "pass": true,
+   "detail": "{\"l\":195,\"r\":263,\"w\":390,\"lensRight\":365,\"h\":44,\"sw\":390}"
+  },
+  {
+   "prof": "iphone",
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "console log at initialization reports the detected maximum lengths",
+   "pass": true,
+   "detail": "[length-filter] longest station name computed from 654 stations: Korean = 9 (\"동대문역사문화공원\"), English = 42 (\"Gyeonggi Provincial Government Northern Office\"); the \"6+\" dropdown lists 6..9 for the current counting language (ko)."
+  },
+  {
+   "prof": "iphone-land",
+   "name": "longest Korean name = 9 and English = 42 (matches the independent computation, 654 stations)",
+   "pass": true,
+   "detail": "{\"ko\":9,\"en\":42,\"n\":654}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: no dropdown while All / 2 / 3 / 4 / 5 is selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: \"6+\" shows a dropdown 6…9 (max generated from the data = 9), consecutive",
+   "pass": true,
+   "detail": "6…9 (4 options)"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: dropdown defaults to 6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: dropdown sits beside the 6+ button",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: 96 line×length combinations show exactly the expected stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: every displayed row has exactly the selected length",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: the station count beside the filter equals the distinct stations shown (all combinations)",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: choosing 6 in the dropdown (line 1) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":6,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: choosing 7 in the dropdown (line 1) shows exactly 1 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":1,\"fc\":1,\"val\":7,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: choosing 9 in the dropdown (line 1) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":9,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: transfer-only + exact length = only transfer stations of that length",
+   "pass": true,
+   "detail": "1/1"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: sort \"en\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: sort \"ko\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: sort \"o\" keeps the same 1 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"flat\":false}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: search text combines with the exact-length filter",
+   "pass": true,
+   "detail": "{\"n\":1,\"fc\":1,\"bad\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: no dropdown while All / 2 / 3 / 4 / 5 is selected",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: \"6+\" shows a dropdown 6…42 (max generated from the data = 42), consecutive",
+   "pass": true,
+   "detail": "6…42 (37 options)"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: dropdown defaults to 6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: dropdown sits beside the 6+ button",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: 888 line×length combinations show exactly the expected stations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: every displayed row has exactly the selected length",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: the station count beside the filter equals the distinct stations shown (all combinations)",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: choosing 6 in the dropdown (line 경의선) shows exactly 10 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":10,\"fc\":10,\"val\":6,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: choosing 24 in the dropdown (line 경의선) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":24,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: choosing 42 in the dropdown (line 경의선) shows exactly 0 station(s), count label accurate",
+   "pass": true,
+   "detail": "{\"rows\":0,\"fc\":0,\"val\":42,\"focus\":\"len-sel\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: keyboard focus stays on the dropdown after filtering",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: transfer-only + exact length = only transfer stations of that length",
+   "pass": true,
+   "detail": "4/12"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: sort \"en\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: sort \"ko\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: sort \"o\" keeps the same 12 stations and an accurate count",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"flat\":false}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: search text combines with the exact-length filter",
+   "pass": true,
+   "detail": "{\"n\":12,\"fc\":12,\"bad\":0}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: 이수(총신대입구) counts as 2 (text in parentheses ignored)",
+   "pass": true,
+   "detail": "{\"k7\":2,\"k4\":5,\"e7\":3,\"e4\":13,\"dd\":28,\"ddName\":\"Dongdaemun History  Culture Park\",\"sample\":28,\"ds\":28}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean: 총신대입구(이수) counts as 5",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: Isu(Chongshin Univ.) counts as 3 letters; Chongshin Univ.(Isu) counts as 13 (Chongshin 9 + Univ 4)",
+   "pass": true,
+   "detail": "3/13"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "English: \"Dongdaemun History & Culture Park\" counts letters only (28; spaces and & ignored); the dataset's own spelling gives the same 28",
+   "pass": true,
+   "detail": "{\"sample\":28,\"ds\":28,\"name\":\"Dongdaemun History  Culture Park\"}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "adding a longer name raises the maximum (42 → 59) and the dropdown follows; removing it restores 42",
+   "pass": true,
+   "detail": "{\"before\":42,\"synth\":59,\"top\":59,\"detected\":59,\"restored\":42}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switching English → Korean clamps 42 to the Korean maximum 9",
+   "pass": true,
+   "detail": "{\"sel\":9,\"last\":9}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "switching back to English restores the full range",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "prof": "iphone-land",
+   "name": "Korean UI: \"6+글자\" button, dropdown present with a Korean accessible label",
+   "pass": true,
+   "detail": "{\"btn\":\"6+글자\",\"label\":\"정확한 글자 수 (6–42)\",\"has\":true}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "mobile layout: dropdown inside the viewport, no horizontal overflow, touch-sized",
+   "pass": true,
+   "detail": "{\"l\":481,\"r\":549,\"w\":750,\"lensRight\":725,\"h\":44,\"sw\":750}"
+  },
+  {
+   "prof": "iphone-land",
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

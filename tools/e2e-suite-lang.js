@@ -26,7 +26,7 @@ async function suite(prof){
   const all=await p.evaluate(()=>{let bad=[],withParen=0;const f=n=>String(n).replace(/\s*\([^)]*\)/g,'');
    ST.forEach(s=>s.ln.forEach(g=>{const n=dnames(s,g);if(/\(/.test(n.ko+n.en))withParen++;
     S.lines.cl='ko';if(cl(s,g)!==f(n.ko).replace(/\s/g,'').length)bad.push(s.ko+':'+g+':ko');
-    S.lines.cl='en';if(cl(s,g)!==f(n.en).replace(/[^A-Za-z0-9]/g,'').length)bad.push(s.ko+':'+g+':en')}));S.lines.cl='ko';return {bad:bad.slice(0,6),n:bad.length,withParen}});
+    S.lines.cl='en';if(cl(s,g)!==(f(n.en).match(/\p{L}/gu)||[]).length)bad.push(s.ko+':'+g+':en')}));S.lines.cl='ko';return {bad:bad.slice(0,6),n:bad.length,withParen}});
   ok(`all stations × lines × both modes ignore parenthetical text (${all.withParen} names have parentheses)`,all.n===0,JSON.stringify(all.bad));
   // UI: filter by length, displayed name unchanged
   await p.evaluate(()=>{tab('lines');S.lines.g='4';S.lines.all=0;S.lines.cl='ko';S.lines.len='5';drawLines()});await wait(150);

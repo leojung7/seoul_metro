@@ -283,7 +283,7 @@
    "prof": "desktop",
    "name": "desktop: the browser actually requested map_korea.pdf",
    "pass": true,
-   "detail": "http://localhost:41167/map_korea.pdf"
+   "detail": "http://localhost:35557/map_korea.pdf"
   },
   {
    "prof": "desktop",
@@ -1129,7 +1129,7 @@
    "prof": "desktop@/seoul-metro-hub/",
    "name": "desktop: the browser actually requested map_korea.pdf",
    "pass": true,
-   "detail": "http://localhost:32887/seoul-metro-hub/map_korea.pdf"
+   "detail": "http://localhost:37277/seoul-metro-hub/map_korea.pdf"
   },
   {
    "prof": "desktop@/seoul-metro-hub/",
